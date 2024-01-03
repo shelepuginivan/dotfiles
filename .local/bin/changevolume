@@ -1,0 +1,56 @@
+#!/bin/sh
+
+NOTIFICATION_ID=1
+DELTA=5
+
+# Get audio status in the following format:
+# Currently at <percentage>% (Device <ON|OFF>)
+# E.g. "Currently at 70% (Device ON)".
+get_audio_status() {
+    amixer -D pulse sget Master | egrep -om 1 "[[0-9]+%] \[(on|off)\]" | awk '{gsub(/[][]/, ""); print $1 " (Device " toupper($2) ")"}'
+}
+
+# Send notification with status of the device.
+# It has specific ID so can be replaced.
+send_notification() {
+    gdbus call \
+    --session \
+    --dest org.freedesktop.Notifications \
+    --object-path /org/freedesktop/Notifications \
+    --method org.freedesktop.Notifications.Notify \
+    changevolume \
+    "$NOTIFICATION_ID" \
+    gtk-dialog-info \
+    Volume \
+    "Currently at $(get_audio_status)" \
+    [] \
+    {} \
+    4000 > /dev/null
+}
+
+upper_volume() {
+    amixer -q -D pulse sset Master "$DELTA"%+
+    send_notification
+}
+
+lower_volume() {
+    amixer -q -D pulse sset Master "$DELTA"%-
+    send_notification
+}
+
+toggle_mute() {
+    amixer -D pulse set Master 1+ toggle > /dev/null
+    send_notification
+}
+
+# If the second argument is provided, use it as delta
+if [ -n "$2" ]; then
+    DELTA="$2"
+fi
+
+case "$1" in
+    inc) upper_volume ;;
+    dec) lower_volume ;;
+    toggle) toggle_mute ;;
+    *) exit 1 ;;
+esac
