@@ -1,0 +1,16 @@
+#!/bin/sh
+
+OPTION_POWEROFF=" Power Off"
+OPTION_REBOOT=" Reboot"
+OPTION_SUSPEND="󰤄 Suspend"
+OPTION_LOCK=" Lock Screen"
+
+CHOSEN=$(echo "$OPTION_POWEROFF\n$OPTION_REBOOT\n$OPTION_SUSPEND\n$OPTION_LOCK" | rofi -dmenu -p "Action:")
+
+case "$CHOSEN" in
+    "$OPTION_POWEROFF") poweroff ;;
+    "$OPTION_REBOOT") reboot ;;
+    "$OPTION_SUSPEND") systemctl suspend ;;
+    "$OPTION_LOCK") betterlockscreen -l --show-layout ;;
+    *) exit 1 ;;
+esac
