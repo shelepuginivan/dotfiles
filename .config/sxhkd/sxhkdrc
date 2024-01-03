@@ -1,0 +1,43 @@
+# Open rofi drun menu
+ctrl + space
+	rofi -show drun
+
+# Lock screen
+F9
+	betterlockscreen -l --show-layout
+
+# Open power menu
+super + shift + p
+	powermenu
+
+# Screenshot
+Print
+	screenshot
+
+# Screenshot select area
+shift + Print
+	screenshot select
+
+# Screenshot focused window
+ctrl + Print
+	screenshot window
+
+# Increase volume
+XF86AudioRaiseVolume
+	changevolume inc
+
+# Decrease volume
+XF86AudioLowerVolume
+	changevolume dec
+
+# Toggle mute
+XF86AudioMute
+	changevolume toggle
+
+# Increase brightness
+XF86MonBrightnessDown
+	changebrightness dec
+
+# Decrease brightness
+XF86MonBrightnessUp
+	changebrightness inc
