@@ -1,0 +1,18 @@
+#!/bin/sh
+
+SCREENSHOTS=$HOME/Images/Screenshots
+OUTPUT="$SCREENSHOTS/$(date +%Y-%m-%d_%H-%M-%S).png"
+
+case "$1" in
+    "select")
+        scrot -s "$OUTPUT" || exit 1
+        ;;
+    "window")
+        scrot -u "$OUTPUT" || exit 1
+        ;;
+    *)
+        scrot "$OUTPUT" || exit 1
+        ;;
+esac
+
+notify-send "Screenshot" "Saved to $(echo $SCREENSHOTS | sed "s|$HOME|~|g")"
