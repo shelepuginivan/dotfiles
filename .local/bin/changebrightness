@@ -1,0 +1,26 @@
+#!/bin/sh
+
+BRIGHTNESS=$(xbacklight -get)
+DELTA=5
+
+upper_brightness() {
+    xbacklight -inc $DELTA
+}
+
+lower_brightness() {
+    # Don't lower brightness to 0
+    if ! awk "BEGIN{ exit ($BRIGHTNESS > $DELTA) }"; then
+        xbacklight -dec $DELTA
+    fi
+}
+
+# If the second argument is provided, use it as delta
+if [ -n "$2" ]; then
+    DELTA="$2"
+fi
+
+if [ "$1" = "inc" ]; then
+    upper_brightness
+elif [ "$1" = "dec" ]; then
+    lower_brightness
+fi
