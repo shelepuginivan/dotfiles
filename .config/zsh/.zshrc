@@ -26,11 +26,12 @@ export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/Apps
 
-# --- OMZ settings ---
+# --- zsh & Oh My Zsh settings ---
 export ZSH="$HOME/.oh-my-zsh"
+export ZDOTDIR=$XDG_CONFIG_HOME/zsh
+export HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
 HYPHEN_INSENSITIVE="true"
 ZSH_THEME="robbyrussell"
-zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 # DISABLE_MAGIC_FUNCTIONS="true"
 # DISABLE_LS_COLORS="true"
 # DISABLE_AUTO_TITLE="true"
@@ -38,10 +39,7 @@ zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 # COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
-
-# --- ZSH settings ---
-export ZDOTDIR=$XDG_CONFIG_HOME/zsh
-export HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
+zstyle ':completion:*' cache-path $XDG_CACHE_HOME/zsh/zcompcache
 
 source "$ZSH_CONFIG_DIR/plugins.zsh"    # plugins are required to be loaded before oh-my-zsh
 source $ZSH/oh-my-zsh.sh
