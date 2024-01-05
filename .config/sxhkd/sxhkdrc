@@ -11,15 +11,15 @@ super + shift + p
 	powermenu
 
 # Screenshot
-Print
+@Print
 	screenshot
 
 # Screenshot select area
-shift + Print
+shift + @Print
 	screenshot select
 
 # Screenshot focused window
-ctrl + Print
+ctrl + @Print
 	screenshot window
 
 # Increase volume
