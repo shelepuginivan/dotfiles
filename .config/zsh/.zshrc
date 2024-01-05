@@ -27,7 +27,7 @@ export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$HOME/Apps
 
 # --- zsh & Oh My Zsh settings ---
-export ZSH="$HOME/.oh-my-zsh"
+export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh
 export HISTFILE=$XDG_STATE_HOME/zsh/.zsh_history
 HYPHEN_INSENSITIVE="true"
