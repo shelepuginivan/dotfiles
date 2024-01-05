@@ -16,7 +16,7 @@ alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts"
 alias ytdl="yt-dlp"
 alias zshconfig="$EDITOR $ZSH_CONFIG_DIR"
 
-# dotfiles management
+# --- dotfiles management ---
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dfa="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add"
 alias dfst="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status"

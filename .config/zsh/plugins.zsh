@@ -1,4 +1,4 @@
-# zsh plugin settings
+# --- zsh plugin settings ---
 plugins=(
     auto-notify
     git
