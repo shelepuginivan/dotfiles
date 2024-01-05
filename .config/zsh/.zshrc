@@ -24,7 +24,6 @@ export PYTHONUSERBASE=$XDG_DATA_HOME/python
 # --- PATH ---
 export PATH=$PATH:/usr/local/go/bin
 export PATH=$PATH:$GOPATH/bin
-export PATH=$PATH:$HOME/.lua-ls/bin
 export PATH=$PATH:$HOME/Apps
 
 # --- OMZ settings ---
