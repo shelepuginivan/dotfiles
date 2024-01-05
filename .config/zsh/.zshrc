@@ -14,6 +14,7 @@ export XDG_STATE_HOME=$HOME/.local/state
 export ZSH_CONFIG_DIR=$XDG_CONFIG_HOME/zsh
 
 # --- Directories ---
+export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 export GOPATH="$XDG_DATA_HOME"/go
 export GOMODCACHE="$XDG_CACHE_HOME"/go/mod
 export PYTHONPYCACHEPREFIX=$XDG_CACHE_HOME/python
