@@ -15,16 +15,12 @@ export ZSH_CONFIG_DIR="$XDG_CONFIG_HOME/zsh"
 
 # --- Directories ---
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export GOPATH="$XDG_DATA_HOME/go"
-export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 # export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
 
 # --- PATH ---
-export PATH="$PATH:/usr/local/go/bin"
-export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/Apps"
 
 # --- zsh & Oh My Zsh settings ---
