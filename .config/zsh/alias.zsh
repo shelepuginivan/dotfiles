@@ -14,7 +14,7 @@ alias reload="source ~/.zshenv"
 alias v="nvim"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts"
 alias ytdl="yt-dlp"
-alias zshconfig="$EDITOR $ZSH_CONFIG_DIR"
+alias zshconfig="$EDITOR $ZDOTDIR"
 
 # --- dotfiles management ---
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"

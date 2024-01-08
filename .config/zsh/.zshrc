@@ -11,7 +11,6 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
-export ZSH_CONFIG_DIR="$XDG_CONFIG_HOME/zsh"
 
 # --- Directories ---
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
@@ -38,7 +37,7 @@ ZSH_THEME="robbyrussell"
 # HIST_STAMPS="mm/dd/yyyy"
 zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
 
-source "$ZSH_CONFIG_DIR/plugins.zsh"    # plugins are required to be loaded before oh-my-zsh
+source "$ZDOTDIR/plugins.zsh"    # plugins are required to be loaded before oh-my-zsh
 source "$ZSH/oh-my-zsh.sh"
-source "$ZSH_CONFIG_DIR/apps.zsh"
-source "$ZSH_CONFIG_DIR/alias.zsh"
+source "$ZDOTDIR/apps.zsh"
+source "$ZDOTDIR/alias.zsh"
