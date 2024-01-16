@@ -2,6 +2,7 @@
 export BROWSER="firefox"
 export EDITOR="nvim"
 export GTK_THEME="Adwaita:dark"
+export LC_ALL="en_US.UTF-8"
 export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 export TERMINAL="alacritty"
