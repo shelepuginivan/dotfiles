@@ -1,0 +1,21 @@
+#!/bin/sh
+
+run() {
+    if ! pgrep -f "$1"; then
+        "$@"&
+    fi
+}
+
+run picom
+run dunst
+
+setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
+setxkbmap -option "ctrl:nocaps"
+
+run sxhkd -c $HOME/.config/sxhkd/sxhkdrc $HOME/.config/sxhkd/sxhkdrc.bspwm
+
+run blueman-applet
+run nm-applet
+run launchpolybar
+
+run feh --bg-fill --no-fehbg $HOME/Images/Wallpapers/wallpaper.png

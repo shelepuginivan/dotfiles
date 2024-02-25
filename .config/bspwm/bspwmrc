@@ -1,0 +1,26 @@
+#!/bin/sh
+
+# Execute autorun script
+$HOME/.config/bspwm/autorun
+
+# Monitors
+bspc monitor -d  󰖟  
+
+# Pointer
+bspc config pointer_modifier      mod4
+bspc config pointer_action1       move
+bspc config pointer_action2       resize_side
+bspc config pointer_action1       resize_corner
+bspc config focus_follows_pointer true
+bspc config click_to_focus        none
+
+# Desktop
+bspc config borderless_monocle    true
+bspc config gapless_monocle       true
+
+bspc config border_width          0
+bspc config window_gap            12
+bspc config split_ratio           0.5
+
+# Rules
+bspc rule -a firefox desktop="^2" follow=off
