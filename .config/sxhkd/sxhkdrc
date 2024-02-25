@@ -2,6 +2,10 @@
 ctrl + space
 	rofi -show drun
 
+# Terminal emulator
+super + Return
+	alacritty
+
 # Lock screen
 F9
 	betterlockscreen -l --show-layout
