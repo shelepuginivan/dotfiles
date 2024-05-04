@@ -6,7 +6,7 @@ OPTION_SUSPEND="󰤄 Suspend"
 OPTION_LOCK=" Lock Screen"
 OPTION_LOGOUT="󰍃 Logout"
 
-CHOSEN=$(echo "$OPTION_POWEROFF\n$OPTION_REBOOT\n$OPTION_SUSPEND\n$OPTION_LOCK\n$OPTION_LOGOUT" | rofi -dmenu -p "Action:")
+CHOSEN=$(printf "$OPTION_POWEROFF\n$OPTION_REBOOT\n$OPTION_SUSPEND\n$OPTION_LOCK\n$OPTION_LOGOUT" | rofi -dmenu -p "Action:")
 
 case "$CHOSEN" in
     "$OPTION_POWEROFF") poweroff ;;
