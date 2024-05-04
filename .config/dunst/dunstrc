@@ -10,17 +10,17 @@
     # Geometry
     origin = top-right
     geometry = "375x150-16+76"
-    width = 450
+    width = 300
     height = 150
-    offset = 16x76
+    offset = 16x56
     padding = 12
     horizontal_padding = 12
 
     # Multiple notifications
     notification_limit = 3
     indicate_hidden = yes
-    gap_size = 12
     separator_height = 12
+    gap_size = 12
 
     # Progress bar
     progress_bar = true
