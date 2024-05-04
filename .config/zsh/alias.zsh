@@ -1,5 +1,4 @@
-alias bat="batcat"
-alias cat="batcat"
+alias cat="bat"
 alias cal="ncal -M -b"
 alias clip="xclip -selection clipboard"
 alias cls="clear"
