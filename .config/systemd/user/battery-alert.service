@@ -1,0 +1,12 @@
+[Unit]
+Description=Desktop alert warning of low remaining battery
+
+[Service]
+Type=oneshot
+Environment=HOME=%h
+Environment=DISPLAY=:0
+Environment=DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
+ExecStart=%h/.local/bin/battery-alert
+
+[Install]
+WantedBy=default.target
