@@ -1,6 +1,5 @@
 [color]
 gradient = 1
-gradient_count = 3
-gradient_color_1 = '#d11818'
-gradient_color_2 = '#e27e1a'
-gradient_color_3 = '#f2dc2a'
+gradient_count = 2
+gradient_color_1 = '#8aba6e'
+gradient_color_2 = '#a3e0fe'

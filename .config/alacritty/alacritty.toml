@@ -1,26 +1,26 @@
 [colors.bright]
-black = "0x696969"
-blue = "0x007FFF"
-cyan = "0x00CCCC"
-green = "0x03C03C"
-magenta = "0xFF1493"
-red = "0xFF2400"
-white = "0xFFFAFA"
-yellow = "0xFDFF00"
+black = "#696969"
+blue = "#007FFF"
+cyan = "#a3e0fe"
+green = "#29a93e"
+magenta = "#ff9ec2"
+red = "#FF2400"
+white = "#FFFAFA"
+yellow = "#ffeb8f"
 
 [colors.normal]
-black = "0x10100E"
-blue = "0x0087BD"
-cyan = "0x20B2AA"
-green = "0x009F6B"
-magenta = "0x9A4EAE"
-red = "0xC40233"
-white = "0xC6C6C4"
-yellow = "0xFFD700"
+black = "#10100E"
+blue = "#0087BD"
+cyan = "#66c1ef"
+green = "#8aba6e"
+magenta = "#ff76a8"
+red = "#C40233"
+white = "#C6C6C4"
+yellow = "#e8d762"
 
 [colors.primary]
-background = "0x000000"
-foreground = "0xC6C6C4"
+background = "#000000"
+foreground = "#C6C6C4"
 
 [font]
 size = 12
@@ -58,7 +58,7 @@ program = "/bin/zsh"
 [window]
 decorations = "full"
 dynamic_padding = true
-opacity = 0.9
+opacity = 0.8
 
 [window.dimensions]
 columns = 140

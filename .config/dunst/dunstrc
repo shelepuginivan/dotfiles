@@ -61,7 +61,7 @@
     override_pause_level = 30
 
 [urgency_critical]
-    background = "#900000"
+    background = "#e13e3b"
     foreground = "#f1f2f3"
     frame_color = "#d6050f"
     timeout = 0
