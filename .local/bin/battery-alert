@@ -27,8 +27,9 @@ CRITICAL_FILE=/tmp/batterycritical
 # Reset notifications if the computer is charging/discharging.
 if [ "$BATTERY_DISCHARGING" -eq 1 ] && [ -f "$FULL_FILE" ]; then
 	rm "$FULL_FILE"
-elif [ "$BATTERY_DISCHARGING" -eq 0 ] && [ -f "$LOW_FILE" ]; then
-	rm "$LOW_FILE"
+elif [ "$BATTERY_DISCHARGING" -eq 0 ]; then
+    [ -f "$LOW_FILE" ] && rm "$LOW_FILE"
+    [ -f "$CRITICAL_FILE" ] && rm "$CRITICAL_FILE"
 fi
 
 # If the battery is charging and is full (and has not shown notification yet).
