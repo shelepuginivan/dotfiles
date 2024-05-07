@@ -64,5 +64,5 @@
     background = "#e13e3b"
     foreground = "#f1f2f3"
     frame_color = "#d6050f"
-    timeout = 0
+    timeout = 15
     override_pause_level = 60
