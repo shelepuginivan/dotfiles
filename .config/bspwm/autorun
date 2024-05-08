@@ -6,8 +6,15 @@ run() {
     fi
 }
 
+# Env variables
+export PATH="$PATH:$HOME/.local/bin"
+export GTK_THEME="Adwaita:dark"
+export QT_QPA_PLATFORMTHEME="gtk3"
+
 run picom
 run dunst
+
+xsetroot -cursor_name left_ptr
 
 setxkbmap -layout "us,ru" -option "grp:alt_shift_toggle"
 setxkbmap -option "ctrl:nocaps"
