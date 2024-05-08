@@ -2,9 +2,9 @@
 
 # Background image.
 if [ -n "$XDG_DATA_HOME" ]; then
-    BG_IMAGE="$XDG_DATA_HOME/icons/lockscreen/bg.png"
+    BG_IMAGE="$XDG_DATA_HOME/lockscreen/bg.png"
 else
-    BG_IMAGE="$HOME/.local/share/icons/lockscreen/bg.png"
+    BG_IMAGE="$HOME/.local/share/lockscreen/bg.png"
 fi
 
 # Fonts.
