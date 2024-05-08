@@ -8,7 +8,7 @@ super + Return
 
 # Lock screen
 F9
-	betterlockscreen -l --show-layout
+	lockscreen
 
 # Open power menu
 super + shift + p
