@@ -1,0 +1,64 @@
+#!/bin/sh
+
+# Background image.
+if [ -n "$XDG_DATA_HOME" ]; then
+    BG_IMAGE="$XDG_DATA_HOME/icons/lockscreen/bg.png"
+else
+    BG_IMAGE="$HOME/.local/share/icons/lockscreen/bg.png"
+fi
+
+# Fonts.
+FONT="JetBrains Mono"
+FONT_MEDIUM=20
+
+# Colors.
+BLANK="#00000000"
+CLEAR="#fcf5e450"
+DEFAULT="#00000000"
+KEY="#29a93e"
+TEXT="#282a36"
+WRONG="#e13e3b88"
+VERIFYING="#8aba6e"
+
+i3lock -n                       \
+    -L -i "$BG_IMAGE"           \
+    \
+    --indicator                 \
+    --inside-color=$CLEAR       \
+    --insidever-color=$CLEAR    \
+    --insidewrong-color=$WRONG  \
+    --line-color=$BLANK         \
+    --radius=108                \
+    --ringver-color=$VERIFYING  \
+    --ringwrong-color=$DEFAULT  \
+    --ring-color=$DEFAULT       \
+    --separator-color=$DEFAULT  \
+    \
+    --clock                     \
+    --date-color=$TEXT          \
+    --date-font="$FONT"         \
+    --date-str="%B %d, %Y"      \
+    --time-color=$TEXT          \
+    --time-font="$FONT"         \
+    --time-str="%H:%M"          \
+    \
+    --keylayout                 \
+    --layout-color=$TEXT        \
+    --layout-font="$FONT"       \
+    \
+    --keyhl-color=$KEY          \
+    \
+    --bshl-color=$WRONG         \
+    \
+    --verif-color=$TEXT         \
+    --verif-font="$FONT"        \
+    --verif-size="$FONT_MEDIUM" \
+    \
+    --wrong-color=$TEXT         \
+    --wrong-font="$FONT"        \
+    --wrong-size="$FONT_MEDIUM" \
+    \
+    --pass-media-keys           \
+    --pass-screen-keys          \
+    --pass-volume-keys          \
+    --pass-power-keys           \
