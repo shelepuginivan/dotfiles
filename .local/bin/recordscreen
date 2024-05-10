@@ -66,6 +66,7 @@ start_record() {
     echo "$DEVICE $VIDEOCODEC $AUDIOCODEC $W $H $X $Y $OUTPUT" > "$TEMPFILE"
 
     notify-send "Recording" "Started at $(date +%H:%M:%S) (File: $OUTPUT)"
+
     ffmpeg \
         -f x11grab \
         -s "$W"x"$H" \
@@ -74,7 +75,11 @@ start_record() {
         -i "$DEVICE" \
         -c:v "$VIDEOCODEC" \
         -c:a "$AUDIOCODEC" \
+        -profile:v baseline \
+        -level 3.0 \
+        -pix_fmt yuv420p \
         "$OUTPUT"
+
     notify-send "Recording" "Stopped at $(date +%H:%M:%S) (File: $OUTPUT)"
 }
 
