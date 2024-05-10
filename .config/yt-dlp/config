@@ -1,2 +1,2 @@
-# Save in ~/Videos
--o ~/Videos/%(upload_date)s__%(id)s__%(title)s.%(ext)s
+# Save in ~/Downloads directory.
+-o ~/Downloads/%(upload_date)s__%(id)s__%(title)s.%(ext)s
