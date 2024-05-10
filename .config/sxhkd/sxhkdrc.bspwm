@@ -1,34 +1,35 @@
-# bspwm switch monitor
-super + {Left,Right}
-	bspc desktop -f {prev,next}
-
-# bspwm close window
-super + q
-	bspc node -c
-
+# Quit bspwm.
 super + shift + q
 	bspc quit
 
-# bspwm restart wm
+# Restart bspwm.
 super + shift + r
 	bspc wm -r
 
-# bspwm focus on window in direction
-super + {h,j,k,l}
-	bspc node -f {west,south,north,east}
+# Switch desktop.
+super + {Left,Right}
+	bspc desktop -f {prev,next}
 
-# bspwm swap window with direction
-super + shift + {h,j,k,l}
-	bspc node -s {west,south,north,east}
+# Close window.
+super + q
+	bspc node -c
 
-# bspwm toggle fullscreen
+# Toggle fullscreen mode.
 super + f
 	bspc node focused -t fullscreen || bspc node focused -t tiled
 
-# bspwm hide window
+# Hide window.
 super + n
 	bspc node -g hidden
 
-# bspwm show last hidden window
+# Show last hidden window.
 super + shift + n
 	bspc node $(bspc query -N -n .hidden | tail -n1) -g hidden=off
+
+# Focus on window in direction.
+super + {h,j,k,l}
+	bspc node -f {west,south,north,east}
+
+# Swap window in direction.
+super + shift + {h,j,k,l}
+	bspc node -s {west,south,north,east}
