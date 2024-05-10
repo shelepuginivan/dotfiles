@@ -33,3 +33,7 @@ super + {h,j,k,l}
 # Swap window in direction.
 super + shift + {h,j,k,l}
 	bspc node -s {west,south,north,east}
+
+# Send window to the next or the previous desktop.
+super + ctrl + {Left,Right}
+	bspc node -d {prev,next}
