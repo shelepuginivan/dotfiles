@@ -20,3 +20,6 @@ export PATH="$PATH:$LUA_LS_DIR/bin"
 # --- nvm ---
 export NVM_DIR="$XDG_CONFIG_HOME/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && source "$NVM_DIR/nvm.sh"
+
+# --- wine ---
+export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
