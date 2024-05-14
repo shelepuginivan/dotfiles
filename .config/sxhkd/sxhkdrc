@@ -1,47 +1,47 @@
-# Open rofi drun menu
+# App launcher.
 ctrl + space
 	rofi -show drun
 
-# Terminal emulator
+# Terminal emulator.
 super + Return
 	alacritty
 
-# Lock screen
-F9
-	lockscreen
-
-# Open power menu
+# Power menu.
 super + shift + p
 	powermenu
 
-# Screenshot
+# Screenshot.
 @Print
 	screenshot
 
-# Screenshot select area
+# Screenshot of selected area.
 shift + @Print
 	screenshot select
 
-# Screenshot focused window
+# Screenshot of focused window.
 ctrl + @Print
 	screenshot window
 
-# Increase volume
+# Lock screen.
+F9
+	lockscreen
+
+# Increase volume.
 XF86AudioRaiseVolume
 	changevolume inc
 
-# Decrease volume
+# Decrease volume.
 XF86AudioLowerVolume
 	changevolume dec
 
-# Toggle mute
+# Toggle mute.
 XF86AudioMute
 	changevolume toggle
 
-# Increase brightness
+# Increase brightness.
 XF86MonBrightnessDown
 	changebrightness dec
 
-# Decrease brightness
+# Decrease brightness.
 XF86MonBrightnessUp
 	changebrightness inc
