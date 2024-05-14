@@ -6,6 +6,18 @@ ctrl + space
 super + Return
 	alacritty
 
+# Browser.
+super + b
+	firefox
+
+# File manager.
+super + e
+	alacritty --command lf
+
+# Music player.
+super + m
+	alacritty --command musikcube
+
 # Power menu.
 super + shift + p
 	powermenu
