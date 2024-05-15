@@ -140,8 +140,9 @@ map gv cd ~/Videos
 
 # git bindings.
 map Ga $git add "$fx"
-map Gc $git commit
+map Gc $git commit --verbose
 map Gl $git log --oneline --decorate --graph
+map Gp $git push
 map Grh $git reset
 map Grs $git restore "$fx"
 map Gst $git status | less
