@@ -1,0 +1,147 @@
+# Basic settings.
+set cursorpreviewfmt "\033[7;2m"
+set drawbox true
+set hidden true
+set icons true
+set ifs "\n"
+set ignorecase true
+set incsearch true
+set shell zsh
+set shellopts '-eu'
+set scrolloff 7
+
+# Previewer.
+set preview true
+set previewer ~/.config/lf/preview
+
+
+# Commands.
+
+# `chmod` command.
+# Writes file permissions.
+cmd chmod %printf "Mode: "; read MODE; chmod "$MODE" "$fx"
+
+# `create` command.
+# Prompts to enter a file name and creates it. If the name ends with `/`, a
+# directory is created. Paths are supported.
+cmd create %printf "Name: "; read NAME; [[ "$NAME" == */ ]] && mkdir -p "$NAME" || touch "$NAME"
+
+# `edit` command.
+# Open file with $EDITOR.
+cmd edit %lf -remote "send $id \$$EDITOR \$fx"
+
+# `exec` command.
+# Asks to confirm and executes the file (must be an executable).
+cmd exec %printf "Execute $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && "$fx"
+
+# `open` command.
+# This command is called when current file is not a directory. You may want to
+# use either file extensions and/or mime types here. Below uses an editor for
+# text files and a file opener for the rest.
+cmd open &{{
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# `remove` command.
+# Asks to confirm and removes the file.
+cmd remove %printf "Remove $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && rm -rf "$fx"
+
+# `rename` command.
+# Promts to enter a new file name and moves the file. If the path exists, asks
+# to confirm.
+cmd rename %printf "New name: "; read FILENAME; [ ! -e "$FILENAME" ] && mv "$fx" "$FILENAME" || printf "Overwrite $FILENAME ? [y/n] " && read ANS && [ "$ANS" = "y" ] && mv "$fx" "$FILENAME"
+
+# `trash` command.
+# Puts file in trash using trash-cli.
+cmd trash %trash-put "$fx"
+
+# Archive commands.
+
+# `extract` command.
+# Extracts the archive.
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+    esac
+}}
+
+# `tar` command.
+# Creates a new `.tar.gz` archive.
+cmd tar ${{
+    set -f
+    mkdir TARTMP
+    cp -r $fx TARTMP
+    tar czf $fx.tar.gz TARTMP
+    rm -rf TARTMP
+}}
+
+# `zip` command.
+# Creates a new `.zip` archive.
+cmd zip ${{
+    set -f
+    mkdir ZIPTMP
+    cp -r $fx ZIPTMP
+    zip -rq $fx.zip ZIPTMP
+    rm -rf ZIPTMP
+}}
+
+
+# Bindings
+
+# Unmap default keys.
+map c
+map d
+map m
+map G
+
+# Basic actions.
+map a create
+map ch chmod
+map e exec
+map gG bottom
+map p paste
+map r rename
+map v edit
+map x cut
+map y copy
+map . set hidden!
+map <enter> shell
+map <esc> clear
+
+# Remove actions.
+map dt trash
+map <delete> trash
+map dd remove
+
+# Archive actions.
+map Xe extract
+map Xt tar
+map Xz zip
+
+# Filesystem navigation.
+map gc cd ~/Code
+map gC cd ~/.config
+map gd cd ~/Downloads
+map gD cd ~/Documents
+map gh cd ~
+map gi cd ~/Images
+map gm cd ~/Music
+map gr cd ~/Videos/Records
+map gs cd ~/Images/Screenshots
+map gS cd ~/.local/bin
+map gv cd ~/Videos
+
+# git bindings.
+map Ga $git add "$fx"
+map Gc $git commit
+map Gl $git log --oneline --decorate --graph
+map Grh $git reset
+map Grs $git restore "$fx"
+map Gst $git status | less
