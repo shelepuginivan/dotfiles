@@ -5,7 +5,7 @@ OUTPUT="$SCREENSHOTS/$(date +%Y-%m-%d_%H-%M-%S).png"
 
 case "$1" in
     "select")
-        scrot -s "$OUTPUT" || exit 1
+        scrot -s -l mode=edge "$OUTPUT" || exit 1
         ;;
     "window")
         scrot -u "$OUTPUT" || exit 1
