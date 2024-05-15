@@ -152,12 +152,14 @@ fi             # FILE
 *.bashprofile           
 *.bashrc                
 *.ds_store              
+*.git                   
 *.gitattributes         
 *.gitconfig             
 *.github                
 *.gitignore             
 *.gitlab-ci.yml         
 *.gvimrc                
+*.idea                  
 *.vimrc                 
 *.zprofile              
 *.zshrc                 
@@ -186,6 +188,7 @@ fi             # FILE
 *rakefile               
 *react.jsx              
 *robots.txt             󰚩
+*.vscode                󰨞
 *_gvimrc                
 *_vimrc                 
 
@@ -201,6 +204,7 @@ fi             # FILE
 *LICENSE                
 *React.jsx              
 *Procfile               
+*PKGBUILD               
 *Dockerfile             
 *Docker-compose.yml     
 *Docker-compose.yaml    
@@ -213,6 +217,9 @@ fi             # FILE
 *.Xresources            
 
 # archives or compressed (extensions from dircolors defaults)
+*.deb   
+*.rpm   
+*.jar   
 *.tar   
 *.tgz   
 *.arc   
@@ -241,8 +248,6 @@ fi             # FILE
 *.tbz   
 *.tbz2  
 *.tz    
-*.deb   
-*.rpm   
 *.jar   
 *.war   
 *.ear   
@@ -334,6 +339,8 @@ fi             # FILE
 *.3g2   
 
 # other formats
-*.pdf   
-*.txt   󰦪
-*.md    
+*.iso      
+*.md       
+*.pdf      
+*.torrent  
+*.txt      󰦪
