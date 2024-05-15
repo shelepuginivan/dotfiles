@@ -1,0 +1,77 @@
+#!/bin/sh
+
+# Show image information in the following format:
+#   Image "<filename>"
+#
+#   Geometry   | <width>x<height>
+#   Format     | <format>
+#   Colorspace | <colorspace>
+#   Size       | <human-readable-file-size>
+#
+# Requires: `identify` (part of Imagemagick).
+preview_image() {
+    printf "\033[0;35mImage \033[3m$(basename "$1")\033[0m\n\n"
+    identify -format "Geometry   | %wx%h\nFormat     | %m\nColorspace | %r\n" "$1"
+    echo "Size       | $(du -sh "$1" | awk '{print $1}')"
+}
+
+# Show video and audio information in the following format:
+#   Media "<filename>"
+#
+#   Geometry | <width>x<height>
+#   Duration | <duration> seconds
+#   Size       | <human-readable-file-size>
+#
+# Requires: `ffprobe` (part of ffmpeg).
+preview_media() {
+    printf "\033[0;35mMedia \033[3m$(basename "$1")\033[0m\n\n"
+    printf "Geometry | %sx%s\nDuration | %s seconds\n" $(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration -of default=noprint_wrappers=1:nokey=1 "$1")
+    echo "Size     | $(du -sh "$1" | awk '{print $1}')"
+}
+
+case "$1" in
+    *.avif | \
+    *.bmp  | \
+    *.ico  | \
+    *.jpg  | \
+    *.jpeg | \
+    *.png  | \
+    *.tif  | \
+    *.tiff | \
+    *.webp) 
+        preview_image "$1"
+        ;;
+    *.avi  | \
+    *.mid  | \
+    *.midi | \
+    *.mp3  | \
+    *.mp4  | \
+    *.mkv  | \
+    *.mpeg | \
+    *.oga  | \
+    *.ogv  | \
+    *.opus | \
+    *.wav  | \
+    *.weba | \
+    *.webm)
+        preview_media "$1"
+        ;;
+    # Archives
+    *.iso) iso-info --no-header -l "$1" ;;
+    *.tar) tar -tvf "$1" ;;
+    *.tar.bz2 | \
+    *.tbz)
+        tar -jtvf "$1"
+        ;;
+    *.tar.gz | \
+    *.tgz)
+        tar -ztvf "$1"
+        ;;
+    *.tar.xz | \
+    *.txz)
+        tar -Jtvf "$1"
+        ;;
+    *.zip) zipinfo "$1" ;;
+    # Else
+    *) bat --color=always --style=plain "$1" ;;
+esac
