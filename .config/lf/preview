@@ -76,6 +76,8 @@ case "$1" in
         tar -Jtvf "$1"
         ;;
     *.zip) zipinfo "$1" ;;
+    # Other formats
+    *.torrent) transmission-show "$1" ;;
     # Else
     *) bat --color=always --style=plain "$1" ;;
 esac
