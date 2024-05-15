@@ -22,6 +22,14 @@ super + q
 super + f
 	bspc node focused -t fullscreen || bspc node focused -t tiled
 
+# Toggle floating.
+super + v
+	if [ -z "$(bspc query -N -n focused.floating)" ]; then \
+		bspc node focused -t floating; \
+	else \
+		bspc node focused -t tiled; \
+	fi
+
 # Hide window.
 super + n
 	bspc node -g hidden
