@@ -1,8 +1,9 @@
 #!/bin/sh
 
 # Show image information in the following format:
-#   Image "<filename>"
+#   <filename>
 #
+#   Type       | Image
 #   Geometry   | <width>x<height>
 #   Format     | <format>
 #   Colorspace | <colorspace>
@@ -10,21 +11,24 @@
 #
 # Requires: `identify` (part of Imagemagick).
 preview_image() {
-    printf "\033[0;35mImage \033[3m$(basename "$1")\033[0m\n\n"
+    printf "\033[0;35m\033[3m$(basename "$1")\033[0m\n\n"
+    echo "Type       | Image"
     identify -format "Geometry   | %wx%h\nFormat     | %m\nColorspace | %r\n" "$1"
     echo "Size       | $(du -sh "$1" | awk '{print $1}')"
 }
 
 # Show video and audio information in the following format:
-#   Media "<filename>"
+#   <filename>
 #
+#   Type     | Media
 #   Geometry | <width>x<height>
 #   Duration | <duration> seconds
-#   Size       | <human-readable-file-size>
+#   Size     | <human-readable-file-size>
 #
 # Requires: `ffprobe` (part of ffmpeg).
 preview_media() {
-    printf "\033[0;35mMedia \033[3m$(basename "$1")\033[0m\n\n"
+    printf "\033[0;35m\033[3m$(basename "$1")\033[0m\n\n"
+    echo "Type     | Media"
     printf "Geometry | %sx%s\nDuration | %s seconds\n" $(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration -of default=noprint_wrappers=1:nokey=1 "$1")
     echo "Size     | $(du -sh "$1" | awk '{print $1}')"
 }
