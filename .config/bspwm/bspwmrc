@@ -23,4 +23,6 @@ bspc config window_gap            12
 bspc config split_ratio           0.5
 
 # Rules
-bspc rule -a firefox desktop="^2" follow=off
+bspc rule -a firefox   desktop="^2" follow=off
+bspc rule -a musikcube state=floating rectangle=1896x768+12+72
+bspc rule -a cava      state=floating rectangle=1896x216+12+852

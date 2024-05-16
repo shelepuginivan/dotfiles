@@ -16,7 +16,7 @@ super + e
 
 # Music player.
 super + m
-	alacritty --command musikcube
+	launchmusicplayer
 
 # Power menu.
 super + shift + p
