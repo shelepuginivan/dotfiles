@@ -37,23 +37,14 @@ export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 HISTSIZE=2000
 SAVEHIST=2000
 
-# --- Directories ---
-export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
-export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
-export PYTHONUSERBASE="$XDG_DATA_HOME/python"
-export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-
-# --- PATH ---
-export PATH="$PATH:$HOME/Apps"
-
-source "$ZDOTDIR/apps.zsh"
 source "$ZDOTDIR/alias.zsh"
+source "$ZDOTDIR/apps.zsh"
 source "$ZDOTDIR/functions.zsh"
+source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/prompt.zsh"
 
 plugin "MichaelAquilina/zsh-auto-notify"
+plugin "MichaelAquilina/zsh-you-should-use"
 plugin "zsh-users/zsh-autosuggestions"
 plugin "zsh-users/zsh-syntax-highlighting"
 plugin "zsh-users/zsh-history-substring-search"
-
-source "$ZDOTDIR/plugins.zsh"
