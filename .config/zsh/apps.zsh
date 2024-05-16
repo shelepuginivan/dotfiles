@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # --- bun ---
 export BUN_INSTALL="$XDG_CONFIG_HOME/bun"
 export PATH="$PATH:$BUN_INSTALL/bin"

@@ -1,3 +1,5 @@
+#!/usr/bin/env zsh
+
 # --- Common ---
 export BROWSER="firefox"
 export EDITOR="nvim"
@@ -13,32 +15,45 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
+# --- ZSH settings ---
+bindkey -e
+bindkey  "^[[H"   beginning-of-line
+bindkey  "^[[F"   end-of-line
+bindkey  "^[[3~"  delete-char
+unsetopt BEEP
+setopt APPEND_HISTORY
+setopt AUTO_CD
+setopt GLOB_DOTS
+setopt NOMATCH
+setopt MENU_COMPLETE
+setopt EXTENDED_GLOB
+setopt INTERACTIVE_COMMENTS
+setopt PROMPT_SUBST
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+zstyle ':completion:*' menu yes select
+export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
+HISTSIZE=2000
+SAVEHIST=2000
+
 # --- Directories ---
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export PYTHONPYCACHEPREFIX="$XDG_CACHE_HOME/python"
 export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
-# export WGETRC=$XDG_CONFIG_HOME/wget/wgetrc
 
 # --- PATH ---
 export PATH="$PATH:$HOME/Apps"
 
-# --- zsh & Oh My Zsh settings ---
-export ZSH="$XDG_CONFIG_HOME/oh-my-zsh"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
-export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
-HYPHEN_INSENSITIVE="true"
-ZSH_THEME="robbyrussell"
-# DISABLE_MAGIC_FUNCTIONS="true"
-# DISABLE_LS_COLORS="true"
-# DISABLE_AUTO_TITLE="true"
-# ENABLE_CORRECTION="true"
-# COMPLETION_WAITING_DOTS="true"
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="mm/dd/yyyy"
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/zcompcache"
-
-source "$ZDOTDIR/plugins.zsh"    # plugins are required to be loaded before oh-my-zsh
-source "$ZSH/oh-my-zsh.sh"
 source "$ZDOTDIR/apps.zsh"
 source "$ZDOTDIR/alias.zsh"
+source "$ZDOTDIR/functions.zsh"
+source "$ZDOTDIR/prompt.zsh"
+
+plugin "MichaelAquilina/zsh-auto-notify"
+plugin "zsh-users/zsh-autosuggestions"
+plugin "zsh-users/zsh-syntax-highlighting"
+plugin "zsh-users/zsh-history-substring-search"
+
+source "$ZDOTDIR/plugins.zsh"

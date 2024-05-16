@@ -1,9 +1,4 @@
-# --- zsh plugin settings ---
-plugins=(
-    auto-notify
-    git
-    you-should-use
-)
+#!/usr/bin/env zsh
 
 # --- auto-notify ---
 export AUTO_NOTIFY_TITLE="%command"
@@ -23,3 +18,7 @@ export AUTO_NOTIFY_WHITELIST=(
     "ytdl"
     "yt-dlp"
 )
+
+# --- history-substring-search ---
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
