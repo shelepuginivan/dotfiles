@@ -75,21 +75,13 @@ cmd extract ${{
 # `tar` command.
 # Creates a new `.tar.gz` archive.
 cmd tar ${{
-    set -f
-    mkdir TARTMP
-    cp -r $fx TARTMP
-    tar czf $fx.tar.gz TARTMP
-    rm -rf TARTMP
+    tar czvf "$fx.tar.gz" "$(basename $fx)"
 }}
 
 # `zip` command.
 # Creates a new `.zip` archive.
 cmd zip ${{
-    set -f
-    mkdir ZIPTMP
-    cp -r $fx ZIPTMP
-    zip -rq $fx.zip ZIPTMP
-    rm -rf ZIPTMP
+    zip -rqv "$fx.zip" "$(basename $fx)"
 }}
 
 
