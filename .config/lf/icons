@@ -32,7 +32,7 @@ fi             # FILE
 # ex              # EXEC
 # fi             # FILE
 
-# file extensions (vim-devicons)
+# Development.
 *.styl          
 *.sass          
 *.scss          
@@ -148,78 +148,80 @@ fi             # FILE
 *.sol           󰡪
 *.pem           
 
-# Common file names.
-*.bashprofile           
-*.bashrc                
-*.ds_store              
-*.git                   
-*.gitattributes         
-*.gitconfig             
-*.github                
-*.gitignore             
-*.gitlab-ci.yml         
-*.gvimrc                
-*.idea                  
-*.vimrc                 
-*.zprofile              
-*.zshrc                 
-*.zshenv                
-*cmakelists.txt         
-*compose.yml            
-*compose.yaml           
-*config.ru              
-*docker-compose.yml     
-*docker-compose.yaml    
-*dockerfile             
-*dropbox                
-*favicon.ico            
-*gemfile                
-*gruntfile.coffee       
-*gruntfile.js           
-*gruntfile.ls           
-*gulpfile.coffee        
-*gulpfile.js            
-*gulpfile.ls            
-*license                
-*makefile               
-*mix.lock               
-*node_modules           
-*procfile               
-*rakefile               
-*react.jsx              
-*robots.txt             󰚩
-*.vscode                󰨞
-*_gvimrc                
-*_vimrc                 
+# Docker.
+*compose.yml           
+*compose.yaml          
+*docker-compose.yml    
+*docker-compose.yaml   
+*dockerfile            
 
-# file names (case-sensitive adaptations)
-*Gruntfile.coffee       
-*Gruntfile.js           
-*Gruntfile.ls           
-*Gulpfile.coffee        
-*Gulpfile.js            
-*Gulpfile.ls            
-*Dropbox                
-*.DS_Store              
-*LICENSE                
-*React.jsx              
-*Procfile               
-*PKGBUILD               
-*Dockerfile             
-*Docker-compose.yml     
-*Docker-compose.yaml    
-*Rakefile               
-*Gemfile                
-*Makefile               
-*CMakeLists.txt         
-*.Xauthority            
-*.xprofile              
-*.Xresources            
+# Editors.
+*.vscode               󰨞
+*.idea                 
+*.gvimrc               
+*.vimrc                
+*_gvimrc               
+*_vimrc                
 
-# archives or compressed (extensions from dircolors defaults)
-*.deb   
-*.rpm   
-*.jar   
+# Git.
+*.git                  
+*.gitattributes        
+*.gitconfig            
+*.gitignore            
+*.gitmodules           
+*.github               
+*.gitlab-ci.yml        
+
+# Go.
+*go.mod                󰟓
+*go.sum                󰟓
+
+# JavaScript.
+*node_modules          
+*react.jsx             
+*gruntfile.coffee      
+*gruntfile.js          
+*gruntfile.ls          
+*gulpfile.coffee       
+*gulpfile.js           
+*gulpfile.ls           
+
+# Make.
+*cmakelists.txt        
+CMakeLists.txt         
+*makefile              
+*Makefile              
+
+# Packages.
+*PKGBUILD              
+
+# Ruby.
+*config.ru             
+*gemfile               
+*rakefile              
+
+# Shells.
+*.bashprofile          
+*.bashrc               
+*.zprofile             
+*.zshrc                
+*.zshenv               
+
+# Xorg.
+*.xauthority           
+*.xprofile             
+*.xresources           
+
+# Uncategorized common file names.
+*.ds_store             
+*dropbox               
+*favicon.ico           
+*license               
+*mix.lock              
+*procfile              
+*robots.txt            󰚩
+
+# Archives or compressed.
 *.tar   
 *.tgz   
 *.arc   
@@ -264,6 +266,10 @@ fi             # FILE
 *.swm   
 *.dwm   
 *.esd   
+*.deb   
+*.rpm   
+*.jar   
+*.iso   
 
 # image formats (extensions from dircolors defaults)
 *.jpg   
@@ -309,7 +315,7 @@ fi             # FILE
 *.emf   
 *.ogx   
 
-# audio formats (extensions from dircolors defaults)
+# Audio formats.
 *.aac   
 *.au    
 *.flac  
@@ -338,8 +344,7 @@ fi             # FILE
 *.3gp   
 *.3g2   
 
-# other formats
-*.iso      
+# Other formats.
 *.md       
 *.pdf      
 *.torrent  
