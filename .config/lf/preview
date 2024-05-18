@@ -27,7 +27,7 @@ preview_image() {
 #
 # Requires: `ffprobe` (part of ffmpeg).
 preview_media() {
-    printf "\033[0;35m\033[3m$(basename "$1")\033[0m\n\n"
+    printf "\033[0;32m\033[3m$(basename "$1")\033[0m\n\n"
     echo "Type     | Media"
     printf "Geometry | %sx%s\nDuration | %s seconds\n" $(ffprobe -v error -select_streams v:0 -show_entries stream=width,height,duration -of default=noprint_wrappers=1:nokey=1 "$1")
     echo "Size     | $(du -sh "$1" | awk '{print $1}')"
