@@ -36,6 +36,10 @@ prompt_area() {
     if [ "$MODE" == "$MODE_REGION" ]; then
 		read -r X Y W H <<< $(slop -f "%x %y %w %h")
     fi
+
+    # Ensure that width and height are even (required by libx264).
+    W="$(expr $W '-' $W '%' '2')"
+    H="$(expr $H '-' $H '%' '2')"
 }
 
 start_record() {
