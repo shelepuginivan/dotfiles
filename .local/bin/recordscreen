@@ -18,6 +18,13 @@ Y=0
 # Temporary file used to store state of the script.
 TEMPFILE="/tmp/record_data"
 
+# Icons.
+ICONS_DIR="$HOME/.local/share/icons/dunst"
+
+if [ -n "$XDG_DATA_HOME" ]; then
+    ICONS_DIR="$XDG_DATA_HOME/icons/dunst"
+fi
+
 # Select audio device using rofi
 prompt_device() {
     DEVICE=$(pactl list short sources \
@@ -45,13 +52,13 @@ prompt_area() {
 start_record() {
     # Cancel recording if no video codec ($VIDEOCODEC) is specified
     if [ -z $VIDEOCODEC ]; then
-        notify-send "Recording" "Canceled (no video codec is specified)"
+        notify-send -i "$ICONS_DIR/recording-error.svg" "Recording" "Canceled (no video codec is specified)"
         exit 1
     fi
     
     # Cancel recording if no audio codec ($AUDIOCODEC) is specified
     if [ -z $AUDIOCODEC ]; then
-        notify-send "Recording" "Canceled (no audio codec is specified)"
+        notify-send -i "$ICONS_DIR/recording-error.svg" "Recording" "Canceled (no audio codec is specified)"
         exit 1
     fi
 
@@ -59,8 +66,8 @@ start_record() {
 
     # Cancel recording if device is not selected
     # e.g. if esc is pressed
-    if [ -z $DEVICE ]; then
-        notify-send "Recording" "Canceled (no device is selected)"
+    if [ -z "$DEVICE" ]; then
+        notify-send -i "$ICONS_DIR/recording-error.svg" "Recording" "Canceled (no device is selected)"
         exit 1
     fi
     
@@ -69,7 +76,7 @@ start_record() {
     # Save state of the script in a temporary file
     echo "$DEVICE $VIDEOCODEC $AUDIOCODEC $W $H $X $Y $OUTPUT" > "$TEMPFILE"
 
-    notify-send "Recording" "Started at $(date +%H:%M:%S) (File: $OUTPUT)"
+    notify-send -i "$ICONS_DIR/recording.svg" "Recording" "Started at $(date +%H:%M:%S)"
 
     ffmpeg \
         -f x11grab \
@@ -84,7 +91,7 @@ start_record() {
         -pix_fmt yuv420p \
         "$OUTPUT"
 
-    notify-send "Recording" "Stopped at $(date +%H:%M:%S) (File: $OUTPUT)"
+    notify-send -i "$ICONS_DIR/recording.svg" "Recording" "Stopped at $(date +%H:%M:%S)"
 }
 
 stop_record() {
