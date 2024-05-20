@@ -39,3 +39,11 @@ A list of the programmes I use.
 | Music player         | [musikcube](https://github.com/clangen/musikcube)                                                         |
 | Lockscreen           | [i3lock-color](https://github.com/Raymo111/i3lock-color)                                                  |
 | Fonts                | [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest)                       |
+
+## Links
+
+Inspirations, resources &mdash; what I've used and am using to improve my workflow.
+
+- [r/unixporn](https://www.reddit.com/r/unixporn)
+- [SVG Repo](https://www.svgrepo.com)
+- [ericmurphyxyz/dotfiles](https://github.com/ericmurphyxyz/dotfiles)
