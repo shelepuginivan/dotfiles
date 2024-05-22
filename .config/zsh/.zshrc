@@ -17,9 +17,15 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # --- ZSH settings ---
 bindkey -e
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-bindkey  "^[[3~"  delete-char
+bindkey "^[[H"    beginning-of-line
+bindkey "^[[1;5H" beginning-of-line
+bindkey "^[[F"    end-of-line
+bindkey "^[[1;5F" end-of-line
+bindkey "^[[3~"   delete-char
+bindkey "^[[3;5~" kill-word
+bindkey "^H"      backward-kill-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 unsetopt BEEP
 setopt APPEND_HISTORY
 setopt AUTO_CD
