@@ -41,17 +41,6 @@ style = "Italic"
 family = "JetBrainsMono Nerd Font Mono"
 style = "Regular"
 
-[[keyboard.bindings]]
-chars = " "
-key = "Space"
-mods = "Alt"
-
-# delete line
-[[keyboard.bindings]]
-chars = "\u0015"
-key = "Back"
-mods = "Super"
-
 [shell]
 program = "/bin/zsh"
 
@@ -67,3 +56,9 @@ lines = 50
 [window.padding]
 x = 0
 y = 0
+
+# Delete line.
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
