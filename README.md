@@ -11,11 +11,12 @@ setup.
 
 For your convenience &mdash; a table of directories.
 
-| Directory                                                                           | What is stored                                     |
-|-------------------------------------------------------------------------------------|----------------------------------------------------|
-| [`.config`](https://github.com/shelepuginivan/dotfiles/tree/main/.config)           | Configuration filed                                |
-| [`.local/bin`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/bin)     | Shell scripts and utilities                        |
-| [`.local/share`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/share) | Application data (`.desktop` entries, icons, etc.) |
+| Directory                                                                                                 | What is stored                                     |
+| --------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
+| [`.config`](https://github.com/shelepuginivan/dotfiles/tree/main/.config)                                 | Configuration filed                                |
+| [`.local/bin`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/bin)                           | Shell scripts and utilities                        |
+| [`.local/share`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/share)                       | Application data (`.desktop` entries, icons, etc.) |
+| [`.local/share/wallpapers`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/share/wallpapers) | Wallpapers                                         |
 
 Note that this repository contains submodules for large configurations such as
 my [Neovim configuration](https://github.com/shelepuginivan/init.lua).
