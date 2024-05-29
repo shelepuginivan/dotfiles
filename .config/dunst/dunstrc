@@ -40,6 +40,7 @@
 
     # Icons
     enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"
     min_icon_size = 32
     max_icon_size = 32
 
