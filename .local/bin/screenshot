@@ -1,6 +1,7 @@
 #!/bin/sh
 
 SCREENSHOTS=$HOME/Images/Screenshots
+ICON=$XDG_DATA_HOME/icons/dunst/picture.svg
 OUTPUT="$SCREENSHOTS/$(date +%Y-%m-%d_%H-%M-%S).png"
 
 case "$1" in
@@ -15,4 +16,4 @@ case "$1" in
         ;;
 esac
 
-notify-send "Screenshot" "Saved to $(echo $SCREENSHOTS | sed "s|$HOME|~|g")"
+notify-send -i "$ICON" "Screenshot" "Screenshot taken"
