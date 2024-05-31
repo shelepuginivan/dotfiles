@@ -10,14 +10,7 @@ check() {
 }
 
 pre_run() {
-    if pgrep picom; then
-        killall picom
-        while pgrep picom; do
-            sleep 1
-        done
-
-        picom --no-vsync &
-    fi
+    :
 }
 
 run() {
@@ -29,15 +22,6 @@ run() {
 
 post_run() {
     xrandr -s 1920x1080
-    
-    if pgrep picom; then
-        killall picom
-        while pgrep picom; do
-            sleep 1
-        done
-
-        picom -b
-    fi
 }
 
 check "$1"
