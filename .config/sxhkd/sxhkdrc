@@ -26,6 +26,14 @@ super + m
 super + shift + p
 	powermenu
 
+# Calculator menu.
+super + shift + c
+	  rofi -show calc -no-show-match -no-sort -no-persist-history -calc-command "echo -n '{result}' | xclip -selection clipboard"
+
+# Emoji selection menu.
+super + shift + e
+	rofi -show emoji
+
 # Screenshot.
 @Print
 	screenshot
