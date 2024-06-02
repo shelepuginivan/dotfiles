@@ -28,7 +28,7 @@ super + shift + p
 
 # Calculator menu.
 super + shift + c
-	  rofi -show calc -no-show-match -no-sort -no-persist-history -calc-command "echo -n '{result}' | xclip -selection clipboard"
+	calc
 
 # Emoji selection menu.
 super + shift + e
