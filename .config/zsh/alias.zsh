@@ -16,6 +16,8 @@ alias tree="eza --tree"
 alias rd="rmdir"
 alias reload="source $HOME/.zshenv"
 alias sv="sudoedit"
+alias t="tmux"
+alias ta="tmux attach-session"
 alias v="nvim"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts"
 alias ytdl="yt-dlp"
@@ -37,7 +39,6 @@ alias gr="git remote"
 alias grh="git reset"
 alias grs="git restore"
 alias gst="git status"
-
 
 # --- dotfiles management ---
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
