@@ -1,9 +1,9 @@
 #!/bin/sh
 
-# Send a notification if the laptop battery is either low or is fully charged.
-# Set on a systemd timer (~/.config/systemd/user/battery-alert.timer).
+# Send a notification if the laptop battery is either low or full.
+# Set on a systemd timer (see ~/.config/systemd/user/battery-alert.timer).
 #
-# Credits: <https://github.com/ericmurphyxyz/dotfiles/blob/master/.local/bin/battery-alert>
+# Source: https://github.com/ericmurphyxyz/dotfiles/blob/master/.local/bin/battery-alert
 
 # Battery levels.
 FULL_LEVEL=80
@@ -11,13 +11,14 @@ LOW_LEVEL=25
 CRITICAL_LEVEL=5
 
 # Battery info.
-BATTERY_DISCHARGING=$(acpi -b | grep "Battery 0" | grep -c "Discharging")
-BATTERY_LEVEL=$(acpi -b | grep "Battery 0" | grep -P -o '[0-9]+(?=%)')
+BATTERY_DISCHARGING=$(acpi -b | grep -c 'Discharging')
+BATTERY_LEVEL=$(acpi -b | grep -P -o '[0-9]+(?=%)')
 
 # Notification icons.
-FULL_ICON="$HOME/.local/share/icons/dunst/battery-full.svg"
-LOW_ICON="$HOME/.local/share/icons/dunst/battery-low.svg"
-CRITICAL_ICON="$HOME/.local/share/icons/dunst/battery-critical.svg"
+ICONS="$HOME/.config/dunst/icons"
+FULL_ICON="$ICONS/battery-full.svg"
+LOW_ICON="$ICONS/battery-low.svg"
+CRITICAL_ICON="$ICONS/battery-critical.svg"
 
 # Temporary files to store whether notification has been shown.
 FULL_FILE=/tmp/batteryfull
@@ -34,14 +35,14 @@ fi
 
 # If the battery is charging and is full (and has not shown notification yet).
 if [ "$BATTERY_LEVEL" -gt "$FULL_LEVEL" ] && [ "$BATTERY_DISCHARGING" -eq 0 ] && [ ! -f "$FULL_FILE" ]; then
-	notify-send "Battery Full" "Battery is fully charged." -i "$FULL_ICON" -r 9991
+	notify-send "Battery Full" "Battery is fully charged" -i "$FULL_ICON" -r 9991
 	touch "$FULL_FILE"
 # If the battery is low and is not charging (and has not shown notification yet).
 elif [ "$BATTERY_LEVEL" -le $LOW_LEVEL ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f "$LOW_FILE" ]; then
-	notify-send "Low Battery" "${BATTERY_LEVEL}% of battery remaining." -u critical -i "$LOW_ICON" -r 9991
+	notify-send "Low Battery" "${BATTERY_LEVEL}% of battery remaining" -u critical -i "$LOW_ICON" -r 9991
 	touch "$LOW_FILE"
 # If the battery is critical and is not charging (and has not shown notification yet).
 elif [ "$BATTERY_LEVEL" -le "$CRITICAL_LEVEL" ] && [ "$BATTERY_DISCHARGING" -eq 1 ] && [ ! -f "$CRITICAL_FILE" ]; then
-	notify-send "Battery Critical" "The computer will shutdown soon." -u critical -i "$CRITICAL_ICON" -r 9991
+	notify-send "Battery Critical" "The computer will shutdown soon" -u critical -i "$CRITICAL_ICON" -r 9991
 	touch "$CRITICAL_FILE"
 fi
