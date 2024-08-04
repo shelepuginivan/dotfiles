@@ -1,0 +1,377 @@
+// ──────────────────────────────────────────────────────────┤ 1. Environment │
+environment {
+    DISPLAY null
+
+    // swww.
+    SWWW_TRANSITION "wipe"
+    SWWW_TRANSITION_ANGLE "30"
+    SWWW_TRANSITION_DURATION "1"
+    
+    // Applications.
+    ELECTRON_OZONE_PLATFORM_HINT "wayland"
+    MOZ_ENABLE_WAYLAND "1"
+    QT_QPA_PLATFORM "wayland"
+    QT_WAYLAND_DISABLE_WINDOWDECORATION "1"
+
+    // XDG.
+    XDG_SESSION_DESKTOP "Niri"
+    XDG_CURRENT_DESKTOP "Niri"
+}
+
+
+/* ───────────────────────────────────────────────────┤ 2. Execute at startup │
+
+NOTE: dunst, waybar, swww-daemon, and swayidle
+      are started as systemd services:
+      https://github.com/YaLTeR/niri/wiki/Example-systemd-Setup
+
+*/
+
+spawn-at-startup "evolution"
+spawn-at-startup "telegram-desktop"
+
+
+/* ───────────────────────────────────────────────────────┤ 3. Input settings │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Input
+
+*/ 
+input {
+    keyboard {
+        xkb {
+            // Enable en and ru layouts.
+            layout "us,ru"
+
+            // Switch layouts by pressing Shift+Alt,
+            // remap CapsLock to Ctrl.
+            options "grp:alt_shift_toggle,ctrl:nocaps"
+        }
+    }
+    
+    touchpad {
+        tap
+    }
+}
+
+
+/* ──────────────────────────────────────────────────────┤ 4. Layout settings │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Layout
+
+*/
+layout {
+    // Gaps between windows.
+    gaps 8
+
+    // Don't center the focused column (default).
+    center-focused-column "never"
+
+    // Preset widths for columns.
+    preset-column-widths {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.7
+    }
+
+    // Default width of the new window.
+    // Leave empty to let the window decide.
+    default-column-width {
+        proportion 0.5
+    }
+
+    // Focus ring (disabled).
+    focus-ring { off ;}
+
+    // Borders.
+    border {
+        width 2
+        active-color "#cccccc"
+        inactive-color "#505050"
+    }
+}
+
+
+/* ───────────────────────────────────────────────────────────┤ 5. Animations │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Animations
+
+NOTE: I really like the default configuration for this.
+
+*/
+animations {}
+
+
+/* ─────────────────────────────────────────────────────────┤ 6. Window rules │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
+
+*/
+window-rule {
+    geometry-corner-radius 8
+    clip-to-geometry true
+}
+
+// Set default column width for Alacritty.
+window-rule {
+    match app-id="Alacritty"
+
+    default-column-width { proportion 0.7 ;}
+}
+
+// Set default column width for Amberol.
+window-rule {
+    match app-id="io.bassi.Amberol"
+
+    default-column-width { proportion 0.3 ;}
+}
+
+// Set default column width for Blueman Manager.
+window-rule {
+    match app-id="blueman-manager"
+
+    default-column-width { proportion 0.35 ;}
+}
+
+// Open maximized.
+window-rule {
+    match title="Mozilla Firefox"
+    match app-id="evolution"
+    match app-id="org.telegram.desktop"
+    match app-id="com.obsproject.Studio"
+
+    open-maximized true
+}
+
+// Firefox dialog windows.
+window-rule {
+    match app-id="firefox"
+    exclude title="Mozilla Firefox"
+
+    default-column-width { proportion 0.3 ;}
+    border { off ;}
+}
+
+// Exclude sensitive apps from screencast.
+window-rule {
+    match app-id="evolution"
+    match app-id=r#"^org\.telegram\.desktop$"#
+    match app-id="gcr-prompter"
+
+    block-out-from "screencast"
+}
+
+
+/* ─────────────────────────────────────────────────────────────┤ 7. Keybinds │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
+
+NOTE: Since I started my tiling WM journey with AwesomeWM, 
+      I prefer to set a fair number of its default keybinds.
+
+*/
+binds {
+    // Open wofi on Ctrl+Space (like Spotlight on macOS).
+    Ctrl+Space { spawn "wofi" ;}
+
+    // Spawn terminal on Super+Return.
+    Super+Return { spawn "alacritty" ;}
+
+    // Spawn left wofi menu (actions) on Super+O.
+    Super+O { spawn "sh" "-c" "~/.config/wofi/scripts/theme-select" ;}
+
+    // Spawn right wofi menu (power) on Super+P.
+    Super+P { spawn "sh" "-c" "~/.config/wofi/scripts/menu-right" ;}
+
+    // Spawn browser on Super+B.
+    Super+B { spawn "firefox" ;}
+
+    // Spawn Amberol on Super+M.
+    Super+M { spawn "sh" "-c" "amberol ~/Music" ;}
+    
+    // Spawn file manager on Super+E.
+    Super+E { spawn "alacritty" "-e" "lf" ;}
+
+    // Spawn system monitor on Super+V.
+    Super+V { spawn "alacritty" "-e" "btop" ;}
+
+    // Lock Wayland session on F9 (gtklock).
+    F9 { spawn "gtklock" ;}
+    
+    // Close window on Super+Q.
+    Super+Q { close-window ;}
+
+    // Brightness control.
+    // NOTE: I use a simple wrapper around xbacklight.
+    XF86MonBrightnessDown allow-when-locked=true {
+        spawn "changebrightness" "dec"
+    }
+    XF86MonBrightnessUp allow-when-locked=true {
+        spawn "changebrightness" "inc"
+    }
+
+    // Volume control (PipeWire).
+    XF86AudioRaiseVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05+"
+    }
+    XF86AudioLowerVolume allow-when-locked=true {
+        spawn "wpctl" "set-volume" "@DEFAULT_AUDIO_SINK@" "0.05-"
+    }
+    XF86AudioMute allow-when-locked=true {
+        spawn "wpctl" "set-mute" "@DEFAULT_AUDIO_SINK@" "toggle"
+    }
+
+    // Navigation around windows.
+    Super+Left  { focus-column-left  ;}
+    Super+Down  { focus-window-down  ;}
+    Super+Up    { focus-window-up    ;}
+    Super+Right { focus-column-right ;}
+    Super+H     { focus-column-left  ;}
+    Super+J     { focus-window-down  ;}
+    Super+K     { focus-window-up    ;}
+    Super+L     { focus-column-right ;}
+    Super+Home  { focus-column-first ;}
+    Super+End   { focus-column-last  ;}
+
+    // Window movement.
+    Super+Ctrl+Left  { move-column-left     ;}
+    Super+Ctrl+Down  { move-window-down     ;}
+    Super+Ctrl+Up    { move-window-up       ;}
+    Super+Ctrl+Right { move-column-right    ;}
+    Super+Ctrl+H     { move-column-left     ;}
+    Super+Ctrl+J     { move-window-down     ;}
+    Super+Ctrl+K     { move-window-up       ;}
+    Super+Ctrl+L     { move-column-right    ;}
+    Super+Ctrl+Home  { move-column-to-first ;}
+    Super+Ctrl+End   { move-column-to-last  ;}
+
+    // Navigation around monitors.
+    //
+    // NOTE: I disabled it since I have one monitor.
+    /* 
+    Super+Shift+Left  { focus-monitor-left  ;}
+    Super+Shift+Down  { focus-monitor-down  ;}
+    Super+Shift+Up    { focus-monitor-up    ;}
+    Super+Shift+Right { focus-monitor-right ;}
+    Super+Shift+H     { focus-monitor-left  ;}
+    Super+Shift+J     { focus-monitor-down  ;}
+    Super+Shift+K     { focus-monitor-up    ;}
+    Super+Shift+L     { focus-monitor-right ;}
+
+    // Moving windows to monitors.
+    Super+Shift+Ctrl+Left  { move-column-to-monitor-left  ;}
+    Super+Shift+Ctrl+Down  { move-column-to-monitor-down  ;}
+    Super+Shift+Ctrl+Up    { move-column-to-monitor-up    ;}
+    Super+Shift+Ctrl+Right { move-column-to-monitor-right ;}
+    Super+Shift+Ctrl+H     { move-column-to-monitor-left  ;}
+    Super+Shift+Ctrl+J     { move-column-to-monitor-down  ;}
+    Super+Shift+Ctrl+K     { move-column-to-monitor-up    ;}
+    Super+Shift+Ctrl+L     { move-column-to-monitor-right ;}
+    */
+
+    // Navigation around workspaces.
+    Super+Page_Down      { focus-workspace-down ;}
+    Super+Page_Up        { focus-workspace-up   ;}
+    Super+U              { focus-workspace-down ;}
+    Super+I              { focus-workspace-up   ;}
+
+    // Moving windows to workspaces.
+    Super+Ctrl+Page_Down { move-column-to-workspace-down ;}
+    Super+Ctrl+Page_Up   { move-column-to-workspace-up   ;}
+    Super+Ctrl+U         { move-column-to-workspace-down ;}
+    Super+Ctrl+I         { move-column-to-workspace-up   ;}
+
+    // Moving workspaces around.
+    Super+Shift+Page_Down { move-workspace-down ;}
+    Super+Shift+Page_Up   { move-workspace-up   ;}
+    Super+Shift+U         { move-workspace-down ;}
+    Super+Shift+I         { move-workspace-up   ;}
+
+    // Workspace operations like above, but using mouse wheel.
+    //
+    // To avoid scrolling through workspaces really fast, you can use
+    // the cooldown-ms property. The bind will be rate-limited to this value.
+    // You can set a cooldown on any bind, but it's most useful for the wheel.
+    Super+WheelScrollDown      cooldown-ms=150 { focus-workspace-down          ;}
+    Super+WheelScrollUp        cooldown-ms=150 { focus-workspace-up            ;}
+    Super+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down ;}
+    Super+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up   ;}
+
+    Super+WheelScrollRight      { focus-column-right ;}
+    Super+WheelScrollLeft       { focus-column-left  ;}
+    Super+Ctrl+WheelScrollRight { move-column-right  ;}
+    Super+Ctrl+WheelScrollLeft  { move-column-left   ;}
+
+    // Usually scrolling up and down with Shift in applications results in
+    // horizontal scrolling; these binds replicate that.
+    Super+Shift+WheelScrollDown      { focus-column-right ;}
+    Super+Shift+WheelScrollUp        { focus-column-left  ;}
+    Super+Ctrl+Shift+WheelScrollDown { move-column-right  ;}
+    Super+Ctrl+Shift+WheelScrollUp   { move-column-left   ;}
+
+    // Focusing workspaces with number keys.
+    Super+1 { focus-workspace 1 ;}
+    Super+2 { focus-workspace 2 ;}
+    Super+3 { focus-workspace 3 ;}
+    Super+4 { focus-workspace 4 ;}
+    Super+5 { focus-workspace 5 ;}
+    Super+6 { focus-workspace 6 ;}
+    Super+7 { focus-workspace 7 ;}
+    Super+8 { focus-workspace 8 ;}
+    Super+9 { focus-workspace 9 ;}
+
+    // Moving windows with number keys.
+    Super+Ctrl+1 { move-column-to-workspace 1 ;}
+    Super+Ctrl+2 { move-column-to-workspace 2 ;}
+    Super+Ctrl+3 { move-column-to-workspace 3 ;}
+    Super+Ctrl+4 { move-column-to-workspace 4 ;}
+    Super+Ctrl+5 { move-column-to-workspace 5 ;}
+    Super+Ctrl+6 { move-column-to-workspace 6 ;}
+    Super+Ctrl+7 { move-column-to-workspace 7 ;}
+    Super+Ctrl+8 { move-column-to-workspace 8 ;}
+    Super+Ctrl+9 { move-column-to-workspace 9 ;}
+
+    // Window/column actions.
+    Super+R       { switch-preset-column-width ;}
+    Super+Shift+R { reset-window-height        ;}
+    Super+F       { maximize-column            ;}
+    Super+Shift+F { fullscreen-window          ;}
+    Super+C       { center-column              ;}
+    Super+Comma   { consume-window-into-column ;}
+    Super+Period  { expel-window-from-column   ;}
+
+    // Column resizing (width and height).
+    Super+Minus       { set-column-width  "-5%" ;}
+    Super+Equal       { set-column-width  "+5%" ;}
+    Super+Shift+Minus { set-window-height "-5%" ;}
+    Super+Shift+Equal { set-window-height "+5%" ;}
+
+    // Screenshots.
+    Print       { screenshot-screen ;}
+    Shift+Print { screenshot        ;}
+    Ctrl+Print  { screenshot-window ;}
+
+    // Quit Niri with Super+Shift+Q.
+    Super+Shift+Q { quit ;}
+
+    // Powers off the monitors. To turn them back on, do any input like moving
+    // the mouse or pressing any other key.
+    Super+Shift+P { power-off-monitors ;}
+}
+
+/* ────────────────────────────────────────────────────────┤ 8. Miscellaneous │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous
+
+NOTE: Some miscellaneous sections are separated
+      for convenience, see above.
+
+*/
+
+// Disable client-side window decorations.
+prefer-no-csd
+
+// Screenshot path.
+screenshot-path "~/Images/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+
+// Disable hotkey overlay.
+hotkey-overlay { skip-at-startup ;}
