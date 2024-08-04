@@ -1,0 +1,51 @@
+@import url("colors.css");
+
+* {
+    font-family: Comfortaa;
+}
+
+window {
+   background-image: url("background.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+}
+
+
+#clock-label {
+    font-size: 116px;
+    margin-bottom: 256px;
+}
+
+#input-label {
+    font-size: 0;
+}
+
+#input-field {
+    font-family: "JetBrains Mono";
+    font-size: 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    padding: 4px 12px;
+}
+
+#error-label {
+    color: @danger;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+#unlock-button {
+    background-color: @accent;
+    color: @fg-on-accent;
+    padding: 10px 16px 8px 16px;
+    font-size: 16px;
+    border-radius: 8px;
+}
+
+#playerctl-revealer > box {
+    background: @surface;
+    padding: 16px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+}
