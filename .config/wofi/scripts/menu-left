@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+if pgrep wofi; then
+    pkill wofi
+    exit 0
+fi
+
+WOFI_MENU_CONFIG="$HOME/.config/wofi/menu-left.conf"
+
+OPTION_THEME="🎨 Change theme"
+OPTION_GAMEMODE="🎮 Toggle gamemode"
+OPTION_REC="📹 Record screen"
+OPTION_MUSIC="🎵 Music player"
+OPTION_UTO="☁️ Show desktop Uto"
+
+if pgrep -f wf-recorder; then
+    OPTION_REC="📹 Stop recording"
+fi
+
+if pgrep cava && pgrep cmus; then
+    OPTION_MUSIC="🎵 Close player"
+fi
+
+if pgrep pqiv; then
+    OPTION_UTO="☁️ Hide desktop Uto"
+fi
+
+record() {
+    if pgrep -f wf-recorder; then
+        pkill -INT wf-recorder || exit 1
+        notify-send "Recording" "Recording stopped"
+        exit 0
+    fi
+    
+    AUDIO="$(pactl list sources | grep 'Name' | awk '{print $2}' | wofi -c $WOFI_MENU_CONFIG)"
+
+    if [ -z "$AUDIO" ]; then
+        notify-send "Recording" "Cancelled (no device selected)"
+        exit 1
+    fi
+
+    MODE="$(echo -e 'Fullscreen\nRegion' | wofi -c $WOFI_MENU_CONFIG)"
+    
+    case "$MODE" in
+        "Fullscreen")
+            wf-recorder \
+                --audio="$AUDIO" \
+                --file="$HOME/Videos/Records/$(date +%Y-%m-%d_%H-%M-%S).mp4" \
+                -c libx264 \
+                -C aac \
+                -x yuv420p &
+            ;;
+        "Region")
+            GEOMETRY="$(slurp)"
+
+            wf-recorder \
+                --audio="$AUDIO" \
+                --file="$HOME/Videos/Records/$(date +%Y-%m-%d_%H-%M-%S).mp4" \
+                -c libx264 \
+                -C aac \
+                -x yuv420p \
+                -g "$GEOMETRY" &
+            ;;
+        *)
+            notify-send "Recording" "Cancelled (invalid mode)"
+            exit 1
+            ;;
+    esac
+
+    notify-send "Recording" "Recording started"
+}
+
+music() {
+    if pgrep cava && pgrep cmus; then
+        pkill cava
+        pkill cmus
+        exit 0
+    fi
+
+    alacritty --title cava  --option "font.size = 8" --command cava &
+    alacritty --title cmus --command cmus &
+    swaymsg -r '[title="cmus"] focus'
+}
+
+desktop_uto() {
+    if pgrep pqiv; then
+        pkill pqiv
+        exit 0
+    fi
+
+    pqiv --transparent-background --hide-info-box --low-memory --zoom-level 0.25 --window-title "overlay" "$HOME/.config/wofi/img/uto.gif" & disown
+}
+
+OPTIONS="$OPTION_THEME\n$OPTION_GAMEMODE\n$OPTION_REC\n$OPTION_MUSIC\n$OPTION_UTO"
+SELECTED="$(echo -e $OPTIONS | wofi -c $WOFI_MENU_CONFIG)"
+
+case "$SELECTED" in
+    "$OPTION_THEME")    "$XDG_CONFIG_HOME/wofi/scripts/theme-select" ;;
+    "$OPTION_GAMEMODE") "$HYPR/scripts/gamemode.sh" ;;
+    "$OPTION_MUSIC")    music                       ;;
+    "$OPTION_REC")      record                      ;;
+    "$OPTION_UTO")      desktop_uto                 ;;
+    *)                  exit 1                      ;;
+esac

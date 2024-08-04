@@ -1,0 +1,35 @@
+@import url('.config/wofi/colors.css');
+
+* {
+    color: @secondary;
+    font-family: 'Comfortaa';
+    font-size: 16px;
+    border: none;
+}
+
+window {
+    border-radius: 6px;
+    background-color: @background;
+    border: 2px solid @surface;
+}
+
+#outer-box {
+    margin: -12px 12px 12px 8px;
+    padding: 0px;
+}
+
+#input {
+    font-size: 0;
+    opacity: 0;
+}
+
+#entry {
+    border-radius: 0;
+    padding-left: 12px;
+}
+
+#entry:selected {
+    background-color: @background;
+    padding-left: 8px;
+    border-left: 4px solid @accent;
+}

@@ -1,0 +1,40 @@
+#!/usr/bin/env python3
+
+from os import devnull
+from pathlib import Path
+from subprocess import CalledProcessError, check_call, run
+
+with open(devnull, 'w') as dn:
+    try:
+        check_call('theme', stdout=dn)
+    except CalledProcessError:
+        exit(1)
+
+theme_prefix = str(Path.home().joinpath('.config').joinpath('theme'))
+theme_list = run(['theme', 'list'], capture_output=True)
+themes = theme_list.stdout.decode().splitlines()
+theme_thumbnails = {}
+
+wofi_options = []
+
+for theme in themes:
+    path = f'img:{theme_prefix}/{theme}/thumbnail.png'
+    wofi_options.append(path)
+    theme_thumbnails[path] = theme
+
+wofi_config = Path.home()\
+    .joinpath('.config')\
+    .joinpath('wofi')\
+    .joinpath('menu-theme.conf')
+
+wofi_command = ['wofi', '-c', wofi_config]
+wofi_input = '\n'.join(wofi_options).encode()
+
+result = run(wofi_command, input=wofi_input, capture_output=True)
+
+selected = result.stdout.decode().strip()
+
+if selected not in theme_thumbnails.keys():
+    exit(1)
+
+run(['theme', 'set', theme_thumbnails[selected]])

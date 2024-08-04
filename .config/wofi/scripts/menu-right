@@ -1,0 +1,22 @@
+#!/bin/sh
+
+if pgrep wofi; then
+    pkill wofi
+    exit 0
+fi
+
+OPTION_POWEROFF="Power Off"
+OPTION_REBOOT="Reboot"
+OPTION_LOCK="Lock"
+OPTION_LOGOUT="Logout"
+OPTIONS="$OPTION_POWEROFF\n$OPTION_REBOOT\n$OPTION_LOCK\n$OPTION_LOGOUT"
+
+SELECTED=$(printf "$OPTIONS" | wofi -c "$HOME/.config/wofi/menu-right.conf")
+
+case "$SELECTED" in
+    "$OPTION_POWEROFF") poweroff                ;;
+    "$OPTION_REBOOT"  ) reboot                  ;;
+    "$OPTION_LOCK"    ) gtklock                 ;;
+    "$OPTION_LOGOUT"  ) niri msg action quit -s ;;
+    *) exit 1 ;;
+esac

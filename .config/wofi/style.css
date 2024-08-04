@@ -1,0 +1,50 @@
+@import url('.config/wofi/colors.css');
+
+* {
+    color: #e6edf9;
+    font-family: 'Comfortaa';
+    font-size: 16px;
+    border: none;
+}
+
+window {
+    background-color: @background;
+    border: 2px solid @surface;
+    border-radius: 8px;
+}
+
+#outer-box {
+    margin: 20px;
+    padding: 0px;
+    border-radius: 16px;
+}
+
+#input {
+    margin: 0 0 32px 0;
+    padding: 8px 12px;
+    background-color: @surface;
+    border: 2px solid @secondary;
+}
+
+#entry:selected {
+    background-color: @surface;
+    border-radius: 20px;
+}
+
+#text {
+    padding: 5px;
+    color: #ebe8ec;
+}
+
+#text:selected {
+    font-weight: bold;
+    background-color: transparent;
+}
+
+#img {
+    margin: 0 8px;
+}
+
+#img:selected {
+    background-color: transparent;
+}
