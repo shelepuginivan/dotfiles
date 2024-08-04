@@ -1,0 +1,12 @@
+@define-color background       #131415;
+@define-color surface          #232527;
+@define-color selection        #3b3c40;
+@define-color foreground       #e6edf9;
+@define-color tooltip          #e6edf9;
+@define-color secondary        #b9bbbd;
+@define-color disabled         #898b8d;
+@define-color accent           #a8c64b;
+@define-color accent-rgba      rgba(168, 198, 75, .7);
+@define-color accent-secondary #d7bc32;
+@define-color fg-on-accent     #131415;
+@define-color danger           #eb363e;
