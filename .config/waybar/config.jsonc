@@ -1,4 +1,5 @@
 {
+    // ─────────────────────────────────────────────────────────┤ 1. Settings │
     "margin": "px",
     "margin-left": 8,
     "margin-top": 8,
@@ -7,6 +8,8 @@
     "spacing": 8,
     "layer": "top",
 
+
+    // ─────────────────────────────────────────────────────────────┤ 2. Left │
     "modules-left": [
         "custom/actions",
         "wireplumber",
@@ -14,30 +17,13 @@
         "disk",
         "custom/notifications"
     ],
-
-    "modules-center": [
-        "mpris"
-    ],
-
-    "modules-right": [
-        "tray",
-        "clock",
-        "battery",
-        "custom/powermenu"
-    ],
-
+    
     "custom/actions": {
         "format": "󰣇",
-        "on-click": "env -C $HOME $HOME/.config/wofi/scripts/theme-select",
+        "on-click": "$HOME/.config/wofi/scripts/theme-select",
         "tooltip": false
     },
-
-    "custom/powermenu": {
-        "format": "󰤆",
-        "on-click": "env -C $HOME $HOME/.config/wofi/scripts/menu-right",
-        "tooltip": false
-    },
-
+    
     "wireplumber": {
         "format": "{icon}  {volume}%",
         "format-muted": "   Muted",
@@ -46,7 +32,7 @@
         "scroll-step": 2,
         "format-icons": ["", "", " "]
     },
-
+    
     "memory": {
         "interval": 30,
         "format": "  {}%",
@@ -60,11 +46,21 @@
         "on-click": "alacritty -e lf"
     },
 
-    "tray": {
-        "icon-size": 14,
-        "spacing": 12
+    "custom/notifications": {
+        "format": "{}",
+        "exec-on-event": true,
+        "restart-interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "tooltip": false
     },
 
+
+    // ───────────────────────────────────────────────────────────┤ 3. Center │
+    "modules-center": [
+        "mpris"
+    ],
+    
     "mpris": {
         "format": "{player_icon} <b>{artist} — {title}</b>",
     	"format-paused": "{status_icon} <b>{artist} — {title}</b>",
@@ -79,11 +75,18 @@
         ]
     },
 
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "full-at": 96,
-        "format-charging": "󰂄 {capacity}%",
-        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+
+    // ────────────────────────────────────────────────────────────┤ 4. Right │
+    "modules-right": [
+        "tray",
+        "clock",
+        "battery",
+        "custom/powermenu"
+    ],
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 12
     },
 
     "clock": {
@@ -100,12 +103,16 @@
         }
     },
 
-    "custom/notifications": {
-        "format": "{}",
-        "exec-on-event": true,
-        "restart-interval": 60,
-        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "full-at": 96,
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+    },
+
+    "custom/powermenu": {
+        "format": "󰤆",
+        "on-click": "$HOME/.config/wofi/scripts/menu-right",
         "tooltip": false
     }
 }
