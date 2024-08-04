@@ -1,4 +1,0 @@
-#!/bin/sh
-
-alacritty --class=cava --title=cava --command=cava &
-alacritty --class=musikcube --title=musikcube --command=musikcube &
