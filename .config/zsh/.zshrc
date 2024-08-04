@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# --- Common ---
+
+# ────────────────────────────────────────────────────────────────┤ 1. Common │
 export BROWSER="firefox"
 export EDITOR="nvim"
 export LC_ALL="en_US.UTF-8"
@@ -8,13 +9,15 @@ export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 export TERMINAL="alacritty"
 
-# --- XDG user directories ---
+
+# ────────────────────────────────────────────────────┤ 2. XDG Base Directory │
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 
-# --- ZSH settings ---
+
+# ──────────────────────────────────────────────────────────┤ 3. ZSH settings │
 bindkey -e
 bindkey "^[[H"    beginning-of-line
 bindkey "^[[1;5H" beginning-of-line
@@ -42,14 +45,17 @@ export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 HISTSIZE=2000
 SAVEHIST=2000
 
+
+# ───────────────────────────────────────────────────────────────┤ 4. Sources │
 source "$ZDOTDIR/alias.zsh"
 source "$ZDOTDIR/apps.zsh"
 source "$ZDOTDIR/functions.zsh"
 source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/prompt.zsh"
 
+
+# ───────────────────────────────────────────────────────────────┤ 5. Plugins │
 plugin "MichaelAquilina/zsh-auto-notify"
-plugin "MichaelAquilina/zsh-you-should-use"
 plugin "zsh-users/zsh-autosuggestions"
 plugin "zsh-users/zsh-syntax-highlighting"
 plugin "zsh-users/zsh-history-substring-search"

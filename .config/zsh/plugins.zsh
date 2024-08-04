@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# --- auto-notify ---
+
+# ───────────────────────────────────────────────────────────┤ 1. Auto Notify │
 export AUTO_NOTIFY_TITLE="%command"
 export AUTO_NOTIFY_BODY="Time: %elapsed"s", exit code: %exit_code"
 export AUTO_NOTIFY_EXPIRE_TIME=5000
@@ -19,6 +20,7 @@ export AUTO_NOTIFY_WHITELIST=(
     "yt-dlp"
 )
 
-# --- history-substring-search ---
+
+# ──────────────────────────────────────────────┤ 2. History Substring Search │
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down

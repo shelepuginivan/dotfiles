@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-alias cal="ncal -M -b"
+
+# ────────────────────────────────────────────────────────────────┤ 1. Common │
 alias cat="bat"
 alias clip="xclip -selection clipboard"
 alias cls="clear"
@@ -23,7 +24,8 @@ alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts"
 alias ytdl="yt-dlp"
 alias zshconfig="$EDITOR $ZDOTDIR"
 
-# --- git ---
+
+# ───────────────────────────────────────────────────────────────────┤ 2. git │
 alias g="git"
 alias ga="git add"
 alias gc="git commit --verbose"
@@ -40,7 +42,8 @@ alias grh="git reset"
 alias grs="git restore"
 alias gst="git status"
 
-# --- dotfiles management ---
+
+# ──────────────────────────────────────────────────────────────┤ 3. Dotfiles │
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dfa="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add"
 alias dfst="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status"
