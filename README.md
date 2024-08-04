@@ -61,3 +61,10 @@ Inspirations, resources &mdash; what I've used and am using to improve my workfl
 - [wallhaven.cc](https://wallhaven.cc/) &mdash; Wallpapers
 - [Wallpaper Flare](https://www.wallpaperflare.com/) &mdash; Wallpapers
 - [Niri setup showcase](https://github.com/YaLTeR/niri/discussions/325) &mdash; Niri configuration examples
+
+## Old configurations
+
+Since I'm now using Wayland instead of Xorg,
+I removed the old dotfiles from the `main` branch. You can still find them
+on the [`xorg` tag](https://github.com/shelepuginivan/dotfiles/tree/xorg),
+although they are not maintained.
