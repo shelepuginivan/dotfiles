@@ -132,12 +132,20 @@ window-rule {
     default-column-width { proportion 0.35 ;}
 }
 
+// Set default column width for Obsidian.
+window-rule {
+    match app-id="obsidian"
+
+    default-column-width { proportion 0.7 ;}
+}
+
 // Open maximized.
 window-rule {
-    match title="Mozilla Firefox"
-    match app-id="evolution"
-    match app-id="org.telegram.desktop"
     match app-id="com.obsproject.Studio"
+    match app-id="evolution"
+    match title="Mozilla Firefox"
+    match app-id="org.telegram.desktop"
+    match app-id="org.inkscape.Inkscape"
 
     open-maximized true
 }
