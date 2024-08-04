@@ -29,10 +29,6 @@ decorations = "full"
 dynamic_padding = true
 opacity = 0.87
 
-[window.dimensions]
-columns = 140
-lines = 50
-
 [window.padding]
 x = 0
 y = 0
