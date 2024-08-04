@@ -1,0 +1,108 @@
+{
+    "margin": "px",
+    "margin-left": 8,
+    "margin-top": 8,
+    "margin-right": 8,
+    "height": 40,
+    "spacing": 8,
+    "layer": "top",
+
+    "modules-left": [
+        "custom/actions",
+        "wireplumber",
+        "memory",
+        "disk",
+        "custom/notifications"
+    ],
+
+    "modules-center": [
+        "mpris"
+    ],
+
+    "modules-right": [
+        "tray",
+        "clock",
+        "battery",
+        "custom/powermenu"
+    ],
+
+    "custom/actions": {
+        "format": "󰣇",
+        "on-click": "env -C $HOME $HOME/.config/wofi/scripts/theme-select",
+        "tooltip": false
+    },
+
+    "custom/powermenu": {
+        "format": "󰤆",
+        "on-click": "env -C $HOME $HOME/.config/wofi/scripts/menu-right",
+        "tooltip": false
+    },
+
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "   Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 2,
+        "format-icons": ["", "", " "]
+    },
+
+    "memory": {
+        "interval": 30,
+        "format": "  {}%",
+        "on-click": "alacritty -e btop"
+    },
+
+    "disk": {
+        "interval": "once",
+        "format": "  {percentage_used}%",
+        "path": "/home",
+        "on-click": "alacritty -e lf"
+    },
+
+    "tray": {
+        "icon-size": 14,
+        "spacing": 12
+    },
+
+    "mpris": {
+        "format": "{player_icon} <b>{artist} — {title}</b>",
+    	"format-paused": "{status_icon} <b>{artist} — {title}</b>",
+    	"player-icons": {
+	    	"default": " "
+    	},
+	    "status-icons": {
+		    "paused": "󰏤 "
+    	}
+    },
+
+    "battery": {
+        "format": "{icon} {capacity}%",
+        "full-at": 96,
+        "format-charging": "󰂄 {capacity}%",
+        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
+    },
+
+    "clock": {
+        "interval": 60,
+        "format": "   {:%H:%M}",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "format": {
+                "months": "<span color='#d7bc32'><b>{}</b></span>",
+                "days": "<span color='#b9bbbd'><b>{}</b></span>",
+                "weekdays": "<span color='#e6edf9'><b><u>{}</u></b></span>",
+                "today": "<span color='#eb363e'><b>{}</b></span>"
+            }
+        }
+    },
+
+    "custom/notifications": {
+        "format": "{}",
+        "exec-on-event": true,
+        "restart-interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "tooltip": false
+    }
+}

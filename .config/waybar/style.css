@@ -1,0 +1,79 @@
+@import url('colors.css');
+
+* {
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    color: @foreground;
+}
+
+#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @background;
+}
+
+tooltip label {
+    color: @tooltip;
+    font-family: 'JetBrains Mono';
+    font-size: 12px;
+}
+
+.modules-left,
+.modules-right {
+    background: @background;
+    border-radius: 20px;
+    padding: 3px;
+}
+
+#workspaces button {
+    padding: 0;
+    min-width: 34px;
+    border-radius: 17px;
+    border: none;
+}
+
+#workspaces button:not(:first-child) {
+    margin-left: 4px;
+}
+
+#workspaces button:hover {
+    background: @accent-transparent;
+}
+
+#custom-actions, #wireplumber, #memory, #disk, #custom-notifications,
+#workspaces button.active,
+#language, #tray, #clock, #battery, #custom-powermenu {
+    background: @surface;
+    padding: 0;
+    border-radius: 17px;
+    min-width: 34px;
+}
+
+#wireplumber, #memory, #disk,
+#tray, #clock, #battery {
+    padding: 0 12px;
+}
+
+#custom-actions, #custom-notifications,
+#custom-powermenu {
+    font-family: 'JetBrains Mono Nerd Font Mono';
+    font-size: 20px;
+}
+
+#mpris {
+    border-radius: 20px;
+    padding: 6px;
+    padding: 0 12px;
+}
+
+#mpris.playing {
+    color: @fg-on-accent;
+    background: linear-gradient(45deg, @accent, @accent-secondary);
+}
+
+#mpris.paused {
+    background: @surface;
+    border: 3px solid @background;
+}
