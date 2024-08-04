@@ -3,12 +3,12 @@
 
 # ────────────────────────────────────────────────────────────────┤ 1. Common │
 alias cat="bat"
-alias clip="xclip -selection clipboard"
+alias clip="wl-copy"
+alias copy="wl-copy"
 alias cls="clear"
 alias l="eza -lah"
 alias mcube="musikcube"
 alias md="mkdir -p"
-alias mdpdf="md-to-pdf"
 alias o="xdg-open"
 alias open="xdg-open"
 alias pass="gopass"
@@ -28,6 +28,7 @@ alias zshconfig="$EDITOR $ZDOTDIR"
 # ───────────────────────────────────────────────────────────────────┤ 2. git │
 alias g="git"
 alias ga="git add"
+alias gb="git branch"
 alias gc="git commit --verbose"
 alias gcl="git clone --recurse-submodules"
 alias gco="git checkout"
@@ -45,6 +46,7 @@ alias gst="git status"
 
 # ──────────────────────────────────────────────────────────────┤ 3. Dotfiles │
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
+alias dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dfa="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add"
 alias dfst="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status"
 alias dfc="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -v"
