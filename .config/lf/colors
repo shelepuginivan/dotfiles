@@ -1,5 +1,5 @@
 # vim:ft=dircolors
-# (This is not a dircolors file but it helps to highlight colors and comments)
+# This is not a dircolors file but it helps to highlight colors and comments
 
 # default values from dircolors
 # (entries with a leading # are not implemented in lf)
@@ -46,7 +46,7 @@ or      31;01   # ORPHAN
 tw      34      # STICKY_OTHER_WRITABLE
 ow      34      # OTHER_WRITABLE
 st      01;34   # STICKY
-di      01;96   # DIR
+di      03;36   # DIR
 pi      33      # FIFO
 so      01;35   # SOCK
 bd      33;01   # BLK
