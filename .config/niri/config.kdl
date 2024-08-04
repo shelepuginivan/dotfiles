@@ -161,9 +161,10 @@ window-rule {
 
 // Exclude sensitive apps from screencast.
 window-rule {
+    match app-id="com.belmoussaoui.Authenticator"
     match app-id="evolution"
-    match app-id=r#"^org\.telegram\.desktop$"#
     match app-id="gcr-prompter"
+    match app-id=r#"^org\.telegram\.desktop$"#
 
     block-out-from "screencast"
 }
