@@ -2,13 +2,23 @@
 
 from os import devnull
 from pathlib import Path
+from psutil import process_iter
 from subprocess import CalledProcessError, check_call, run
 
+
+# Close menu if it is already opened and exit.
+for proc in process_iter():
+    if proc.name() == 'wofi':
+        proc.kill()
+        exit(0)
+
+# Check whether theme is installed.
 with open(devnull, 'w') as dn:
     try:
         check_call('theme', stdout=dn)
     except CalledProcessError:
         exit(1)
+
 
 theme_prefix = str(Path.home().joinpath('.config').joinpath('theme'))
 theme_list = run(['theme', 'list'], capture_output=True)
