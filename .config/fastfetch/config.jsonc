@@ -56,6 +56,10 @@
             "format": "└─────────────────────────────┘"
         },
         "break",
-        "colors"
+        {
+            "type": "colors",
+            "symbol": "circle",
+            "paddingLeft": 8
+        }
     ]
 }
