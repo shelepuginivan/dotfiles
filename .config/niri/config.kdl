@@ -106,35 +106,29 @@ animations {}
 SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Window-Rules
 
 */
+
+// Global rules applied to all windows.
 window-rule {
     geometry-corner-radius 8
+
+    // Properly render window corners.
+    // Works well with geometry-corner-radius and prefer-no-csd.
     clip-to-geometry true
 }
 
-// Set default column width for Alacritty.
+// Set default column width to 30%.
 window-rule {
-    match app-id="Alacritty"
-
-    default-column-width { proportion 0.7 ;}
-}
-
-// Set default column width for Amberol.
-window-rule {
+    match app-id="blueman-manager"
     match app-id="io.bassi.Amberol"
 
     default-column-width { proportion 0.3 ;}
 }
 
-// Set default column width for Blueman Manager.
+// Set default column width to 70%.
 window-rule {
-    match app-id="blueman-manager"
-
-    default-column-width { proportion 0.35 ;}
-}
-
-// Set default column width for Obsidian.
-window-rule {
+    match app-id="Alacritty"
     match app-id="obsidian"
+    match app-id="org.gnome.World.Secrets"
 
     default-column-width { proportion 0.7 ;}
 }
@@ -150,6 +144,13 @@ window-rule {
     open-maximized true
 }
 
+// Open Gamescope fullscreen.
+window-rule {
+    match app-id="gamescope"
+
+    open-fullscreen true
+}
+
 // Firefox dialog windows.
 window-rule {
     match app-id="firefox"
@@ -161,9 +162,9 @@ window-rule {
 
 // Exclude sensitive apps from screencast.
 window-rule {
-    match app-id="com.belmoussaoui.Authenticator"
     match app-id="evolution"
     match app-id="gcr-prompter"
+    match app-id="org.gnome.World.Secrets"
     match app-id=r#"^org\.telegram\.desktop$"#
 
     block-out-from "screencast"
