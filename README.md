@@ -3,9 +3,14 @@
 Welcome to my dotfiles repository!
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/f52587b9-2afc-49a7-9069-1516fe2d6a7c" alt="Screenshot 1">
-  <i>I can't escape Touhou</i>
+  <img src="https://cdn.shelepugin.ru/i/png/dotfiles-1.png" alt="Screenshot 1" width="48%">
+  <img src="https://cdn.shelepugin.ru/i/png/dotfiles-2.png" alt="Screenshot 2" width="48%">
+
+  <i>I can't escape Touhou...</i>
+  
+  <i>hint: click on a screenshot to expand it</i>
 </div>
+
 
 ---
 
