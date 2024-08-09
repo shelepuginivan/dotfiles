@@ -21,6 +21,7 @@ alias t="tmux"
 alias ta="tmux attach-session"
 alias v="nvim"
 alias wget="wget --hsts-file=$XDG_CACHE_HOME/wget/wget-hsts"
+alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 alias ytdl="yt-dlp"
 alias zshconfig="$EDITOR $ZDOTDIR"
 
