@@ -144,13 +144,6 @@ window-rule {
     open-maximized true
 }
 
-// Open Gamescope fullscreen.
-window-rule {
-    match app-id="gamescope"
-
-    open-fullscreen true
-}
-
 // Firefox dialog windows.
 window-rule {
     match app-id="firefox"
