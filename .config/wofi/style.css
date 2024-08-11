@@ -8,15 +8,14 @@
 }
 
 window {
-    background-color: @background;
-    border: 2px solid @surface;
-    border-radius: 8px;
+    background-color: transparent;
 }
 
 #outer-box {
-    margin: 20px;
-    padding: 0px;
-    border-radius: 16px;
+    background-color: @background;
+    padding: 20px;
+    border: 2px solid @surface;
+    border-radius: 8px;
 }
 
 #input {
