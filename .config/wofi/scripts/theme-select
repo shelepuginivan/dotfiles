@@ -28,7 +28,12 @@ theme_thumbnails = {}
 wofi_options = []
 
 for theme in themes:
-    path = f'img:{theme_prefix}/{theme}/thumbnail.png'
+    thumbnail_path = f'{theme_prefix}/{theme}/thumbnail.png'
+
+    if not Path(thumbnail_path).exists():
+        continue
+
+    path = f'img:{thumbnail_path}'
     wofi_options.append(path)
     theme_thumbnails[path] = theme
 
