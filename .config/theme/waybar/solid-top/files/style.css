@@ -1,0 +1,58 @@
+@import url('colors.css');
+
+* {
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    color: @foreground;
+}
+
+#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @background;
+}
+
+tooltip label {
+    color: @tooltip;
+    font-family: 'JetBrains Mono';
+    font-size: 12px;
+}
+
+.modules-left,
+.modules-right {
+    background: @background;
+    border-radius: 10px;
+    padding: 3px 8px;
+    border: 3px solid @surface;
+}
+
+#custom-actions, #wireplumber, #memory, #disk, #custom-notifications,
+#workspaces button.active,
+#language, #tray, #clock, #battery, #custom-powermenu {
+    padding: 0;
+    min-width: 32px;
+}
+
+#wireplumber, #memory, #disk,
+#tray, #clock, #battery {
+    padding: 0 12px;
+}
+
+#custom-actions, #custom-notifications,
+#custom-powermenu {
+    font-family: 'JetBrains Mono Nerd Font Mono';
+    font-size: 20px;
+}
+
+#mpris {
+    padding: 0 12px;
+    border-radius: 10px;
+    background: @background;
+    border: 3px solid @surface;
+}
+
+#mpris.playing {
+    border-color: @accent;
+}
