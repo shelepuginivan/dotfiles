@@ -1,0 +1,14 @@
+[
+    {
+        "src": "@/files/scripts",
+        "dst": "$HOME/.config/waybar/scripts"
+    },
+    {
+        "src": "@/files/config.jsonc",
+        "dst": "$HOME/.config/waybar/config.jsonc"
+    },
+    {
+        "src": "@/files/style.css",
+        "dst": "$HOME/.config/waybar/style.css"
+    }
+]
