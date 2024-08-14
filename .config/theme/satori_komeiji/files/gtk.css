@@ -1,4 +1,5 @@
 @define-color background       #303446;
+@define-color bg-alpha         rgba(48, 52, 70, .8);
 @define-color surface          #414559;
 @define-color selection        #51576d;
 @define-color foreground       #c6d0f5;
