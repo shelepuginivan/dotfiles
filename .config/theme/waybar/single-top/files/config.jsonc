@@ -16,7 +16,7 @@
         "wireplumber",
         "memory",
         "disk",
-        "custom/notifications"
+        "custom/pacman"
     ],
     
     "custom/actions": {
@@ -47,13 +47,10 @@
         "on-click": "alacritty -e lf"
     },
 
-    "custom/notifications": {
-        "format": "{}",
-        "exec-on-event": true,
-        "restart-interval": 60,
-        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
-        "tooltip": false
+    "custom/pacman": {
+        "exec": "$HOME/.config/waybar/scripts/pacman.sh",
+        "return-type": "json",
+        "interval": 3600
     },
 
 
@@ -80,6 +77,7 @@
     // ────────────────────────────────────────────────────────────┤ 4. Right │
     "modules-right": [
         "tray",
+        "custom/notifications",
         "clock",
         "battery",
         "custom/powermenu"
@@ -88,6 +86,15 @@
     "tray": {
         "icon-size": 14,
         "spacing": 12
+    },
+
+    "custom/notifications": {
+        "format": "{}",
+        "exec-on-event": true,
+        "restart-interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "tooltip": false
     },
 
     "clock": {
