@@ -2,8 +2,8 @@
 # Check pacman updates.
 # Depends on pacman-contrib.
 
-UPDATE_LIST="$(checkupdates --nocolor --nosync)"
-UPDATES="Updates: $(printf "$UPDATE_LIST" | wc -l)"
+UPDATE_LIST="$(checkupdates --nocolor)"
+UPDATES="Updates: $(echo "$UPDATE_LIST" | wc -l)"
 
 if [ -z "$UPDATE_LIST" ]; then
     UPDATE_LIST="Arch-chan is happy!"
