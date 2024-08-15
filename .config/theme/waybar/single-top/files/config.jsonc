@@ -49,6 +49,8 @@
 
     "custom/pacman": {
         "exec": "$HOME/.config/waybar/scripts/pacman.sh",
+        "exec-on-event": true,
+        "on-click": "exit",
         "return-type": "json",
         "interval": 3600
     },
