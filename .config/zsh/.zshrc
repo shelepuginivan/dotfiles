@@ -8,6 +8,7 @@ export LC_ALL="en_US.UTF-8"
 export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 export TERMINAL="alacritty"
+export PATH="$HOME/.local/bin:$PATH"
 
 
 # ────────────────────────────────────────────────────┤ 2. XDG Base Directory │
