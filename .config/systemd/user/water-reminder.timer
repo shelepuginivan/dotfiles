@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for Water Reminder
+
+[Timer]
+OnBootSec=10min
+OnUnitActiveSec=2h
+Unit=water-reminder.service
+
+[Install]
+WantedBy=timers.target
