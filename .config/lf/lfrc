@@ -50,9 +50,17 @@ cmd open &{{
 cmd remove %printf "Remove $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && rm -rf "$fx"
 
 # `rename` command.
-# Promts to enter a new file name and moves the file. If the path exists, asks
-# to confirm.
-cmd rename %printf "New name: "; read FILENAME; [ ! -e "$FILENAME" ] && mv "$fx" "$FILENAME" || printf "Overwrite $FILENAME ? [y/n] " && read ANS && [ "$ANS" = "y" ] && mv "$fx" "$FILENAME"
+# Allows to edit filename in the editor ($EDITOR).
+cmd rename ${{
+    if [ -z "$fs" ]; then
+        fs="$fx"
+    fi
+
+    echo -e "$fs" | xargs -d '\n' basename -a | xargs -d '\n' vimv
+
+    lf -remote "send $id load"
+    lf -remote "send $id unselect"
+}}
 
 # `trash` command.
 # Puts file in trash using trash-cli.
