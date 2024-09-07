@@ -248,9 +248,6 @@ binds {
     Super+Ctrl+End   { move-column-to-last  ;}
 
     // Navigation around monitors.
-    //
-    // NOTE: I disabled it since I have one monitor.
-    /* 
     Super+Shift+Left  { focus-monitor-left  ;}
     Super+Shift+Down  { focus-monitor-down  ;}
     Super+Shift+Up    { focus-monitor-up    ;}
@@ -269,7 +266,6 @@ binds {
     Super+Shift+Ctrl+J     { move-column-to-monitor-down  ;}
     Super+Shift+Ctrl+K     { move-column-to-monitor-up    ;}
     Super+Shift+Ctrl+L     { move-column-to-monitor-right ;}
-    */
 
     // Navigation around workspaces.
     Super+Page_Down      { focus-workspace-down ;}
