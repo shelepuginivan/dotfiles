@@ -37,3 +37,7 @@ export PATH="$PATH:$CARGO_HOME/bin"
 
 # ──────────────────────────────────────────────────────────────────┤ 7. Wine │
 export WINEPREFIX="$XDG_DATA_HOME/wineprefixes/default"
+
+
+# ──────────────────────────────────────────────────────────────────┤ 8. qrcp │
+export QRCP_OUTPUT="$HOME/Downloads"
