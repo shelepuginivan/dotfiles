@@ -1,3 +1,9 @@
 #!/bin/sh
 
 find "$HOME"/Downloads "$HOME"/Images/GIMP/Export "$HOME"/Images/Inkscape/Export "$HOME"/Images/Screenshots "$HOME"/Videos/Records -type f -exec trash-put {} \;
+
+case "$1" in
+    "-e" | "--empty" | "empty")
+        trash-empty -f
+        ;;
+esac
