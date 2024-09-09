@@ -134,6 +134,7 @@ map gh cd ~
 map gi cd ~/Images
 map gm cd ~/Music
 map gr cd ~/Videos/Records
+map gR cd /
 map gs cd ~/Images/Screenshots
 map gS cd ~/.local/bin
 map gv cd ~/Videos
