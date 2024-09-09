@@ -2,7 +2,7 @@
 # Check pacman updates.
 # Depends on pacman-contrib.
 
-UPDATE_LIST="$(checkupdates --nocolor)"
+UPDATE_LIST="$(checkupdates --nocolor --nosync)"
 UPDATES="Updates: $(echo "$UPDATE_LIST" | wc -l)"
 
 if [ -z "$UPDATE_LIST" ]; then
