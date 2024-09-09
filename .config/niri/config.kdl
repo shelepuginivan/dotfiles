@@ -144,6 +144,13 @@ window-rule {
     open-maximized true
 }
 
+// Open cage fullscreen. I use it for gaming.
+window-rule {
+    match app-id="wlroots"
+    
+    open-fullscreen true
+}
+
 // Firefox dialog windows.
 window-rule {
     match app-id="firefox"
