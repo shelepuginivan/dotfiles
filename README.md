@@ -31,7 +31,9 @@ For your convenience &mdash; a table of directories.
 | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
 | [`.config`](https://github.com/shelepuginivan/dotfiles/tree/main/.config)                                 | Configuration filed                                |
 | [`.local/bin`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/bin)                           | Shell scripts and utilities                        |
-| [`.local/share/wallpapers`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/share/wallpapers) | Wallpapers                                         |
+
+> [!TIP]
+> Wallpapers can be found in a [separate repository](https://github.com/shelepuginivan/wallpapers).
 
 > [!NOTE]
 > This repository contains submodules for large configurations such as
