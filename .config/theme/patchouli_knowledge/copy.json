@@ -1,0 +1,22 @@
+[
+    {
+        "$comment": "Alacritty",
+        "src": "@/files/alacritty.toml",
+        "dst": "$HOME/.config/alacritty/colors.toml"
+    },
+    {
+        "$comment": "dunst config and icons",
+        "src": "@/files/dunst",
+        "dst": "$HOME/.config/dunst"
+    },
+    {
+        "$comment": "GTK colors definition",
+        "src": "@/files/gtk.css",
+        "dst": "$HOME/.cache/gtk.css"
+    },
+    {
+        "$comment": "gtklock background image",
+        "src": "@/files/lock.png",
+        "dst": "$HOME/.config/gtklock/background.png"
+    }
+]
