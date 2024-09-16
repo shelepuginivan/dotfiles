@@ -70,8 +70,6 @@ Inspirations, resources &mdash; what I've used and am using to improve my workfl
 - [r/unixporn](https://www.reddit.com/r/unixporn) &mdash; Self-explanatory, UNIX rices (safe for work)
 - [SVG Repo](https://www.svgrepo.com) &mdash; Icons for `dunst`
 - [ericmurphyxyz/dotfiles](https://github.com/ericmurphyxyz/dotfiles) &mdash; Battery notifications
-- [wallhaven.cc](https://wallhaven.cc/) &mdash; Wallpapers
-- [Wallpaper Flare](https://www.wallpaperflare.com/) &mdash; Wallpapers
 - [Niri setup showcase](https://github.com/YaLTeR/niri/discussions/325) &mdash; Niri configuration examples
 
 ## Old configurations
