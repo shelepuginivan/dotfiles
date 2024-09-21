@@ -378,7 +378,7 @@ NOTE: Some miscellaneous sections are separated
 prefer-no-csd
 
 // Screenshot path.
-screenshot-path "~/Images/Screenshots/%Y-%m-%d_%H-%M-%S.png"
+screenshot-path "~/Pictures/Screenshots/%Y-%m-%d_%H-%M-%S.png"
 
 // Disable hotkey overlay.
 hotkey-overlay { skip-at-startup ;}

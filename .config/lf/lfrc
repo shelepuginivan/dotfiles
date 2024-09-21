@@ -131,11 +131,12 @@ map gC cd ~/.config
 map gd cd ~/Downloads
 map gD cd ~/Documents
 map gh cd ~
-map gi cd ~/Images
+map gi cd ~/Pictures
 map gm cd ~/Music
+map gp cd ~/Pictures
 map gr cd ~/Videos/Records
 map gR cd /
-map gs cd ~/Images/Screenshots
+map gs cd ~/Pictures/Screenshots
 map gS cd ~/.local/bin
 map gv cd ~/Videos
 
