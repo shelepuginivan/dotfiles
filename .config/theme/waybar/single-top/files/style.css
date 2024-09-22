@@ -28,7 +28,6 @@ tooltip label {
 }
 
 #custom-actions, #wireplumber, #memory, #disk, #custom-notifications,
-#workspaces button.active,
 #language, #tray, #clock, #battery, #custom-powermenu {
     padding: 0;
     min-width: 32px;
@@ -50,5 +49,9 @@ tooltip label {
 }
 
 #mpris.playing {
-    border-color: @accent;
+    color: @accent;
+}
+
+#workspaces button {
+    min-width: 14px;
 }

@@ -6,32 +6,24 @@
     "margin-right": 8,
     "margin-bottom": 0,
     "height": 42,
-    "spacing": 8,
+    "spacing": 12,
     "layer": "top",
 
 
     // ─────────────────────────────────────────────────────────────┤ 2. Left │
     "modules-left": [
         "custom/actions",
-        "wireplumber",
         "memory",
         "disk",
-        "custom/pacman"
+        "custom/notifications",
+        "wireplumber",
+        "mpris"
     ],
     
     "custom/actions": {
         "format": "󰣇",
         "on-click": "$HOME/.config/wofi/scripts/theme-select",
         "tooltip": false
-    },
-    
-    "wireplumber": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "   Muted",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "max-volume": 100,
-        "scroll-step": 2,
-        "format-icons": ["", "", " "]
     },
     
     "memory": {
@@ -47,20 +39,24 @@
         "on-click": "alacritty -e lf"
     },
 
-    "custom/pacman": {
-        "exec": "$HOME/.config/waybar/scripts/pacman.sh",
-        "on-click": "$HOME/.config/waybar/scripts/pacman-update.sh",
-        "signal": 8,
-        "return-type": "json",
-        "interval": 3600
+    "custom/notifications": {
+        "format": "{}",
+        "exec-on-event": true,
+        "restart-interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "tooltip": false
     },
 
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "   Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 2,
+        "format-icons": ["", "", " "]
+    },
 
-    // ───────────────────────────────────────────────────────────┤ 3. Center │
-    "modules-center": [
-        "mpris"
-    ],
-    
     "mpris": {
         "format": "{player_icon} <b>{artist} — {title}</b>",
     	"format-paused": "{status_icon} <b>{artist} — {title}</b>",
@@ -76,10 +72,24 @@
     },
 
 
+    // ───────────────────────────────────────────────────────────┤ 3. Center │
+    "modules-center": [
+        "niri/workspaces"
+    ],
+    
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    
+
     // ────────────────────────────────────────────────────────────┤ 4. Right │
     "modules-right": [
         "tray",
-        "custom/notifications",
+        "niri/language",
         "clock",
         "battery",
         "custom/powermenu"
@@ -90,13 +100,10 @@
         "spacing": 12
     },
 
-    "custom/notifications": {
-        "format": "{}",
-        "exec-on-event": true,
-        "restart-interval": 60,
-        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
-        "tooltip": false
+    "niri/language": {
+    	"format": "󰗊  {}",
+	    "format-en": "English",
+    	"format-ru": "Русский"
     },
 
     "clock": {
