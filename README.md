@@ -1,20 +1,11 @@
 <div align="center">
+  <img src="https://cdn.shelepugin.ru/i/png/gh-banner-dotfiles.png" alt="shelepuginivan/dotfiles">
+  <h3>Welcome to my dotfiles repository!</h3>
 
-![shelepuginivan/dotfiles](https://cdn.shelepugin.ru/i/png/gh-banner-dotfiles.png)
+  ---
 
-### Welcome to my dotfiles repository!
-
-</div>
-
----
-
-<div align="center">
-  <img src="https://cdn.shelepugin.ru/i/png/dotfiles-1.png" alt="Screenshot 1" width="48%">
-  <img src="https://cdn.shelepugin.ru/i/png/dotfiles-2.png" alt="Screenshot 2" width="48%">
-
-  <i>I can't escape Touhou...</i>
-  
-  <i>hint: click on a screenshot to expand it</i>
+  <img src="https://cdn.shelepugin.ru/i/png/dotfiles-screenshot.png" alt="Screenshot">
+  <h3><i>Now with niri modules for Waybar 🎉</i></h3>
 </div>
 
 ---
