@@ -205,6 +205,9 @@ binds {
     // Spawn system monitor on Super+V.
     Super+V { spawn "alacritty" "-e" "btop" ;}
 
+    // Spawn secrets (password manager) on Super+Shift+P.
+    Super+Shift+P { spawn "secrets" ;}
+
     // Lock Wayland session on F9 (gtklock).
     F9 { spawn "gtklock" ;}
     
@@ -359,10 +362,6 @@ binds {
 
     // Quit Niri with Super+Shift+Q.
     Super+Shift+Q { quit ;}
-
-    // Powers off the monitors. To turn them back on, do any input like moving
-    // the mouse or pressing any other key.
-    Super+Shift+P { power-off-monitors ;}
 }
 
 /* ────────────────────────────────────────────────────────┤ 8. Miscellaneous │
