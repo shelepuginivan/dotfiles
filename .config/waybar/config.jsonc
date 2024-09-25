@@ -4,33 +4,26 @@
     "margin-left": 8,
     "margin-top": 8,
     "margin-right": 8,
-    "height": 40,
-    "spacing": 8,
+    "margin-bottom": 0,
+    "height": 42,
+    "spacing": 12,
     "layer": "top",
 
 
     // ─────────────────────────────────────────────────────────────┤ 2. Left │
     "modules-left": [
         "custom/actions",
-        "wireplumber",
         "memory",
         "disk",
-        "custom/notifications"
+        "custom/notifications",
+        "wireplumber",
+        "mpris"
     ],
     
     "custom/actions": {
         "format": "󰣇",
         "on-click": "$HOME/.config/wofi/scripts/theme-select",
         "tooltip": false
-    },
-    
-    "wireplumber": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "   Muted",
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
-        "max-volume": 100,
-        "scroll-step": 2,
-        "format-icons": ["", "", " "]
     },
     
     "memory": {
@@ -55,12 +48,15 @@
         "tooltip": false
     },
 
+    "wireplumber": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "   Muted",
+        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+        "max-volume": 100,
+        "scroll-step": 2,
+        "format-icons": ["", "", " "]
+    },
 
-    // ───────────────────────────────────────────────────────────┤ 3. Center │
-    "modules-center": [
-        "mpris"
-    ],
-    
     "mpris": {
         "format": "{player_icon} <b>{artist} — {title}</b>",
     	"format-paused": "{status_icon} <b>{artist} — {title}</b>",
@@ -76,9 +72,24 @@
     },
 
 
+    // ───────────────────────────────────────────────────────────┤ 3. Center │
+    "modules-center": [
+        "niri/workspaces"
+    ],
+    
+    "niri/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    
+
     // ────────────────────────────────────────────────────────────┤ 4. Right │
     "modules-right": [
         "tray",
+        "niri/language",
         "clock",
         "battery",
         "custom/powermenu"
@@ -87,6 +98,12 @@
     "tray": {
         "icon-size": 14,
         "spacing": 12
+    },
+
+    "niri/language": {
+    	"format": "󰗊  {}",
+	    "format-en": "English",
+    	"format-ru": "Русский"
     },
 
     "clock": {
