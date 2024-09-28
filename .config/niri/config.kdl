@@ -217,13 +217,13 @@ binds {
     // Close window on Super+Q.
     Super+Q { close-window ;}
 
-    // Brightness control.
-    // NOTE: I use a simple wrapper around xbacklight.
+    // Brightness control using brillo.
+    // SEE: https://gitlab.com/cameronnemo/brillo
     XF86MonBrightnessDown allow-when-locked=true {
-        spawn "changebrightness" "dec"
+        spawn "brillo" "-qU" "5"
     }
     XF86MonBrightnessUp allow-when-locked=true {
-        spawn "changebrightness" "inc"
+        spawn "brillo" "-qA" "5"
     }
 
     // Volume control (PipeWire).
