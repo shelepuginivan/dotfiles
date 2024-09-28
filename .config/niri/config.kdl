@@ -137,7 +137,7 @@ window-rule {
 // Open maximized.
 window-rule {
     match app-id="com.obsproject.Studio"
-    match app-id="evolution"
+    match app-id="org.gnome.Evolution"
     match title="Mozilla Firefox"
     match app-id="org.telegram.desktop"
     match app-id="org.inkscape.Inkscape"
@@ -163,7 +163,7 @@ window-rule {
 
 // Exclude sensitive apps from screencast.
 window-rule {
-    match app-id="evolution"
+    match app-id="org.gnome.Evolution"
     match app-id="gcr-prompter"
     match app-id="org.gnome.World.Secrets"
     match app-id=r#"^org\.telegram\.desktop$"#
