@@ -142,7 +142,7 @@ fi             # FILE
 *.elm           
 *.swift         
 *.xcplayground  
-*.tex           󰙩
+*.tex           
 *.r             󰟔
 *.rproj         󰗆
 *.sol           󰡪
@@ -316,8 +316,15 @@ CMakeLists.txt         
 *.3gp   
 *.3g2   
 
+# Gaming on Linux.
+*.exe   
+*.dll   
+*.dat   
+*.win   
+
 # Other formats.
 *.md       
 *.pdf      
 *.torrent  
 *.txt      󰦪
+*.typ      󰗴
