@@ -38,7 +38,7 @@ For your convenience &mdash; a table of directories.
 ## Uses
 
 | Type                 | Name                                                                                                      |
-|----------------------|-----------------------------------------------------------------------------------------------------------|
+| -------------------- | --------------------------------------------------------------------------------------------------------- |
 | Operating system     | [Arch Linux](https://archlinux.org)                                                                       |
 | Wayland compositor   | [niri](https://github.com/YaLTeR/niri)                                                                    |
 | Status bar           | [Waybar](https://github.com/Alexays/waybar)                                                               |
@@ -50,7 +50,7 @@ For your convenience &mdash; a table of directories.
 | File manager         | [lf](https://github.com/gokcehan/lf)                                                                      |
 | Image viewer         | [imv](https://sr.ht/~exec64/imv)                                                                          |
 | Video player         | [mpv](https://github.com/mpv-player/mpv)                                                                  |
-| Music player         | [Amberol](https://gitlab.gnome.org/World/amberol)                                                         |
+| Music player         | [musikcube](https://github.com/clangen/musikcube)                                                         |
 | Lockscreen           | [gtklock](https://github.com/jovanlanik/gtklock)                                                          |
 | Fonts                | [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest)                       |
 
