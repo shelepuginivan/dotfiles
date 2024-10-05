@@ -199,8 +199,8 @@ binds {
     // Spawn Lutris (game launcher) on Super+G.
     Super+G { spawn "lutris" ;}
 
-    // Spawn Amberol on Super+M.
-    Super+M { spawn "sh" "-c" "amberol ~/Music" ;}
+    // Spawn musikcube on Super+M.
+    Super+M { spawn "alacritty" "-e" "musikcube" ;}
     
     // Spawn file manager on Super+E.
     Super+E { spawn "alacritty" "-e" "lf" ;}
