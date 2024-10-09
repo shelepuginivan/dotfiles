@@ -117,24 +117,32 @@ window-rule {
     clip-to-geometry true
 }
 
-// Set default column width to 30%.
+// Set default column width to 30% for
+//   - Blueman Manager
+//   - Qalculate
 window-rule {
     match app-id="blueman-manager"
-    match app-id="io.bassi.Amberol"
+    match app-id="qalculate-gtk"
 
     default-column-width { proportion 0.3 ;}
 }
 
-// Set default column width to 70%.
+// Set default column width to 70% for
+//   - Alacritty
+//   - Secrets
 window-rule {
     match app-id="Alacritty"
-    match app-id="obsidian"
     match app-id="org.gnome.World.Secrets"
 
     default-column-width { proportion 0.7 ;}
 }
 
-// Open maximized.
+// Open maximized
+//   - OBS Studio
+//   - Evolution
+//   - Firefox
+//   - Telegram Desktop
+//   - Inkscape
 window-rule {
     match app-id="com.obsproject.Studio"
     match app-id="org.gnome.Evolution"
