@@ -24,7 +24,19 @@ alias ytdl="yt-dlp"
 alias zshconfig="$EDITOR $ZDOTDIR"
 
 
-# ───────────────────────────────────────────────────────────────────┤ 2. git │
+# ────────────────────────────────────────────────────────────┤ 2. Filesystem │
+alias cdc="cd $HOME/Code"
+alias cddoc="cd $HOME/Documents"
+alias cdd="cd $HOME/Downloads"
+alias cdm="cd $HOME/Music"
+alias cdp="cd $HOME/Pictures"
+alias cds="cd $HOME/Pictures/Screenshots"
+alias cdv="cd $HOME/Videos"
+alias cdr="cd $HOME/Videos/Records"
+alias cdconf="cd $XDG_CONFIG_HOME"
+
+
+# ───────────────────────────────────────────────────────────────────┤ 3. git │
 alias g="git"
 alias ga="git add"
 alias gb="git branch"
@@ -45,7 +57,7 @@ alias grs="git restore"
 alias gst="git status"
 
 
-# ──────────────────────────────────────────────────────────────┤ 3. Dotfiles │
+# ──────────────────────────────────────────────────────────────┤ 4. Dotfiles │
 alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 alias dfa="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add"
