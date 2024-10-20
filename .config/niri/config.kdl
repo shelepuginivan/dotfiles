@@ -219,6 +219,9 @@ binds {
     // Spawn secrets (password manager) on Super+Shift+P.
     Super+Shift+P { spawn "secrets" ;}
 
+    // Spawn evolution (mail client) on Super+Shift+M.
+    Super+Shift+M { spawn "evolution" ;}
+
     // Lock Wayland session on F9 (gtklock).
     F9 { spawn "gtklock" ;}
     
