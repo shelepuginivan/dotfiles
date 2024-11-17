@@ -378,7 +378,18 @@ binds {
     Super+Shift+Q { quit ;}
 }
 
-/* ────────────────────────────────────────────────────────┤ 8. Miscellaneous │
+
+/* ────────────────────────────────────────────────────────┤ 8. Switch events │
+
+SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Switch-Events
+
+*/
+
+switch-events {
+    lid-close { spawn "gtklock" ;}
+}
+
+/* ────────────────────────────────────────────────────────┤ 9. Miscellaneous │
 
 SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Miscellaneous
 
