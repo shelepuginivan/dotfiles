@@ -157,9 +157,12 @@ window-rule {
     open-maximized true
 }
 
-// Open cage fullscreen. I use it for gaming.
+// Open fullscreen
+//   - cage
+//   - gamescope
 window-rule {
     match app-id="wlroots"
+    match app-id="gamescope"
     
     open-fullscreen true
 }
