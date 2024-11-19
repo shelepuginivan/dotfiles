@@ -50,7 +50,11 @@ input {
     }
     
     touchpad {
+        // Tap to click.
         tap
+
+        // Disable when typing.
+        dwt
     }
 }
 
