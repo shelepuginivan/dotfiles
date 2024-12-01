@@ -11,10 +11,9 @@
 }
 
 #waybar > box {
-    background: @bg-alpha;
+    background: @background;
     border-radius: 10px;
-    padding: 3px 8px;
-    border: 3px solid @surface;
+    padding: 6px;
 }
 
 tooltip {
@@ -22,36 +21,68 @@ tooltip {
 }
 
 tooltip label {
-    color: @tooltip;
+    color: @foreground;
     font-family: 'JetBrains Mono';
     font-size: 12px;
 }
 
-#custom-actions, #wireplumber, #memory, #disk, #custom-notifications,
-#language, #tray, #clock, #battery, #custom-powermenu {
+#battery,
+#clock,
+#custom-actions,
+#custom-kernel,
+#custom-notifications,
+#custom-powermenu,
+#disk,
+#language,
+#memory,
+#tray,
+#wireplumber,
+#workspaces {
     padding: 0;
-    min-width: 32px;
+    min-width: 34px;
+    border-radius: 8px;
+    background: @surface;
 }
 
-#wireplumber, #memory, #disk,
-#tray, #clock, #battery {
-    padding: 0 12px;
+#battery,
+#clock,
+#custom-kernel,
+#disk,
+#language,
+#memory,
+#tray,
+#wireplumber {
+    padding: 0 16px;
 }
 
-#custom-actions, #custom-notifications,
+#custom-actions,
+#custom-notifications,
 #custom-powermenu {
     font-family: 'JetBrains Mono Nerd Font Mono';
     font-size: 20px;
 }
 
-#mpris {
-    padding: 0 12px;
-}
-
-#mpris.playing {
-    color: @accent;
+#workspaces button {
+    min-width: 14px;
 }
 
 #workspaces button {
-    min-width: 14px;
+    border-radius: 0;
+}
+
+#workspaces button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+#workspaces button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+#custom-actions {
+    color: @blue;
+}
+
+#custom-powermenu,
+#wireplumber.muted {
+    color: @red;
 }

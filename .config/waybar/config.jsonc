@@ -5,25 +5,29 @@
     "margin-top": 8,
     "margin-right": 8,
     "margin-bottom": 0,
-    "height": 42,
-    "spacing": 12,
+    "spacing": 6,
     "layer": "top",
 
 
     // ─────────────────────────────────────────────────────────────┤ 2. Left │
     "modules-left": [
         "custom/actions",
+        "custom/kernel",
         "memory",
         "disk",
-        "custom/notifications",
-        "wireplumber",
-        "mpris"
+        "wireplumber"
     ],
     
     "custom/actions": {
         "format": "󰣇",
         "on-click": "$HOME/.config/wofi/scripts/theme-select",
         "tooltip": false
+    },
+
+    "custom/kernel": {
+        "format": "  {}",
+        "exec": "uname -r",
+        "interval": "once"
     },
     
     "memory": {
@@ -39,15 +43,6 @@
         "on-click": "alacritty -e lf"
     },
 
-    "custom/notifications": {
-        "format": "{}",
-        "exec-on-event": true,
-        "restart-interval": 60,
-        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
-        "on-click": "dunstctl set-paused toggle",
-        "tooltip": false
-    },
-
     "wireplumber": {
         "format": "{icon}  {volume}%",
         "format-muted": "   Muted",
@@ -55,20 +50,6 @@
         "max-volume": 100,
         "scroll-step": 2,
         "format-icons": ["", "", " "]
-    },
-
-    "mpris": {
-        "format": "{player_icon} <b>{artist} — {title}</b>",
-    	"format-paused": "{status_icon} <b>{artist} — {title}</b>",
-    	"player-icons": {
-	    	"default": " "
-    	},
-	    "status-icons": {
-		    "paused": "󰏤 "
-    	},
-    	"ignored-players": [
-    	    "firefox"
-        ]
     },
 
 
@@ -89,6 +70,7 @@
     // ────────────────────────────────────────────────────────────┤ 4. Right │
     "modules-right": [
         "tray",
+        "custom/notifications",
         "niri/language",
         "clock",
         "battery",
@@ -98,6 +80,15 @@
     "tray": {
         "icon-size": 14,
         "spacing": 12
+    },
+
+    "custom/notifications": {
+        "format": "{}",
+        "exec-on-event": true,
+        "restart-interval": 60,
+        "exec": "$HOME/.config/waybar/scripts/dunst.sh",
+        "on-click": "dunstctl set-paused toggle",
+        "tooltip": false
     },
 
     "niri/language": {
