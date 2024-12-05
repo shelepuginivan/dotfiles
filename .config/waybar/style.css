@@ -78,6 +78,10 @@ tooltip label {
     border-radius: 0 8px 8px 0;
 }
 
+#workspaces button:first-child:last-child {
+    border-radius: 8px;
+}
+
 #custom-actions {
     color: @blue;
 }
