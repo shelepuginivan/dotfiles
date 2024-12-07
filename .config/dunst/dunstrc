@@ -11,9 +11,8 @@
 
     # Geometry
     origin = top-right
-    geometry = "375x150-16+76"
     width = 316
-    height = 150
+    height = 64
     offset = 16x16
     padding = 12
     horizontal_padding = 12
@@ -31,7 +30,7 @@
     progress_bar_max_width = 288
 
     # Fonts
-    font = JetBrains Mono 10
+    font = "JetBrains Mono 10"
     markup = full
     format = "<b>%s</b>\n%b"
     alignment = left
