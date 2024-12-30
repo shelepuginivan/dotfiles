@@ -1,0 +1,92 @@
+@import url('colors.css');
+
+* {
+    font-family: 'Comfortaa';
+    font-size: 12px;
+    color: @foreground;
+}
+
+#waybar {
+    background: transparent;
+}
+
+#waybar > box {
+    background: @background;
+    border-radius: 10px;
+    padding: 6px;
+}
+
+tooltip {
+    background: @background;
+}
+
+tooltip label {
+    color: @foreground;
+    font-family: 'JetBrains Mono';
+    font-size: 12px;
+}
+
+#battery,
+#clock,
+#custom-actions,
+#custom-kernel,
+#custom-notifications,
+#custom-powermenu,
+#disk,
+#language,
+#memory,
+#tray,
+#wireplumber,
+#workspaces {
+    padding: 0;
+    min-width: 34px;
+    border-radius: 8px;
+    background: @surface;
+}
+
+#battery,
+#clock,
+#custom-kernel,
+#disk,
+#language,
+#memory,
+#tray,
+#wireplumber {
+    padding: 0 16px;
+}
+
+#custom-actions,
+#custom-notifications,
+#custom-powermenu {
+    font-family: 'JetBrains Mono Nerd Font Mono';
+    font-size: 20px;
+}
+
+#workspaces button {
+    min-width: 14px;
+}
+
+#workspaces button {
+    border-radius: 0;
+}
+
+#workspaces button:first-child {
+    border-radius: 8px 0 0 8px;
+}
+
+#workspaces button:last-child {
+    border-radius: 0 8px 8px 0;
+}
+
+#workspaces button:first-child:last-child {
+    border-radius: 8px;
+}
+
+#custom-actions {
+    color: @blue;
+}
+
+#custom-powermenu,
+#wireplumber.muted {
+    color: @red;
+}
