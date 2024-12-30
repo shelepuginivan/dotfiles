@@ -1,0 +1,21 @@
+@define-color background       #1e1e2e;
+@define-color bg-alpha         rgba(30, 30, 46, .8);
+@define-color surface          #313244;
+@define-color selection        #585b70;
+@define-color foreground       #e7ecfa;
+@define-color tooltip          #e7ecfa;
+@define-color secondary        #bac2de;
+@define-color disabled         #a6adc8;
+@define-color accent           #eba0ac;
+@define-color accent-rgba      rgba(235, 160, 172, .6);
+@define-color accent-secondary #b4befe;
+@define-color fg-on-accent     #1e1e2e;
+@define-color danger           #f38ba8;
+
+/* Palette colors */
+@define-color blue   #89b4fa;
+@define-color red    #f38ba8;
+@define-color green  #a6e3a1;
+@define-color yellow #f9e2af;
+@define-color purple #cba6f7;
+@define-color cyan   #89dceb;

@@ -11,3 +11,11 @@
 @define-color accent-secondary #b8bb26;
 @define-color fg-on-accent     #282828;
 @define-color danger           #fb4934;
+
+/* Palette colors */
+@define-color blue   #83a598;
+@define-color red    #EA6962;
+@define-color green  #A9B665;
+@define-color yellow #D8A657;
+@define-color purple #D3869B;
+@define-color cyan   #89B482;
