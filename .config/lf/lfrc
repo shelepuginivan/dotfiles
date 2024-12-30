@@ -54,7 +54,13 @@ cmd remove ${{
 
     COUNT="$(echo $fs | wc -l)"
 
-    printf "Remove $COUNT files? [y/N] "
+    PROMPT="Remove $COUNT files? [y/N] "
+
+    if [ "$COUNT" = 1 ]; then
+        PROMPT="Remove 1 file? [y/N] "
+    fi
+
+    printf "$PROMPT"
     read ANS
 
     if [ "$ANS" = "y" ] || [ "$ANS" = "Y" ]; then
