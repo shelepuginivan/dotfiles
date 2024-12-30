@@ -1,0 +1,28 @@
+# Colors (Grayscale)
+
+# Default colors
+[colors.primary]
+background = '#181818'
+foreground = '#f0f0f0'
+
+# Normal colors
+[colors.normal]
+black   = '#181818'
+red     = '#9e9e9e'
+green   = '#a5a5a5'
+yellow  = '#adadad'
+blue    = '#b4b4b4'
+magenta = '#bcbcbc'
+cyan    = '#c3c3c3'
+white   = '#f0f0f0'
+
+# Bright colors
+[colors.bright]
+black   = '#282828'
+red     = '#cbcbcb'
+green   = '#d2d2d2'
+yellow  = '#dadada'
+blue    = '#e1e1e1'
+magenta = '#e9e9e9'
+cyan    = '#f0f0f0'
+white   = '#f8f8f8'
