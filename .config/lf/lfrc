@@ -46,8 +46,23 @@ cmd open &{{
 }}
 
 # `remove` command.
-# Asks to confirm and removes the file.
-cmd remove %printf "Remove $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && rm -rf "$fx"
+# Asks to confirm and removes files. Supports multiple file selection.
+cmd remove ${{
+    if [ -z "$fs" ]; then
+        fs="$fx"
+    fi
+
+    COUNT="$(echo $fs | wc -l)"
+
+    printf "Remove $COUNT files? [y/N] "
+    read ANS
+
+    if [ "$ANS" = "y" ] || [ "$ANS" = "Y" ]; then
+        echo "$fs" | while IFS= read -r file; do
+            rm -rf "$file"
+        done
+    fi
+}}
 
 # `rename` command.
 # Allows to edit filename in the editor ($EDITOR).
