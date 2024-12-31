@@ -393,7 +393,7 @@ SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Switch-Events
 */
 
 switch-events {
-    lid-close { spawn "gtklock" ;}
+    lid-close { spawn "sh" "-c" "pgrep gtklock || gtklock" ;}
 }
 
 /* ────────────────────────────────────────────────────────┤ 9. Miscellaneous │
