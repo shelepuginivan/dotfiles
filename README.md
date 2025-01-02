@@ -15,6 +15,10 @@ the most out of this repository, I recommend that you selectively copy parts of
 configurations and scripts that suit your needs, rather than cloning the entire
 setup.
 
+This branch is intended for **desktop** installations. This means that some
+features, such as battery alerts, are removed. For laptops, please refer to the
+[`main`](https://github.com/shelepuginivan/dotfiles/tree/main) branch.
+
 > [!IMPORTANT]
 > I use my own scripts and programs for some tasks, e.g. for switching themes.
 > Simply ignore these parts or replace them with your preferred tooling.
@@ -51,7 +55,6 @@ For your convenience &mdash; a table of directories.
 | Image viewer         | [imv](https://sr.ht/~exec64/imv)                                                                          |
 | Video player         | [mpv](https://github.com/mpv-player/mpv)                                                                  |
 | Music player         | [musikcube](https://github.com/clangen/musikcube)                                                         |
-| Lockscreen           | [gtklock](https://github.com/jovanlanik/gtklock)                                                          |
 | Power menu           | [powermenu](https://github.com/shelepuginivan/powermenu)
 | Fonts                | [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest)                       |
 
