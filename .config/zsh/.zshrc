@@ -38,16 +38,23 @@ setopt MENU_COMPLETE
 setopt EXTENDED_GLOB
 setopt INTERACTIVE_COMMENTS
 setopt PROMPT_SUBST
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
-zstyle ':completion:*' menu yes select
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 HISTSIZE=2000
 SAVEHIST=2000
 
 
-# ───────────────────────────────────────────────────────────────┤ 4. Sources │
+# ────────────────────────────────────────────────────────────┤ 4. Completion │
+autoload -Uz compinit
+compinit
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' menu yes select
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path "$XDG_CACHE_HOME/zsh/.zcompcache"
+
+
+# ───────────────────────────────────────────────────────────────┤ 5. Sources │
 source "$ZDOTDIR/alias.zsh"
 source "$ZDOTDIR/apps.zsh"
 source "$ZDOTDIR/functions.zsh"
@@ -55,7 +62,7 @@ source "$ZDOTDIR/plugins.zsh"
 source "$ZDOTDIR/prompt.zsh"
 
 
-# ───────────────────────────────────────────────────────────────┤ 5. Plugins │
+# ───────────────────────────────────────────────────────────────┤ 6. Plugins │
 plugin "MichaelAquilina/zsh-auto-notify"
 plugin "zsh-users/zsh-autosuggestions"
 plugin "zsh-users/zsh-syntax-highlighting"
