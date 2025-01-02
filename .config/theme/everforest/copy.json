@@ -13,10 +13,5 @@
         "$comment": "GTK colors definition",
         "src": "@/files/gtk.css",
         "dst": "$HOME/.cache/gtk.css"
-    },
-    {
-        "$comment": "gtklock background image",
-        "src": "@/files/lock.png",
-        "dst": "$HOME/.config/gtklock/background.png"
     }
 ]
