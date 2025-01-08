@@ -73,7 +73,6 @@
         "custom/notifications",
         "niri/language",
         "clock",
-        "battery",
         "custom/powermenu"
     ],
 
@@ -109,13 +108,6 @@
                 "today": "<span color='#eb363e'><b>{}</b></span>"
             }
         }
-    },
-
-    "battery": {
-        "format": "{icon} {capacity}%",
-        "full-at": 96,
-        "format-charging": "󰂄 {capacity}%",
-        "format-icons": ["󰂎", "󰁻", "󰁽", "󰁿", "󰂁", "󰁹"]
     },
 
     "custom/powermenu": {
