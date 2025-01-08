@@ -26,7 +26,6 @@ tooltip label {
     font-size: 12px;
 }
 
-#battery,
 #clock,
 #custom-actions,
 #custom-kernel,
@@ -44,7 +43,6 @@ tooltip label {
     background: @surface;
 }
 
-#battery,
 #clock,
 #custom-kernel,
 #disk,
