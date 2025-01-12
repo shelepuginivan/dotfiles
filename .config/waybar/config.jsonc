@@ -120,7 +120,7 @@
 
     "custom/powermenu": {
         "format": "󰤆",
-        "on-click": "$HOME/.config/wofi/scripts/menu-right",
+        "on-click": "powermenu",
         "tooltip": false
     }
 }

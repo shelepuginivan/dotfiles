@@ -205,8 +205,8 @@ binds {
     // Spawn left wofi menu (actions) on Super+O.
     Super+O { spawn "sh" "-c" "~/.config/wofi/scripts/theme-select" ;}
 
-    // Spawn right wofi menu (power) on Super+P.
-    Super+P { spawn "sh" "-c" "~/.config/wofi/scripts/menu-right" ;}
+    // Spawn powermenu on Super+P.
+    Super+P { spawn "powermenu" ;}
 
     // Spawn browser on Super+B.
     Super+B { spawn "firefox" ;}
