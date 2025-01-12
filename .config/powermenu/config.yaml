@@ -1,0 +1,17 @@
+hibernate:
+  enabled: false
+
+lock:
+  enabled: false
+
+poweroff:
+  order: 1
+
+reboot:
+  order: 2
+
+suspend:
+  order: 3
+
+logout:
+  order: 4
