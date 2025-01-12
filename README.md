@@ -52,6 +52,7 @@ For your convenience &mdash; a table of directories.
 | Video player         | [mpv](https://github.com/mpv-player/mpv)                                                                  |
 | Music player         | [musikcube](https://github.com/clangen/musikcube)                                                         |
 | Lockscreen           | [gtklock](https://github.com/jovanlanik/gtklock)                                                          |
+| Power menu           | [powermenu](https://github.com/shelepuginivan/powermenu)
 | Fonts                | [JetBrains Mono Nerd Font](https://github.com/ryanoasis/nerd-fonts/releases/latest)                       |
 
 ## Links
