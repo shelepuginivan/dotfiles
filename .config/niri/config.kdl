@@ -186,6 +186,26 @@ window-rule {
     block-out-from "screencast"
 }
 
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    border {
+        active-color "#ff656d"
+        inactive-color "#923f41"
+    }
+
+    shadow {
+        on
+        color "#923f4170"
+    }
+
+    tab-indicator {
+        active-color "#ff656d"
+        inactive-color "#923f41"
+    }
+}
+
 // pqiv overlay window.
 window-rule {
     match title="pqiv-overlay"
