@@ -186,6 +186,14 @@ window-rule {
     block-out-from "screencast"
 }
 
+// pqiv overlay window.
+window-rule {
+    match title="pqiv-overlay"
+
+    open-floating true
+    border { off ;}
+}
+
 
 /* ─────────────────────────────────────────────────────────────┤ 7. Keybinds │
 
