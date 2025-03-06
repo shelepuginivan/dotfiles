@@ -25,7 +25,7 @@ For your convenience &mdash; a table of directories.
 
 | Directory                                                                                                 | What is stored                                     |
 | --------------------------------------------------------------------------------------------------------- | -------------------------------------------------- |
-| [`.config`](https://github.com/shelepuginivan/dotfiles/tree/main/.config)                                 | Configuration filed                                |
+| [`.config`](https://github.com/shelepuginivan/dotfiles/tree/main/.config)                                 | Configuration files                                |
 | [`.local/bin`](https://github.com/shelepuginivan/dotfiles/tree/main/.local/bin)                           | Shell scripts and utilities                        |
 
 > [!TIP]
