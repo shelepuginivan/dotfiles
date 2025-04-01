@@ -153,6 +153,7 @@ window-rule {
     match title="Mozilla Firefox"
     match app-id="org.telegram.desktop"
     match app-id="org.inkscape.Inkscape"
+    match app-id="^gimp"
 
     open-maximized true
 }
@@ -213,7 +214,6 @@ window-rule {
     open-floating true
     border { off ;}
 }
-
 
 /* ─────────────────────────────────────────────────────────────┤ 7. Keybinds │
 
