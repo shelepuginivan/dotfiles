@@ -172,15 +172,6 @@ window-rule {
     open-fullscreen true
 }
 
-// Firefox dialog windows.
-window-rule {
-    match app-id="firefox"
-    exclude title="Mozilla Firefox"
-
-    default-column-width { proportion 0.3 ;}
-    border { off ;}
-}
-
 // Exclude sensitive apps from screencast.
 window-rule {
     match app-id="org.gnome.Evolution"
