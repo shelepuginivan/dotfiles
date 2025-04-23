@@ -145,12 +145,16 @@ window-rule {
 //   - OBS Studio
 //   - Evolution
 //   - Firefox
+//   - Chromium
 //   - Telegram Desktop
 //   - Inkscape
+//   - EasyTAG
 window-rule {
     match app-id="com.obsproject.Studio"
     match app-id="org.gnome.Evolution"
     match title="Mozilla Firefox"
+    match app-id="chromium"
+    match app-id="easytag"
     match app-id="org.telegram.desktop"
     match app-id="org.inkscape.Inkscape"
     match app-id="^gimp"
