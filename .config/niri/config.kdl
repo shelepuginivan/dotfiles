@@ -29,7 +29,7 @@ NOTE: dunst, waybar, swww-daemon, and swayidle
 */
 
 spawn-at-startup "evolution"
-spawn-at-startup "telegram-desktop"
+spawn-at-startup "Telegram"
 
 
 /* ───────────────────────────────────────────────────────┤ 3. Input settings │
