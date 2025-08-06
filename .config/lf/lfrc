@@ -40,10 +40,14 @@ cmd edit %lf -remote "send $id \$$EDITOR \$fx"
 cmd exec %printf "Execute $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && "$fx"
 
 # `open` command.
-# This command is called when current file is not a directory. You may want to
-# use either file extensions and/or mime types here. Below uses an editor for
-# text files and a file opener for the rest.
+# This command is called when current file is not a directory.
 cmd open &{{
+    # Specific extensions.
+    case "$f" in
+        *.rnote) rnote "$fx" && exit ;;
+    esac
+
+    # MIME-types.
     case $(file --mime-type -Lb $f) in
         text/*) lf -remote "send $id \$$EDITOR \$fx";;
         *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
