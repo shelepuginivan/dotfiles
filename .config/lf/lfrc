@@ -21,6 +21,11 @@ set previewer ~/.config/lf/preview
 # Writes file permissions.
 cmd chmod %printf "Mode: "; read MODE; chmod "$MODE" "$fx"
 
+# `copy_filename` command.
+# Copies name of the file to clipboard.
+# Under X11 session, change wl-copy with xclip command.
+cmd copy_filename &wl-copy "$fx"
+
 # `create` command.
 # Prompts to enter a file name and creates it. If the name ends with `/`, a
 # directory is created. Paths are supported.
@@ -125,6 +130,7 @@ map G
 # Basic actions.
 map a create
 map ch chmod
+map co copy_filename
 map e exec
 map gG bottom
 map p paste
