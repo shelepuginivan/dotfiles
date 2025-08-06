@@ -257,6 +257,9 @@ binds {
     // Spawn secrets (password manager) on Super+Shift+P.
     Super+Shift+P { spawn "secrets" ;}
 
+    // Spawn Better Control (control center) on Super+Shift+B.
+    Super+Shift+B { spawn "better-control" ;}
+
     // Spawn evolution (mail client) on Super+Shift+M.
     Super+Shift+M { spawn "evolution" ;}
 
