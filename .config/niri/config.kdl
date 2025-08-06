@@ -218,6 +218,19 @@ window-rule {
     default-column-width { fixed 320 ;}
 }
 
+// Better Control.
+window-rule {
+    match title="Better Control"
+    open-floating true
+    default-floating-position x=0 y=32 relative-to="top"
+}
+
+// Put swaybg inside the overview backdrop.
+layer-rule {
+    match namespace="^wallpaper$"
+    place-within-backdrop true
+}
+
 /* ─────────────────────────────────────────────────────────────┤ 7. Keybinds │
 
 SEE: https://github.com/YaLTeR/niri/wiki/Configuration:-Key-Bindings
