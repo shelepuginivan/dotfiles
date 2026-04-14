@@ -6,3 +6,4 @@
   loop:
     - lf
     - nvim
+    - zsh
