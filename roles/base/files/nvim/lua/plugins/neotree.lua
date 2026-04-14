@@ -1,5 +1,6 @@
 require("neo-tree").setup({
     close_if_last_window = true,
+    popup_border_style = "",
     default_component_configs = {
         git_status = {
             symbols = {
@@ -23,7 +24,6 @@ require("neo-tree").setup({
         {
             event = "file_open_requested",
             handler = function()
-                require('neo-tree.command')
                 require("neo-tree.command").execute({ action = "close" })
             end,
         },
@@ -38,5 +38,9 @@ require("neo-tree").setup({
     window = {
         position = "right",
         width = 40,
+
+        mappings = {
+            ["f"] = "noop",
+        },
     },
 })

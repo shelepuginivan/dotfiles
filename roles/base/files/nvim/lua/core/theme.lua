@@ -101,7 +101,10 @@ local highlights = {
     CmpItemKind = { fg = colors.yellow },
 
     -- NeoTree
-    NeoTreeGitModified = { fg = colors.yellow, bold = true },
+    NeoTreeFloatBorder = { fg = colors.gray_4, bg = colors.gray_1 },
+    NeoTreeFloatNormal = { bg = colors.gray_1 },
+    NeoTreeFloatTitle = { bg = colors.gray_1 },
+    NeoTreeGitModified = { fg = colors.yellow, bold = true, italic = true },
     NeoTreeGitUntracked = { fg = colors.orange, italic = true },
     NeoTreeGitDeleted = { fg = colors.red, bold = true },
 }
