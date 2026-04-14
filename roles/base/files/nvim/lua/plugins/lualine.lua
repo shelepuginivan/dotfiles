@@ -4,6 +4,7 @@ require("lualine").setup({
     options = {
         component_separators = "|",
         section_separators = { left = nil, right = nil },
+        globalstatus = true,
         theme = {
             normal = {
                 a = { bg = c.gray_2, fg = c.fg },
