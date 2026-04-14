@@ -1,0 +1,258 @@
+# Basic settings.
+set cursorpreviewfmt "\033[7;2m"
+set drawbox true
+set hidden true
+set icons true
+set ifs "\n"
+set ignorecase true
+set incsearch true
+set shell zsh
+set shellopts '-eu'
+set scrolloff 7
+
+# Previewer.
+set preview true
+set previewer ~/.config/lf/preview
+
+
+# Commands.
+
+# `chmod` command.
+# Writes file permissions.
+cmd chmod %printf "Mode: "; read MODE; chmod "$MODE" "$fx"
+
+# `copy_filename` command.
+# Copies full path of the file to clipboard.
+# Under X11 session, change wl-copy with xclip command.
+cmd copy_filename &wl-copy "$fx"
+
+# `copy_basename` command.
+# Copies filename to clipboard.
+# Under X11 session, change wl-copy with xclip command.
+cmd copy_basename &wl-copy "$(basename $fx)"
+
+# `copy_contents` command.
+# Copies file contents to clipboard.
+# Under X11 session, change wl-copy with xclip command.
+cmd copy_contents &wl-copy --trim-newline < "$fx"
+
+# `create` command.
+# Prompts to enter a file name and creates it. If the name ends with `/`, a
+# directory is created. Paths are supported.
+cmd create %printf "Name: "; read NAME; [[ "$NAME" == */ ]] && mkdir -p "$NAME" || touch "$NAME"
+
+# `edit` command.
+# Open file with $EDITOR.
+cmd edit %lf -remote "send $id \$$EDITOR \$fx"
+
+# `exec` command.
+# Asks to confirm and executes the file (must be an executable).
+cmd exec %printf "Execute $(basename $fx)? [y/n] "; read ANS; [ "$ANS" = "y" ] && "$fx"
+
+# `open` command.
+# This command is called when current file is not a directory.
+cmd open &{{
+    # Specific extensions.
+    case "$f" in
+        *.rnote) rnote "$fx" && exit ;;
+    esac
+
+    # MIME-types.
+    case $(file --mime-type -Lb $f) in
+        text/*) lf -remote "send $id \$$EDITOR \$fx";;
+        *) for f in $fx; do $OPENER $f > /dev/null 2> /dev/null & done;;
+    esac
+}}
+
+# `remove` command.
+# Asks to confirm and removes files. Supports multiple file selection.
+cmd remove ${{
+    if [ -z "$fs" ]; then
+        fs="$fx"
+    fi
+
+    COUNT="$(echo $fs | wc -l)"
+
+    PROMPT="Remove $COUNT files? [y/N] "
+
+    if [ "$COUNT" = 1 ]; then
+        PROMPT="Remove 1 file? [y/N] "
+    fi
+
+    printf "$PROMPT"
+    read ANS
+
+    if [ "$ANS" = "y" ] || [ "$ANS" = "Y" ]; then
+        echo "$fs" | while IFS= read -r file; do
+            rm -rf "$file"
+        done
+    fi
+}}
+
+# `rename` command.
+# Allows to edit filename in the editor ($EDITOR).
+cmd rename ${{
+    if [ -z "$fs" ]; then
+        fs="$fx"
+    fi
+
+    echo -e "$fs" | xargs -d '\n' basename -a | xargs -d '\n' vimv
+
+    lf -remote "send $id load"
+    lf -remote "send $id unselect"
+}}
+
+# `swap` command.
+# Swaps two files.
+cmd swap ${{
+    SELECTED="$(echo -e "$fs" | wc -l)"
+    if [ $SELECTED -ne 2 ]; then
+        echo "Error: expected 2 files to be selected (currently $SELECTED)"
+        read
+        exit
+    fi
+
+    # Store names of selected files in 2 variables.
+    LHS_FILE="${fs%$'\n'*}"
+    RHS_FILE="${fs#*$'\n'}"
+
+    TMP_FILE="/tmp/$(uuidgen)"
+
+    mv $LHS_FILE $TMP_FILE
+    mv $RHS_FILE $LHS_FILE
+    mv $TMP_FILE $RHS_FILE
+
+    rm -rf $TMP_FILE
+    
+    lf -remote "send $id reload"
+}}
+
+cmd warp_save %{{
+    LF_WARP_CACHE="$HOME/.cache/lf_warp"
+
+    echo "$PWD" >> "$LF_WARP_CACHE"
+    sort -u "$LF_WARP_CACHE" -o "$LF_WARP_CACHE"
+    echo "Added $PWD to marks"
+}}
+
+cmd warp_goto ${{
+    # TODO: sort based on freakuency
+    WARP_SELECTION="$(cat "$HOME/.cache/lf_warp" | fzf)"
+    lf -remote "send $id cd \"$WARP_SELECTION\""
+}}
+
+cmd warp_edit ${{
+    $EDITOR "$HOME/.cache/lf_warp"
+}}
+
+#
+#cmd goto_target ${{
+#    # If mark does not exit, this command is a no-op.
+#    if [ ! -n "$HOME/.cache/lf_q_mark" ]; then
+#
+
+#    lf -remote "send $id cd .."
+#        exit
+#    fi
+#
+#    cd "$()"
+#
+#}}
+
+
+# `trash` command.
+# Puts file in trash using trash-cli.
+cmd trash %trash-put "$fx"
+
+# Archive commands.
+
+# `extract` command.
+# Extracts the archive.
+cmd extract ${{
+    set -f
+    case $f in
+        *.tar.bz|*.tar.bz2|*.tbz|*.tbz2) tar xjvf $f;;
+        *.tar.gz|*.tgz) tar xzvf $f;;
+        *.tar.xz|*.txz) tar xJvf $f;;
+        *.zip) unzip $f;;
+    esac
+}}
+
+# `tar` command.
+# Creates a new `.tar` archive.
+cmd tar ${{
+    tar cvf "$fx.tar" "$(basename $fx)"
+}}
+
+# `tar_gz` command.
+# Creates a new `.tar.gz` archive.
+cmd tar_gz ${{
+    tar czvf "$fx.tar.gz" "$(basename $fx)"
+}}
+
+# `tar_xz` command.
+# Creates a new `.tar.xz` archive.
+cmd tar_xz ${{
+    tar cJvf "$fx.tar.xz" "$(basename $fx)"
+}}
+
+# `zip` command.
+# Creates a new `.zip` archive.
+cmd zip ${{
+    zip -rqv "$fx.zip" "$(basename $fx)"
+}}
+
+
+# Bindings
+
+# Unmap default keys.
+map c
+map d
+map m
+
+# Basic actions.
+map a create
+map ch chmod
+map cb copy_basename
+map co copy_filename
+map cc copy_contents
+map e exec
+map p paste
+map r rename
+map v edit
+map x cut
+map y copy
+map sw swap
+map <enter> shell
+map <esc> clear
+
+# Remove actions.
+map dt trash
+map dd remove
+
+# Archive actions.
+map Xe extract
+map Xt tar
+map Xgz tar_gz
+map Xxz tar_xz
+map Xz zip
+
+# Filesystem navigation.
+map gc cd ~/Code
+map gC cd ~/.config
+map gd cd ~/Downloads
+map gD cd ~/Documents
+map gh cd ~
+map gi cd ~/Pictures
+map gm cd ~/Music
+map gp cd ~/Pictures
+map gr cd ~/Videos/Records
+map gR cd /
+map gs cd ~/Pictures/Screenshots
+map gS cd ~/.local/bin
+map gv cd ~/Videos
+
+# Warp.
+map t warp_save
+map gt warp_goto
+map We warp_edit

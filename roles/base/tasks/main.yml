@@ -1,3 +1,6 @@
 ---
 - name: Install packages
   ansible.builtin.include_tasks: ./packages.yml
+
+- name: Copy configuration files
+  ansible.builtin.include_tasks: ./configure.yml

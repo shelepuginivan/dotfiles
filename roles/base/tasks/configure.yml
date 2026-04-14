@@ -1,0 +1,7 @@
+---
+- name: Copy configuration files
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ xdg_config_home }}"
+  loop:
+    - lf

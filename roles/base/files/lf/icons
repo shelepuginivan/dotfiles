@@ -1,0 +1,315 @@
+# vim:ft=conf
+
+# file types (with matching order)
+ln             # LINK
+or             # ORPHAN
+tw      t       # STICKY_OTHER_WRITABLE
+ow             # OTHER_WRITABLE
+st      t       # STICKY
+di             # DIR
+pi      p       # FIFO
+so      s       # SOCK
+bd      b       # BLK
+cd      c       # CHR
+su      u       # SETUID
+sg      g       # SETGID
+# ex             # EXEC
+fi             # FILE
+
+# Containers.
+*compose.yml           
+*compose.yaml          
+*docker-compose.yml    
+*docker-compose.yaml   
+*Dockerfile            
+*Containerfile         
+
+# Development.
+*.styl          
+*.sass          
+*.scss          
+*.htm           
+*.html          
+*.slim          
+*.haml          
+*.ejs           
+*.css           
+*.less          
+*.md            
+*.mdx           
+*.markdown      
+*.rmd           
+*.json          
+*.webmanifest   
+*.js            
+*.mjs           
+*.jsx           
+*.rb            
+*.gemspec       
+*.rake          
+*.php           
+*.py            
+*.pyc           
+*.pyo           
+*.pyd           
+*.coffee        
+*.mustache      
+*.hbs           
+*.conf          
+*.ini           
+*.yml           
+*.yaml          
+*.toml          
+*.bat           
+*.mk            
+*.twig          
+*.cpp           
+*.c++           
+*.cxx           
+*.cc            
+*.cp            
+*.c             
+*.cs            󰌛
+*.h             
+*.hh            
+*.hpp           
+*.hxx           
+*.hs            
+*.lhs           
+*.nix           
+*.lua           
+*.java          
+*.sh            
+*.fish          
+*.bash          
+*.zsh           
+*.ksh           
+*.csh           
+*.awk           
+*.ps1           
+*.ml            λ
+*.mli           λ
+*.diff          
+*.db            
+*.sql           
+*.dump          
+*.clj           
+*.cljc          
+*.cljs          
+*.edn           
+*.scala         
+*.go            
+*.dart          
+*.xul           
+*.sln           
+*.suo           
+*.pl            
+*.pm            
+*.t             
+*.rss           
+'*.f#'          
+*.fsscript      
+*.fsx           
+*.fs            
+*.fsi           
+*.rs            
+*.rlib          
+*.d             
+*.erl           
+*.hrl           
+*.ex            
+*.exs           
+*.eex           
+*.leex          
+*.heex          
+*.vim           
+*.ai            
+*.psd           
+*.psb           
+*.ts            
+*.tsx           
+*.jl            
+*.pp            
+*.vue           
+*.elm           
+*.swift         
+*.xcplayground  
+*.tex           
+*.r             󰟔
+*.rproj         󰗆
+*.sol           󰡪
+*.pem           
+
+# Editors.
+*.vscode               󰨞
+*.idea                 
+*.gvimrc               
+*.vimrc                
+*_gvimrc               
+*_vimrc                
+
+# Git.
+*.git                  
+*.gitattributes        
+*.gitconfig            
+*.gitignore            
+*.gitmodules           
+*.github               
+*.gitlab-ci.yml        
+
+# Go.
+*go.mod                󰟓
+*go.sum                󰟓
+
+# JavaScript.
+*node_modules          
+*react.jsx             
+*gruntfile.coffee      
+*gruntfile.js          
+*gruntfile.ls          
+*gulpfile.coffee       
+*gulpfile.js           
+*gulpfile.ls           
+
+# Make.
+*cmakelists.txt        
+CMakeLists.txt         
+*makefile              
+*Makefile              
+
+# Packages.
+*PKGBUILD              
+
+# Ruby.
+*config.ru             
+*gemfile               
+*rakefile              
+
+# Shells.
+*.bashprofile          
+*.bashrc               
+*.zprofile             
+*.zshrc                
+*.zshenv               
+
+# Xorg.
+*.xauthority           
+*.xprofile             
+*.xresources           
+
+# Uncategorized common file names.
+*.ds_store             
+*dropbox               
+*favicon.ico           
+*license               
+*mix.lock              
+*procfile              
+*robots.txt            󰚩
+
+# Archives or compressed.
+*.tar   
+*.tgz   
+*.arc   
+*.arj   
+*.taz   
+*.lha   
+*.lz4   
+*.lzh   
+*.lzma  
+*.tlz   
+*.txz   
+*.tzo   
+*.t7z   
+*.zip   
+*.z     
+*.dz    
+*.gz    
+*.lrz   
+*.lz    
+*.lzo   
+*.xz    
+*.zst   
+*.tzst  
+*.bz2   
+*.bz    
+*.tbz   
+*.tbz2  
+*.tz    
+*.jar   
+*.war   
+*.ear   
+*.sar   
+*.rar   
+*.alz   
+*.ace   
+*.zoo   
+*.cpio  
+*.7z    
+*.rz    
+*.cab   
+*.wim   
+*.swm   
+*.dwm   
+*.esd   
+*.deb   
+*.rpm   
+*.jar   
+*.iso   
+
+# Image formats.
+*.avif  
+*.bmp   
+*.gif   
+*.jpg   
+*.jpeg  
+*.mjpg  
+*.mjpeg 
+*.png   
+*.tif   
+*.tiff  
+*.webp  
+*.svg   󰜡
+*.svgz  󰜡
+*.xcf   
+
+# Audio formats.
+*.aac   
+*.au    
+*.flac  
+*.m4a   
+*.mid   
+*.midi  
+*.mka   
+*.mp3   
+*.mpc   
+*.ogg   
+*.ra    
+*.wav   
+*.oga   
+*.opus  
+*.spx   
+*.xspf  
+
+# Video formats.
+*.avi   
+*.mkv   
+*.mov   
+*.mp4   
+*.mpeg  
+*.ogv   
+*.webm  
+*.3gp   
+*.3g2   
+
+# Gaming on Linux.
+*.exe   
+*.dll   
+*.dat   
+*.win   
+
+# Other formats.
+*.md       
+*.pdf      
+*.torrent  
+*.txt      󰦪
+*.typ      󰗴
