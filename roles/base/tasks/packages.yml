@@ -1,0 +1,35 @@
+---
+- name: Install general packages (Arch Linux)
+  community.general.pacman:
+    name:
+      - base-devel
+      - bat
+      - btop
+      - eza
+      - fzf
+      - less
+      - lf
+      - nvim
+      - typos
+      - unzip
+      - zip
+      - zsh
+  become: true
+  when: ansible_facts["os_family"] == "Archlinux"
+
+- name: Install development packages (Arch Linux)
+  community.general.pacman:
+    name:
+      - cmake
+      - gdb
+      - git
+      - go
+      - gopls
+      - just
+      - lua-language-server
+      - rustup
+      - tinymist
+      - typescript-language-server
+      - typst
+  become: true
+  when: ansible_facts["os_family"] == "Archlinux"
