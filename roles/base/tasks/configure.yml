@@ -5,3 +5,4 @@
     dest: "{{ xdg_config_home }}"
   loop:
     - lf
+    - nvim
