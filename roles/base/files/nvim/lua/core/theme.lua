@@ -8,6 +8,7 @@ local colors = {
     gray_2 = "#302e2e",
     gray_3 = "#494747",
     gray_4 = "#727171",
+    gray_5 = "#999898",
 
     blue = "#7fbbb3",
     green = "#a7c080",
@@ -39,8 +40,18 @@ local highlights = {
     Constant = { fg = colors.purple },
 
     Directory = { fg = colors.green, bold = true },
+    MoreMsg = { fg = colors.blue },
+    Question = { fg = colors.yellow, bold = true },
 
     TSField = { fg = colors.blue },
+
+    -- git
+    gitcommitBranch = { fg = colors.purple },
+    gitcommitHeader = { fg = colors.fg },
+    diffLine = { fg = colors.orange, bold = true },
+    diffRemoved = { fg = colors.red },
+    diffAdded = { fg = colors.green },
+    diffIndexLine = { fg = colors.orange, bold = true },
 
     -- Go
     goFormatSpecifier = { fg = colors.orange },
@@ -49,12 +60,12 @@ local highlights = {
 
     -- Markup
     ["@markup.list"] = { fg = colors.red },
+    ["@markup.raw"] = { fg = colors.gray_5 },
     ["@markup.heading.1.markdown"] = { fg = colors.green, bold = true },
     ["@markup.heading.2.markdown"] = { fg = colors.green, bold = true },
     ["@markup.heading.3.markdown"] = { fg = colors.yellow, bold = true },
     ["@markup.heading.4.markdown"] = { fg = colors.yellow, bold = true },
     ["@punctuation.special.markdown"] = { fg = colors.red },
-
     ["@string.escape"] = { fg = colors.orange },
 
     -- Configuration
