@@ -1,0 +1,6 @@
+---
+- name: Create .zshenv in user home
+  ansible.builtin.copy:
+    dest: "{{ [user_home, '.zshenv'] | path_join }}"
+    content: |
+      source "$HOME/.config/zsh/.zshrc"

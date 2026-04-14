@@ -4,3 +4,8 @@
 
 - name: Copy configuration files
   ansible.builtin.include_tasks: ./configure.yml
+
+- name: Finish setup of installed packages
+  ansible.builtin.include_tasks: "./{{ item }}.yml"
+  loop:
+    - zsh
