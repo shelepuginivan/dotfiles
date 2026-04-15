@@ -1,0 +1,16 @@
+---
+# Paths.
+user_home: "{{ lookup('env', 'HOME') }}"
+xdg_config_home: "{{ lookup('env', 'XDG_CONFIG_HOME') or [user_home, '.config'] | path_join }}"
+
+# Which configurations to copy to $XDG_CONFIG_HOME.
+configured_apps: []
+
+# Which packages to install. Currently the names are for Arch Linux only.
+packages:
+  general:
+    - alacritty
+  development:
+    - gtk4-layer-shell
+  aur:
+    - zen-browser-bin
