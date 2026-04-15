@@ -30,6 +30,9 @@ packages:
     - wget
     - zip
     - zsh
+    - zsh-autosuggestions
+    - zsh-history-substring-search
+    - zsh-syntax-highlighting
   development:
     - ansible
     - ccls

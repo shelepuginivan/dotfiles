@@ -1,6 +1,7 @@
 #!/usr/bin/env zsh
 
-# ────────────────────────────────────────────────────────────────┤ 1. Common │
+
+# ────────────────────────────────────────────────────────────────┤ 1. General │
 alias cat="bat"
 alias clip="wl-copy"
 alias cls="clear"
@@ -21,7 +22,8 @@ alias yarn="yarn --use-yarnrc $XDG_CONFIG_HOME/yarn/config"
 alias ytdl="yt-dlp"
 alias zshconfig="$EDITOR $ZDOTDIR"
 
-# ────────────────────────────────────────────────────────────┤ 2. Filesystem │
+
+# ─────────────────────────────────────────────────────────────┤ 2. Filesystem │
 alias cdc="cd $HOME/Code"
 alias cddoc="cd $HOME/Documents"
 alias cdd="cd $HOME/Downloads"
@@ -32,7 +34,8 @@ alias cdv="cd $HOME/Videos"
 alias cdr="cd $HOME/Videos/Records"
 alias cdconf="cd $XDG_CONFIG_HOME"
 
-# ───────────────────────────────────────────────────────────────────┤ 3. git │
+
+# ────────────────────────────────────────────────────────────────────┤ 3. git │
 alias g="git"
 alias ga="git add"
 alias gb="git branch"
@@ -51,12 +54,3 @@ alias grm="git rm -r"
 alias grh="git reset"
 alias grs="git restore"
 alias gst="git status"
-
-# ──────────────────────────────────────────────────────────────┤ 4. Dotfiles │
-alias dotfiles="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias dots="git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
-alias dfa="git --git-dir=$HOME/.dotfiles --work-tree=$HOME add"
-alias dfst="git --git-dir=$HOME/.dotfiles --work-tree=$HOME status"
-alias dfc="git --git-dir=$HOME/.dotfiles --work-tree=$HOME commit -v"
-alias dfd="git --git-dir=$HOME/.dotfiles --work-tree=$HOME diff"
-alias dfp="git --git-dir=$HOME/.dotfiles --work-tree=$HOME push"
