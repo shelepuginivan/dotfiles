@@ -10,3 +10,11 @@
     name: "{{ packages.development }}"
   become: true
   when: ansible_facts["os_family"] == "Archlinux"
+
+- name: Install AUR packages (Arch Linux)
+  ansible.builtin.include_role:
+    name: _common
+    tasks_from: aur
+  vars:
+    pkgs: "{{ packages.aur }}"
+  when: ansible_facts["os_family"] == "Archlinux"

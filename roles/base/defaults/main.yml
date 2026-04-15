@@ -36,3 +36,6 @@ packages:
     - tinymist
     - typescript-language-server
     - typst
+  aur:
+    - paru
+    - vimv
