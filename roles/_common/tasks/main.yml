@@ -1,0 +1,5 @@
+---
+- name: Validate role invocation
+  ansible.builtin.fail:
+    msg: This role must not be invoked directly. Use `ansible.builtin.include_role` instead.
+  when: dispatcher_var is not defined
