@@ -1,0 +1,32 @@
+---
+- name: "Check whether {{ package.Name }} is installed"
+  ansible.builtin.command: "pacman -Qq {{ package.Name }}"
+  register: package_query
+  changed_when: false
+  failed_when: false
+
+- name: "Create temporary directory for {{ package.Name }} building"
+  ansible.builtin.tempfile:
+    state: directory
+    suffix: "{{ package.Name }}.build"
+  register: package_builddir
+  when: package_query.rc != 0
+
+- name: "Download {{ package.Name }} sources"
+  ansible.builtin.unarchive:
+    src: "https://aur.archlinux.org{{ package.URLPath }}"
+    dest: "{{ package_builddir.path }}"
+    remote_src: yes
+  when: package_query.rc != 0
+
+- name: "Build {{ package.Name }}"
+  ansible.builtin.command:
+    cmd: makepkg --noconfirm --noprogressbar -mfs
+    chdir: "{{ package_builddir.path }}/{{ package.Name }}"
+  when: package_query.rc != 0
+
+- name: "Install {{ package.Name }}"
+  community.general.pacman:
+    name: "{{ package_builddir.path }}/{{ package.Name }}/{{ package.Name }}-{{ package.Version }}-{{ ansible_facts.architecture }}.pkg.tar.zst"
+  when: package_query.rc != 0
+  become: true

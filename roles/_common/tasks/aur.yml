@@ -1,0 +1,32 @@
+# Resolve, download, build, and install packages from Arch User Resository.
+#
+# Example usage:
+#
+#   - name: Install AUR packages (Arch Linux)
+#     ansible.builtin.include_role:
+#       name: _common
+#       tasks_from: aur
+#     vars:
+#       pkgs:
+#         - paru
+#         - vimv
+#     when: ansible_facts["os_family"] == "Archlinux"
+
+---
+# See https://wiki.archlinux.org/title/Aurweb_RPC_interface#info
+- name: Retrieve package information from AUR
+  ansible.builtin.uri:
+    url: >
+      https://aur.archlinux.org/rpc/v5/info?
+      {%- for p in pkgs %}arg[]={{ p }}{{ '&' if not loop.last else '' }}{% endfor %}
+    body_format: json
+  register: package_info
+  when: "packages.aur | length > 0"
+
+- name: Download, build, and install resolved packages
+  ansible.builtin.include_tasks: ./aur_single.yml
+  when: "packages.aur | length > 0"
+  loop: "{{ package_info.json.results }}"
+  loop_control:
+    loop_var: package
+    label: "{{ package.Name }} {{ package.Version }}"
