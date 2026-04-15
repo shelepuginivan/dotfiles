@@ -11,6 +11,14 @@ configured_apps:
 packages:
   general:
     - alacritty
+    - imv
+    - mpv
+    - noto-fonts-cjk
+    - noto-fonts-emoji
+    - noto-fonts-extra
+    - qalculate-gtk
+    - ttf-jetbrains-mono
+    - ttf-jetbrains-mono-nerd
   development:
     - gtk4-layer-shell
   aur:

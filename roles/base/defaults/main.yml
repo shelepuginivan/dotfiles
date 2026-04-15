@@ -26,6 +26,7 @@ packages:
     - perl-image-exiftool
     - typos
     - unzip
+    - wget
     - zip
     - zsh
   development:
