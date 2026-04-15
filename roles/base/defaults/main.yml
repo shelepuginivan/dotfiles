@@ -8,3 +8,31 @@ configured_apps:
   - lf
   - nvim
   - zsh
+
+# Which packages to install. Currently the names are for Arch Linux only.
+packages:
+  general:
+    - base-devel
+    - bat
+    - btop
+    - eza
+    - fzf
+    - less
+    - lf
+    - nvim
+    - typos
+    - unzip
+    - zip
+    - zsh
+  development:
+    - cmake
+    - gdb
+    - git
+    - go
+    - gopls
+    - just
+    - lua-language-server
+    - rustup
+    - tinymist
+    - typescript-language-server
+    - typst
