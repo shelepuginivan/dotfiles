@@ -1,0 +1,40 @@
+[general]
+import = [
+    "~/.config/alacritty/gruvbox.toml"
+]
+
+[font]
+size = 12
+
+[font.bold]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold"
+
+[font.bold_italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Bold Italic"
+
+[font.italic]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Italic"
+
+[font.normal]
+family = "JetBrainsMono Nerd Font Mono"
+style = "Regular"
+
+[terminal]
+shell = "/bin/zsh"
+
+[window]
+decorations = "Full"
+dynamic_padding = true
+
+[window.padding]
+x = 0
+y = 0
+
+# Delete line.
+[[keyboard.bindings]]
+chars = "\u0015"
+key = "Back"
+mods = "Super"
