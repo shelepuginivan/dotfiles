@@ -13,7 +13,6 @@ bd      b       # BLK
 cd      c       # CHR
 su      u       # SETUID
 sg      g       # SETGID
-# ex             # EXEC
 fi             # FILE
 
 # Containers.
