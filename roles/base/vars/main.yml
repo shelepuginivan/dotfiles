@@ -1,0 +1,4 @@
+---
+# Apps that require additional setup.
+custom_setup_apps:
+  - zsh

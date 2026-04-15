@@ -7,5 +7,4 @@
 
 - name: Finish setup of installed packages
   ansible.builtin.include_tasks: "./{{ item }}.yml"
-  loop:
-    - zsh
+  loop: "{{ custom_setup_apps | intersect(configured_apps) }}"

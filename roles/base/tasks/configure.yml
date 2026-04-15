@@ -3,7 +3,4 @@
   ansible.builtin.copy:
     src: "{{ item }}"
     dest: "{{ xdg_config_home }}"
-  loop:
-    - lf
-    - nvim
-    - zsh
+  loop: "{{ configured_apps }}"
