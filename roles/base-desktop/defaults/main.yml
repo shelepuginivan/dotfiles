@@ -6,6 +6,7 @@ xdg_config_home: "{{ lookup('env', 'XDG_CONFIG_HOME') or [user_home, '.config'] 
 # Which configurations to copy to $XDG_CONFIG_HOME.
 configured_apps:
   - alacritty
+  - mpv
 
 # Which packages to install. Currently the names are for Arch Linux only.
 packages:
