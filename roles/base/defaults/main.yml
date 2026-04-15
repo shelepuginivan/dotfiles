@@ -16,15 +16,21 @@ packages:
     - bat
     - btop
     - eza
+    - ffmpeg
     - fzf
+    - imagemagick
     - less
     - lf
     - nvim
+    - pdftk
+    - perl-image-exiftool
     - typos
     - unzip
     - zip
     - zsh
   development:
+    - ansible
+    - ccls
     - cmake
     - gdb
     - git
@@ -32,7 +38,12 @@ packages:
     - gopls
     - just
     - lua-language-server
+    - podman
+    - podman-compose
+    - pyright
+    - rclone
     - rustup
+    - stylua
     - tinymist
     - typescript-language-server
     - typst
