@@ -1,0 +1,3 @@
+---
+- name: Build bat theme cache
+  ansible.builtin.command: bat cache --build
