@@ -3,7 +3,10 @@
   ansible.builtin.include_tasks: ./packages.yml
 
 - name: Copy configuration files
-  ansible.builtin.include_tasks: ./configure.yml
+  ansible.builtin.copy:
+    src: "{{ item }}"
+    dest: "{{ xdg_config_home }}"
+  loop: "{{ configured_apps }}"
 
 - name: Finish setup of installed packages
   ansible.builtin.include_tasks: "./{{ item }}.yml"
