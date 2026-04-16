@@ -10,7 +10,11 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # ───────────────────────────────────────────────────────────┤ 2. Applications │
 export ANSIBLE_HOME="$XDG_CONFIG_HOME/ansible"
+export ANSIBLE_CONFIG="$XDG_CONFIG_HOME/ansible.cfg"
 export ANSIBLE_GALAXY_CACHE_DIR="$XDG_CACHE_HOME/ansible/galaxy_cache"
+export ANSIBLE_LOCAL_TEMP="$XDG_CACHE_HOME/ansible/tmp"
+export ANSIBLE_SSH_CONTROL_PATH_DIR="$XDG_CACHE_HOME/ansible/cp"
+export ANSIBLE_ASYNC_DIR="$XDG_CACHE_HOME/ansible_async"
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export GOPATH="$XDG_DATA_HOME/go"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
