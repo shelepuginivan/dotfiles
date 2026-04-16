@@ -1,5 +1,4 @@
 vim.pack.add({
-    "https://github.com/xiyaowong/transparent.nvim",
     "https://github.com/nvim-lua/plenary.nvim",
     "https://github.com/nvim-tree/nvim-web-devicons",
     "https://github.com/MunifTanjim/nui.nvim",
@@ -20,5 +19,4 @@ vim.pack.add({
     "https://github.com/echasnovski/mini.ai",
     "https://github.com/pocco81/auto-save.nvim",
     "https://github.com/brenoprata10/nvim-highlight-colors",
-    "https://github.com/windwp/nvim-autopairs",
 })

@@ -1,4 +1,4 @@
-local colors = {
+local c = {
     fg = "#d9d8d8",
     bg = "#0f0d0c",
     none = "NONE",
@@ -19,94 +19,104 @@ local colors = {
 }
 
 vim.o.termguicolors = true
-vim.g.transparent_enabled = true
 
 local highlights = {
-    Visual = { bg = colors.gray_3 },
-    Pmenu = { bg = colors.gray_1 },
-    PmenuSel = { bg = colors.gray_3 },
+    Normal = { bg = c.none, fg = c.fg },
+    NormalNC = { bg = c.none },
+    Comment = { bg = c.none, fg = c.gray_4, italic = true },
+    Constant = { bg = c.none, fg = c.purple },
+    Special = { bg = c.none, fg = c.fg },
+    Identifier = { bg = c.none, fg = c.fg },
+    Statement = { bg = c.none, fg = c.red },
+    PreProc = { bg = c.none, fg = c.red },
+    Type = { bg = c.none, fg = c.yellow },
+    Underlined = { bg = c.none, underline = true },
+    Todo = { bg = c.none, bold = true },
+    String = { bg = c.none, fg = c.green },
+    Function = { bg = c.none, fg = c.yellow },
+    Operator = { bg = c.none },
+    LineNr = { bg = c.none, fg = c.gray_4 },
+    NonText = { bg = c.none, fg = c.gray_4 },
+    SignColumn = { bg = c.none, fg = c.gray_4 },
+    CursorLine = { bg = c.none },
+    CursorLineNr = { bg = c.none, bold = true },
 
-    Comment = { fg = colors.gray_4, italic = true },
-    Identifier = { fg = colors.fg },
-    Keyword = { fg = colors.red },
-    Statement = { fg = colors.red },
-    String = { fg = colors.green },
-    Special = { fg = colors.fg },
-    Boolean = { fg = colors.purple },
-    Number = { fg = colors.purple },
-    Function = { fg = colors.yellow },
-    PreProc = { fg = colors.red },
-    Type = { fg = colors.yellow },
-    Constant = { fg = colors.purple },
+    Visual = { bg = c.gray_3 },
+    Pmenu = { bg = c.gray_1 },
+    PmenuSel = { bg = c.gray_3 },
 
-    Directory = { fg = colors.green, bold = true },
-    MoreMsg = { fg = colors.blue },
-    Question = { fg = colors.yellow, bold = true },
+    Keyword = { fg = c.red },
+    Boolean = { fg = c.purple },
+    Number = { fg = c.purple },
 
-    TSField = { fg = colors.blue },
+    Directory = { fg = c.green, bold = true },
+    MoreMsg = { fg = c.blue },
+    Question = { fg = c.yellow, bold = true },
+
+    TSField = { fg = c.blue },
 
     -- git
-    gitcommitBranch = { fg = colors.purple },
-    gitcommitHeader = { fg = colors.fg },
-    diffLine = { fg = colors.orange, bold = true },
-    diffRemoved = { fg = colors.red },
-    diffAdded = { fg = colors.green },
-    diffIndexLine = { fg = colors.orange, bold = true },
+    gitcommitBranch = { fg = c.purple },
+    gitcommitHeader = { fg = c.fg },
+    diffLine = { fg = c.orange, bold = true },
+    diffRemoved = { fg = c.red },
+    diffAdded = { fg = c.green },
+    diffIndexLine = { fg = c.orange, bold = true },
 
     -- Go
-    goFormatSpecifier = { fg = colors.orange },
-    goBuiltins = { fg = colors.orange },
-    goEscapeC = { fg = colors.orange },
+    goFormatSpecifier = { fg = c.orange },
+    goBuiltins = { fg = c.orange },
+    goEscapeC = { fg = c.orange },
 
     -- Markup
-    ["@markup.list"] = { fg = colors.red },
-    ["@markup.raw"] = { fg = colors.gray_5 },
-    ["@markup.heading.1.markdown"] = { fg = colors.green, bold = true },
-    ["@markup.heading.2.markdown"] = { fg = colors.green, bold = true },
-    ["@markup.heading.3.markdown"] = { fg = colors.yellow, bold = true },
-    ["@markup.heading.4.markdown"] = { fg = colors.yellow, bold = true },
-    ["@punctuation.special.markdown"] = { fg = colors.red },
-    ["@string.escape"] = { fg = colors.orange },
+    ["@markup.list"] = { fg = c.red },
+    ["@markup.raw"] = { fg = c.gray_5 },
+    ["@markup.heading.1.markdown"] = { fg = c.green, bold = true },
+    ["@markup.heading.2.markdown"] = { fg = c.green, bold = true },
+    ["@markup.heading.3.markdown"] = { fg = c.yellow, bold = true },
+    ["@markup.heading.4.markdown"] = { fg = c.yellow, bold = true },
+    ["@punctuation.special.markdown"] = { fg = c.red },
+    ["@string.escape"] = { fg = c.orange },
 
     -- Configuration
-    tomlTable = { fg = colors.yellow, bold = true },
-    tomlTableArray = { fg = colors.yellow, bold = true },
-    yamlBlockString = { fg = colors.green },
-    yamlBlockScalarHeader = { fg = colors.red },
+    tomlTable = { fg = c.yellow, bold = true },
+    tomlTableArray = { fg = c.yellow, bold = true },
+    yamlBlockString = { fg = c.green },
+    yamlBlockScalarHeader = { fg = c.red },
 
     -- Telescope
-    TelescopeNormal = { bg = colors.gray_1 },
-    TelescopeSelection = { bg = colors.none, fg = colors.red },
-    TelescopeMatching = { fg = colors.yellow },
-    TelescopeResultsBorder = { bg = colors.gray_1, fg = colors.gray_1 },
-    TelescopeResultsTitle = { bg = colors.red, fg = colors.gray_1, bold = true },
-    TelescopePromptNormal = { bg = colors.gray_2 },
-    TelescopePromptBorder = { bg = colors.gray_2, fg = colors.gray_2 },
-    TelescopePromptTitle = { bg = colors.orange, fg = colors.gray_1, bold = true },
-    TelescopePreviewNormal = { bg = colors.gray_0 },
-    TelescopePreviewBorder = { bg = colors.gray_0, fg = colors.gray_0 },
-    TelescopePreviewTitle = { bg = colors.green, fg = colors.gray_1, bold = true },
-    TelescopePromptCounter = { fg = colors.gray_4 },
+    TelescopeNormal = { bg = c.gray_1 },
+    TelescopeSelection = { bg = c.none, fg = c.red },
+    TelescopeMatching = { fg = c.yellow },
+    TelescopeResultsBorder = { bg = c.gray_1, fg = c.gray_1 },
+    TelescopeResultsTitle = { bg = c.red, fg = c.gray_1, bold = true },
+    TelescopePromptNormal = { bg = c.gray_2 },
+    TelescopePromptBorder = { bg = c.gray_2, fg = c.gray_2 },
+    TelescopePromptTitle = { bg = c.orange, fg = c.gray_1, bold = true },
+    TelescopePreviewNormal = { bg = c.gray_0 },
+    TelescopePreviewBorder = { bg = c.gray_0, fg = c.gray_0 },
+    TelescopePreviewTitle = { bg = c.green, fg = c.gray_1, bold = true },
+    TelescopePromptCounter = { fg = c.gray_4 },
 
     -- LSP diagnostics
-    DiagnosticError = { fg = colors.red },
-    DiagnosticWarn = { fg = colors.yellow },
-    DiagnosticInfo = { fg = colors.blue },
-    DiagnosticHint = { fg = colors.gray_4 },
+    DiagnosticError = { fg = c.red },
+    DiagnosticWarn = { fg = c.yellow },
+    DiagnosticInfo = { fg = c.blue },
+    DiagnosticHint = { fg = c.gray_4 },
 
     -- nvim-cmp
     CmpItemAbbrDeprecated = { fg = "#808080", strikethrough = true },
-    CmpItemAbbrMatch = { fg = colors.red },
-    CmpItemAbbrMatchFuzzy = { fg = colors.orange },
-    CmpItemKind = { fg = colors.yellow },
+    CmpItemAbbrMatch = { fg = c.red },
+    CmpItemAbbrMatchFuzzy = { fg = c.orange },
+    CmpItemKind = { fg = c.yellow },
 
     -- NeoTree
-    NeoTreeFloatBorder = { fg = colors.gray_4, bg = colors.gray_1 },
-    NeoTreeFloatNormal = { bg = colors.gray_1 },
-    NeoTreeFloatTitle = { bg = colors.gray_1 },
-    NeoTreeGitModified = { fg = colors.yellow, bold = true, italic = true },
-    NeoTreeGitUntracked = { fg = colors.orange, italic = true },
-    NeoTreeGitDeleted = { fg = colors.red, bold = true },
+    NeoTreeFloatBorder = { fg = c.gray_4, bg = c.gray_1 },
+    NeoTreeFloatNormal = { bg = c.gray_1 },
+    NeoTreeFloatTitle = { bg = c.gray_1 },
+    NeoTreeGitModified = { fg = c.yellow, bold = true, italic = true },
+    NeoTreeGitUntracked = { fg = c.orange, italic = true },
+    NeoTreeGitDeleted = { fg = c.red, bold = true },
 }
 
 for group, opts in pairs(highlights) do
@@ -114,5 +124,5 @@ for group, opts in pairs(highlights) do
 end
 
 return {
-    colors = colors,
+    colors = c,
 }
