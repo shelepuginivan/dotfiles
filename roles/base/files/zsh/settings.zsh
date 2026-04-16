@@ -9,7 +9,6 @@ export LESSHISTFILE="-"
 export MANPAGER="nvim +Man!"
 export TERMINAL="alacritty"
 export PATH="$PATH:$HOME/.local/bin:$GOPATH/bin:$CARGO_HOME/bin"
-export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 export HISTFILE="$XDG_STATE_HOME/zsh/.zsh_history"
 export HISTSIZE=5000
 export SAVEHIST=5000
