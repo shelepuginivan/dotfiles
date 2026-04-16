@@ -17,3 +17,6 @@ vim.o.tabstop = 4
 
 vim.o.hlsearch = false
 vim.o.incsearch = true
+
+vim.o.termguicolors = true
+vim.cmd.colorscheme("custom_everforest")

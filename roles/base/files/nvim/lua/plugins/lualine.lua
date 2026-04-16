@@ -1,4 +1,4 @@
-local c = require("core.theme").colors
+local c = vim.g.colors
 
 require("lualine").setup({
     options = {
