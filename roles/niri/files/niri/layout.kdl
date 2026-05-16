@@ -1,0 +1,38 @@
+layout {
+    // Gaps between windows.
+    gaps 8
+
+    // Don't center the focused column.
+    center-focused-column "never"
+
+    // Always center single column.
+    always-center-single-column
+
+    // Make the background transparent
+    // so the backdrop is visible.
+    background-color "#00000000"
+
+    // Preset widths for columns.
+    preset-column-widths {
+        proportion 0.3
+        proportion 0.5
+        proportion 0.7
+    }
+
+    // Default width of the new window.
+    // Leave empty to let the window decide.
+    default-column-width {
+        proportion 0.5
+    }
+
+    // Disable focus ring.
+    focus-ring { off ;}
+
+    // Borders.
+    border {
+        on
+        width 2
+        active-color "#cccccc"
+        inactive-color "#505050"
+    }
+}

@@ -1,0 +1,113 @@
+// Global rules applied to all windows.
+window-rule {
+    geometry-corner-radius 8
+
+    // Properly render window corners.
+    // Works well with geometry-corner-radius and prefer-no-csd.
+    clip-to-geometry true
+}
+
+// Set default column width to 70% for
+//   - Alacritty
+//   - Secrets
+window-rule {
+    match app-id="Alacritty"
+    match app-id="org.gnome.World.Secrets"
+
+    default-column-width { proportion 0.7 ;}
+}
+
+// Open maximized
+//   - GIMP
+//   - Chromium
+//   - OBS Studio
+//   - EasyTAG
+//   - Evolution
+//   - Inkscape
+//   - Lutris
+//   - Telegram Desktop
+//   - Virt Viewer
+//   - Zen Browser
+window-rule {
+    match app-id="^gimp"
+    match app-id="chromium"
+    match app-id="com.obsproject.Studio"
+    match app-id="easytag"
+    match app-id="org.gnome.Evolution"
+    match app-id="org.inkscape.Inkscape"
+    match app-id="net.lutris.Lutris"
+    match app-id="org.telegram.desktop"
+    match app-id="virt-viewer"
+    match app-id="zen"
+
+    open-maximized true
+}
+
+// Exclude sensitive apps from screencast.
+window-rule {
+    match app-id="org.gnome.Evolution"
+    match app-id="gcr-prompter"
+    match app-id="org.gnome.World.Secrets"
+    match app-id=r#"^org\.telegram\.desktop$"#
+
+    block-out-from "screencast"
+}
+
+// Indicate screencasted windows with red colors.
+window-rule {
+    match is-window-cast-target=true
+
+    border {
+        active-color "#ff656d"
+        inactive-color "#e67e80"
+    }
+
+    shadow {
+        on
+        color "#e67e8070"
+    }
+
+    tab-indicator {
+        active-color "#ff656d"
+        inactive-color "#e67e80"
+    }
+}
+
+// pqiv overlay window.
+window-rule {
+    match title="pqiv-overlay"
+
+    open-floating true
+    border { off ;}
+}
+
+// Browser picture-in-picture window.
+window-rule {
+    match title="Picture-in-Picture"
+
+    open-floating true
+    default-column-width { fixed 320 ;}
+}
+
+// Better Control.
+window-rule {
+    match title="Better Control"
+
+    open-floating true
+    default-floating-position x=0 y=32 relative-to="top"
+}
+
+// Qalculate
+window-rule {
+    match app-id="qalculate-gtk"
+
+    min-height 800
+    open-floating true
+    default-floating-position x=0 y=32 relative-to="top"
+}
+
+// Use awww as backdrop wallpaper.
+layer-rule {
+    match namespace="^awww-daemon$"
+    place-within-backdrop true
+}

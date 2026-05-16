@@ -1,0 +1,25 @@
+output "DP-1" {
+    // Make this output primary.
+    focus-at-startup
+
+    // Explicitly set position for this output. 
+    position x=0 y=0
+}
+
+output "HDMI-A-1" {
+    // Rotate by 90 counter-clockwise (it is a vertical monitor).
+    transform "90"
+
+    // Position this output adjacent to the primary monitor, to the right.
+    position x=2560 y=0
+
+    // Disalbe hot corners for this output.
+    hot-corners {
+        off
+    }
+
+    // Layout overrides.
+    layout {
+        default-column-width { proportion 1.0 ;}
+    }
+}

@@ -1,0 +1,20 @@
+input {
+    keyboard {
+        xkb {
+            // Enable en and ru layouts.
+            layout "us,ru"
+
+            // Switch layouts by pressing Shift+Alt,
+            // remap CapsLock to Ctrl.
+            options "grp:alt_shift_toggle,ctrl:nocaps"
+        }
+    }
+    
+    touchpad {
+        // Tap to click.
+        tap
+
+        // Disable when typing.
+        dwt
+    }
+}

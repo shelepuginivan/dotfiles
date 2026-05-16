@@ -1,0 +1,7 @@
+include "environment.kdl"
+include "input.kdl"
+include "output.kdl"
+include "layout.kdl"
+include "window_rules.kdl"
+include "keybinds.kdl"
+include "miscellaneous.kdl"
