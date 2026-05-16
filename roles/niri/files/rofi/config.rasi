@@ -1,0 +1,67 @@
+configuration {
+  display-drun: "App:";
+  drun-display-format: "{name}";
+  font: "JetBrainsMono Nerd Font Mono Medium 14";
+  modi: "drun";
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+@theme "/dev/null"
+
+/* Colors. */
+* {
+  bg: #1c1917;
+  bg-selected: #373432;
+  fg: #9d988e;
+  fg-selected: #f3ebdc;
+}
+
+* {
+  background-color: @bg;
+  text-color: @fg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 800px;
+}
+
+prompt {
+  enabled: true;
+  padding: 12 0 0 12;
+}
+
+entry {
+  padding: 12;
+  text-color: @fg-selected;
+}
+
+listview {
+  columns: 1;
+  lines: 8;
+}
+
+element {
+  padding: 8 12;
+}
+
+element selected {
+  text-color: @fg-selected;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+}
+
+element-icon {
+  size: 16;
+  padding: 0 10 0 0;
+  background-color: transparent;
+}

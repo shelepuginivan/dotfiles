@@ -4,7 +4,8 @@ user_home: "{{ lookup('env', 'HOME') }}"
 xdg_config_home: "{{ lookup('env', 'XDG_CONFIG_HOME') or [user_home, '.config'] | path_join }}"
 
 # Which configurations to copy to $XDG_CONFIG_HOME.
-configured_apps: []
+configured_apps:
+  - rofi
 
 # Which packages to install.
 packages:
