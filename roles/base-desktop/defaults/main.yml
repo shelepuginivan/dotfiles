@@ -16,6 +16,10 @@ packages:
     noto-fonts-cjk, noto-fonts-emoji, noto-fonts-extra, qalculate-gtk,
     simple-scan, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd,
 
+    # Audio.
+    pavucontrol, pipewire, pipewire-alsa, pipewire-libcamera, pipewire-pulse,
+    sof-firmware, wireplumber,
+
     # Development.
     gtk4-layer-shell,
   ]
