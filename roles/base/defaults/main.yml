@@ -18,13 +18,20 @@ packages:
     - btop
     - eza
     - ffmpeg
+    - firejail
     - fzf
+    - gnupg
     - imagemagick
+    - jq
     - less
     - lf
     - nvim
+    - pass
+    - pass-otp
+    - pacman-contrib
     - pdftk
     - perl-image-exiftool
+    - transmission-cli
     - typos
     - unzip
     - wget
@@ -37,12 +44,14 @@ packages:
     - ansible
     - ccls
     - cmake
+    - d2
     - gdb
     - git
     - go
     - gopls
     - just
     - lua-language-server
+    - npm
     - podman
     - podman-compose
     - pyright
@@ -52,6 +61,7 @@ packages:
     - tinymist
     - typescript-language-server
     - typst
+    - uv
   aur:
     - paru
     - vimv
