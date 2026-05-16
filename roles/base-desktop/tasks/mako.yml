@@ -1,6 +1,0 @@
----
-- name: Enable mako systemd service
-  ansible.builtin.systemd:
-    name: mako.service
-    enabled: true
-    scope: user

@@ -6,20 +6,23 @@ xdg_config_home: "{{ lookup('env', 'XDG_CONFIG_HOME') or [user_home, '.config'] 
 # Which configurations to copy to $XDG_CONFIG_HOME.
 configured_apps:
   - alacritty
-  - mako
   - mpv
 
 # Which packages to install. Currently the names are for Arch Linux only.
 packages:
   general:
     - alacritty
+    - evolution
+    - evolution-on
+    - gimp
     - imv
-    - mako
+    - inkscape
     - mpv
     - noto-fonts-cjk
     - noto-fonts-emoji
     - noto-fonts-extra
     - qalculate-gtk
+    - simple-scan
     - ttf-jetbrains-mono
     - ttf-jetbrains-mono-nerd
   development:

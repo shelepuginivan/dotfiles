@@ -1,4 +1,3 @@
 ---
 # Apps that require additional setup.
-custom_setup_apps:
-  - mako
+custom_setup_apps: []
