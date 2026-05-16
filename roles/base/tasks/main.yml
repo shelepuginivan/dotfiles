@@ -1,6 +1,10 @@
 ---
 - name: Install packages
-  ansible.builtin.include_tasks: ./packages.yml
+  ansible.builtin.include_role:
+    name: _common
+    tasks_from: packages
+  vars:
+    _common_packages: "{{ packages }}"
 
 - name: Copy configuration files
   ansible.builtin.copy:
