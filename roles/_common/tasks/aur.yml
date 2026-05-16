@@ -21,11 +21,11 @@
       {%- for p in pkgs %}arg[]={{ p }}{{ '&' if not loop.last else '' }}{% endfor %}
     body_format: json
   register: package_info
-  when: "packages.aur | length > 0"
+  when: "pkgs | length > 0"
 
 - name: Download, build, and install resolved packages
   ansible.builtin.include_tasks: ./aur_single.yml
-  when: "packages.aur | length > 0"
+  when: "pkgs | length > 0"
   loop: "{{ package_info.json.results }}"
   loop_control:
     loop_var: package

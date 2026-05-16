@@ -1,12 +1,12 @@
 ---
 - name: Install pacman packages (Arch Linux)
   community.general.pacman:
-    name: "{{ _common_packages.pacman }}"
+    name: "{{ _common_packages.pacman | default([]) }}"
   become: true
   when: ansible_facts["os_family"] == "Archlinux"
 
 - name: Install AUR packages (Arch Linux)
   ansible.builtin.include_tasks: ./aur.yml
   vars:
-    pkgs: "{{ _common_packages.aur }}"
+    pkgs: "{{ _common_packages.aur | default([]) }}"
   when: ansible_facts["os_family"] == "Archlinux"
