@@ -1,13 +1,7 @@
 ---
-- name: Install general packages (Arch Linux)
+- name: Install pacman packages (Arch Linux)
   community.general.pacman:
-    name: "{{ packages.general }}"
-  become: true
-  when: ansible_facts["os_family"] == "Archlinux"
-
-- name: Install development packages (Arch Linux)
-  community.general.pacman:
-    name: "{{ packages.development }}"
+    name: "{{ packages.pacman }}"
   become: true
   when: ansible_facts["os_family"] == "Archlinux"
 

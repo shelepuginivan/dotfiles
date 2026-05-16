@@ -8,24 +8,17 @@ configured_apps:
   - alacritty
   - mpv
 
-# Which packages to install. Currently the names are for Arch Linux only.
+# Which packages to install.
 packages:
-  general:
-    - alacritty
-    - evolution
-    - evolution-on
-    - gimp
-    - imv
-    - inkscape
-    - mpv
-    - noto-fonts-cjk
-    - noto-fonts-emoji
-    - noto-fonts-extra
-    - qalculate-gtk
-    - simple-scan
-    - ttf-jetbrains-mono
-    - ttf-jetbrains-mono-nerd
-  development:
-    - gtk4-layer-shell
+  pacman: [
+    # General
+    alacritty, evolution, evolution-on, gimp, imv, inkscape, mpv,
+    noto-fonts-cjk, noto-fonts-emoji, noto-fonts-extra, qalculate-gtk,
+    simple-scan, ttf-jetbrains-mono, ttf-jetbrains-mono-nerd,
+
+    # Development.
+    gtk4-layer-shell,
+  ]
+
   aur:
     - zen-browser-bin

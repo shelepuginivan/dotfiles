@@ -10,58 +10,21 @@ configured_apps:
   - nvim
   - zsh
 
-# Which packages to install. Currently the names are for Arch Linux only.
+# Which packages to install.
 packages:
-  general:
-    - base-devel
-    - bat
-    - btop
-    - eza
-    - ffmpeg
-    - firejail
-    - fzf
-    - gnupg
-    - imagemagick
-    - jq
-    - less
-    - lf
-    - nvim
-    - pass
-    - pass-otp
-    - pacman-contrib
-    - pdftk
-    - perl-image-exiftool
-    - transmission-cli
-    - typos
-    - unzip
-    - wget
-    - zip
-    - zsh
-    - zsh-autosuggestions
-    - zsh-history-substring-search
-    - zsh-syntax-highlighting
-  development:
-    - ansible
-    - ccls
-    - cmake
-    - d2
-    - gdb
-    - git
-    - go
-    - gopls
-    - just
-    - lua-language-server
-    - npm
-    - podman
-    - podman-compose
-    - pyright
-    - rclone
-    - rustup
-    - stylua
-    - tinymist
-    - typescript-language-server
-    - typst
-    - uv
+  pacman: [
+    # General
+    base-devel, bat, btop, eza, ffmpeg, firejail, fzf, gnupg, imagemagick, jq,
+    less, lf, nvim, pass, pass-otp, pacman-contrib, pdftk, perl-image-exiftool,
+    transmission-cli, typos, unzip, wget, zip, zsh, zsh-autosuggestions,
+    zsh-history-substring-search, zsh-syntax-highlighting,
+
+    # Development
+    ansible, ccls, cmake, d2, gdb, git, go, gopls, just, lua-language-server,
+    npm, podman, podman-compose, pyright, rclone, rustup, stylua, tinymist,
+    typescript-language-server, typst, uv,
+  ]
+
   aur:
     - paru
     - vimv
