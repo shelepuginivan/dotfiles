@@ -1,0 +1,57 @@
+configuration {
+  font: "JetBrainsMono Nerd Font Mono Medium 100";
+}
+
+@theme "/dev/null"
+
+/* Colors. */
+* {
+  bg: #1c1917;
+  bg-selected: #373432;
+  fg: #9d988e;
+  fg-selected: #f3ebdc;
+}
+
+* {
+  background-color: @bg;
+  text-color: @fg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+window {
+  width: 1000px;
+}
+
+mainbox {
+  children: [ listview ];
+}
+
+prompt, entry {
+  enabled: false;
+}
+
+listview {
+  lines: 1;
+  columns: 5;
+  fixed-columns: true;
+  flow: horizontal;
+  padding: 8px;
+  spacing: 8px;
+}
+
+element selected {
+  text-color: @fg-selected;
+  background-color: @bg-selected;
+}
+
+element-text {
+  background-color: transparent;
+  text-color: inherit;
+  horizontal-align: 0.5;
+  vertical-align: 0.5;
+  padding: 100 0 100 0;
+}
