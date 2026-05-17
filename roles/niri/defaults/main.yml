@@ -13,5 +13,5 @@ configured_apps:
 # Which packages to install.
 packages:
   pacman: [
-    dunst, hyprlock, niri, rofi, waybar,
+    dunst, hyprlock, niri, rofi, rofi-emoji, waybar,
   ]

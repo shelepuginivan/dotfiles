@@ -1,8 +1,9 @@
 configuration {
   display-drun: "App:";
+  display-emoji: "Emoji:";
   drun-display-format: "{name}";
   font: "JetBrainsMono Nerd Font Mono Medium 14";
-  modi: "drun";
+  modi: "drun,emoji";
   show-icons: true;
   icon-theme: "Papirus";
 }
