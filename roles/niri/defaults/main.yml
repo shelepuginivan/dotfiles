@@ -6,11 +6,12 @@ xdg_config_home: "{{ lookup('env', 'XDG_CONFIG_HOME') or [user_home, '.config'] 
 # Which configurations to copy to $XDG_CONFIG_HOME.
 configured_apps:
   - dunst
+  - hypr
   - niri
   - rofi
 
 # Which packages to install.
 packages:
   pacman: [
-    dunst, niri, rofi, waybar,
+    dunst, hyprlock, niri, rofi, waybar,
   ]
