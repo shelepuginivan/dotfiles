@@ -13,7 +13,7 @@ output "HDMI-A-1" {
     // Position this output adjacent to the primary monitor, to the right.
     position x=2560 y=0
 
-    // Disalbe hot corners for this output.
+    // Disable hot corners for this output.
     hot-corners {
         off
     }
