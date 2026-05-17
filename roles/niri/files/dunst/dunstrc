@@ -1,0 +1,67 @@
+# Not really dosini, but enables syntax highlighting.
+#
+# vi: ft=dosini
+
+[global]
+    # Window
+    monitor = DP-1
+    follow = none
+    transparency = 10
+    corner_radius = 4
+    scale = 0
+    frame_width = 2
+    origin = top-right
+    width = 316
+    offset = 16x16
+    padding = 12
+    horizontal_padding = 12
+
+    # Multiple notifications
+    notification_limit = 3
+    indicate_hidden = true
+    gap_size = 8
+
+    # Progress bar
+    progress_bar = true
+    progress_bar_frame_width = 1
+    progress_bar_min_width = 150
+    progress_bar_max_width = 288
+
+    # Fonts
+    font = "JetBrains Mono 12"
+    markup = full
+    format = "<b>%s</b>\n%b"
+    alignment = left
+    vertical_alignment = center
+
+    # Icons
+    enable_recursive_icon_lookup = true
+    icon_theme = "Papirus"
+    min_icon_size = 32
+    max_icon_size = 32
+
+    # Actions
+    show_indicators = true
+    mouse_left_click = close_current
+    mouse_middle_click = close_all
+    mouse_right_click = do_action, close_current
+
+[urgency_low]
+    background = "#1c1917dd"
+    foreground = "#f3ebdc"
+    frame_color = "#7fbbb3"
+    timeout = 5
+
+[urgency_normal]
+    background = "#1c1917dd"
+    foreground = "#f3ebdc"
+    frame_color = "#8ec07c"
+    timeout = 5
+    override_pause_level = 30
+
+[urgency_critical]
+    background = "#1c1917dd"
+    foreground = "#f3ebdc"
+    frame_color = "#e67e80"
+    timeout = 20
+    override_pause_level = 60
