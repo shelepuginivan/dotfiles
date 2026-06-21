@@ -1,3 +1,10 @@
+> [!CAUTION]
+> # This repository is no longer maintained
+> Some of the recent changes were pushed to the [`ansible`](https://github.com/shelepuginivan/dotfiles/tree/ansible)
+> branch. I am not planning to update it, though.
+
+---
+
 <div align="center">
   <img src="https://cdn.shelepugin.ru/i/png/gh-banner-dotfiles.png" alt="shelepuginivan/dotfiles">
   <h3>Welcome to my dotfiles repository!</h3>
